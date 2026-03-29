@@ -41,41 +41,49 @@ const SERVICES = [
     icon: <Car className="w-8 h-8" />,
     title: "Vehicle Insurance",
     description: "Renew or apply for vehicle insurance quickly",
+    image: "/assets/generated/service-vehicle-insurance.dim_800x600.jpg",
   },
   {
     icon: <FileText className="w-8 h-8" />,
     title: "Driving Licence",
     description: "Apply for new or renew your driving licence",
+    image: "/assets/generated/service-driving-licence.dim_800x600.jpg",
   },
   {
     icon: <RotateCcw className="w-8 h-8" />,
     title: "RC Renew",
     description: "Hassle-free RC renewal assistance",
+    image: "/assets/generated/service-rc-renewal.dim_800x600.jpg",
   },
   {
     icon: <CreditCard className="w-8 h-8" />,
     title: "PAN Card Apply",
     description: "Apply for PAN card with ease",
+    image: "/assets/generated/service-pan-card.dim_800x600.jpg",
   },
   {
     icon: <Building2 className="w-8 h-8" />,
     title: "Banking",
     description: "Banking assistance and services",
+    image: "/assets/generated/service-banking.dim_800x600.jpg",
   },
   {
     icon: <Briefcase className="w-8 h-8" />,
     title: "Online Job Apply",
     description: "Get help applying for jobs online",
+    image: "/assets/generated/service-online-job-apply.dim_800x600.jpg",
   },
   {
     icon: <Plane className="w-8 h-8" />,
     title: "Flight Ticket Booking",
     description: "Book domestic and international flights",
+    image: "/assets/generated/service-flight-ticket.dim_800x600.jpg",
   },
   {
     icon: <Train className="w-8 h-8" />,
     title: "Indian Train Ticket Booking",
     description: "Book IRCTC train tickets easily",
+    image: "/assets/generated/service-train-ticket.dim_800x600.jpg",
   },
 ];
 
@@ -772,29 +780,38 @@ export default function App() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.07 }}
                   data-ocid={`services.item.${idx + 1}`}
-                  className="group bg-white rounded-xl border border-blue-100 p-6 flex flex-col gap-4 hover:border-[#0EA5A5] hover:shadow-card transition-all"
+                  className="group bg-white rounded-xl border border-blue-100 overflow-hidden flex flex-col hover:border-[#0EA5A5] hover:shadow-card hover:scale-[1.02] transition-all duration-300"
                 >
-                  <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center text-[#0B4F8F] group-hover:bg-[#0B4F8F] group-hover:text-white transition-all"
-                    style={{ background: "#EFF6FF" }}
-                  >
-                    {service.icon}
+                  <div className="h-[180px] overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <div>
-                    <h3 className="font-bold text-[#0B4F8F] text-base mb-1">
-                      {service.title}
-                    </h3>
+                  <div className="p-5 flex flex-col gap-3 flex-1">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-10 h-10 rounded-lg flex items-center justify-center text-[#0B4F8F] group-hover:bg-[#0B4F8F] group-hover:text-white transition-all flex-shrink-0"
+                        style={{ background: "#EFF6FF" }}
+                      >
+                        {service.icon}
+                      </div>
+                      <h3 className="font-bold text-[#0B4F8F] text-base leading-tight">
+                        {service.title}
+                      </h3>
+                    </div>
                     <p className="text-gray-500 text-sm leading-relaxed">
                       {service.description}
                     </p>
+                    <button
+                      type="button"
+                      onClick={() => handleNavClick("#contact")}
+                      className="mt-auto text-sm font-bold text-[#0EA5A5] hover:text-[#0B4F8F] transition-colors flex items-center gap-1 text-left"
+                    >
+                      Get Started →
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => handleNavClick("#contact")}
-                    className="mt-auto text-sm font-bold text-[#0EA5A5] hover:text-[#0B4F8F] transition-colors flex items-center gap-1 text-left"
-                  >
-                    Learn More →
-                  </button>
                 </motion.div>
               ))}
             </div>
