@@ -1,16 +1,23 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Briefcase,
   Building2,
   Car,
+  Clock,
   CreditCard,
   FileText,
   HeartHandshake,
   MapPin,
   Menu,
+  MessageCircle,
   Phone,
   Plane,
   RotateCcw,
   Shield,
+  Star,
   Train,
   Users,
   X,
@@ -18,12 +25,15 @@ import {
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+import { useGetReviews, useSubmitReview } from "./hooks/useQueries";
+import type { Review } from "./hooks/useQueries";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
   { label: "About Us", href: "#about" },
   { label: "Contact", href: "#contact" },
+  { label: "Reviews", href: "#reviews" },
 ];
 
 const SERVICES = [
@@ -92,9 +102,405 @@ const FEATURES = [
   },
 ];
 
+const WHATSAPP_URL = "https://wa.me/916000134640";
+
 function scrollTo(href: string) {
   const el = document.querySelector(href);
   if (el) el.scrollIntoView({ behavior: "smooth" });
+}
+
+function StarRating({
+  value,
+  onChange,
+}: {
+  value: number;
+  onChange?: (v: number) => void;
+}) {
+  const [hovered, setHovered] = useState(0);
+  const interactive = !!onChange;
+  return (
+    <div className="flex gap-1" role={interactive ? "radiogroup" : undefined}>
+      {[1, 2, 3, 4, 5].map((star) => (
+        <button
+          key={star}
+          type={interactive ? "button" : undefined}
+          aria-label={interactive ? `${star} star` : undefined}
+          disabled={!interactive}
+          onClick={() => onChange?.(star)}
+          onMouseEnter={() => interactive && setHovered(star)}
+          onMouseLeave={() => interactive && setHovered(0)}
+          className={[
+            "transition-all",
+            interactive
+              ? "cursor-pointer hover:scale-110 active:scale-95"
+              : "cursor-default",
+          ].join(" ")}
+        >
+          <Star
+            className="w-7 h-7"
+            fill={star <= (hovered || value) ? "#F59E0B" : "none"}
+            stroke={star <= (hovered || value) ? "#F59E0B" : "#D1D5DB"}
+          />
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function ReviewCard({ review, index }: { review: Review; index: number }) {
+  const date = new Date(Number(review.timestamp / 1_000_000n));
+  const formatted = date.toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.06 }}
+      data-ocid={`reviews.item.${index + 1}`}
+      className="bg-white rounded-2xl border border-blue-100 p-6 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow"
+    >
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-3">
+          <div
+            className="w-10 h-10 rounded-full flex items-center justify-center text-white font-extrabold text-sm flex-shrink-0"
+            style={{
+              background: "linear-gradient(135deg, #0B4F8F, #0EA5A5)",
+            }}
+          >
+            {review.name.charAt(0).toUpperCase()}
+          </div>
+          <div>
+            <div className="font-bold text-[#0B4F8F] text-sm">
+              {review.name}
+            </div>
+            <div className="text-gray-400 text-xs">{formatted}</div>
+          </div>
+        </div>
+        <StarRating value={Number(review.rating)} />
+      </div>
+      {review.comment && (
+        <p className="text-gray-600 text-sm leading-relaxed">
+          {review.comment}
+        </p>
+      )}
+    </motion.div>
+  );
+}
+
+function ReviewsSection() {
+  const { data: reviews = [], isLoading } = useGetReviews();
+  const { mutateAsync: submitReview, isPending } = useSubmitReview();
+
+  const [name, setName] = useState("");
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const sorted = [...reviews].reverse();
+  const avgRating =
+    reviews.length > 0
+      ? reviews.reduce((sum, r) => sum + Number(r.rating), 0) / reviews.length
+      : 0;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    if (!name.trim()) {
+      setError("Please enter your name.");
+      return;
+    }
+    if (rating === 0) {
+      setError("Please select a star rating.");
+      return;
+    }
+    if (!comment.trim()) {
+      setError("Please write a comment.");
+      return;
+    }
+    try {
+      await submitReview({
+        name: name.trim(),
+        rating,
+        comment: comment.trim(),
+      });
+      setSubmitted(true);
+      setName("");
+      setRating(0);
+      setComment("");
+    } catch {
+      setError("Something went wrong. Please try again.");
+    }
+  };
+
+  return (
+    <section
+      id="reviews"
+      className="py-16 md:py-24"
+      style={{ background: "#F3F6FA" }}
+      data-ocid="reviews.section"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <span className="text-[#0EA5A5] font-bold uppercase tracking-widest text-sm">
+            Customer Feedback
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B4F8F] mt-2 mb-4">
+            Reviews & Ratings
+          </h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Share your experience with QS DIGITAL and help others know what to
+            expect.
+          </p>
+          {reviews.length > 0 && (
+            <div className="mt-4 inline-flex items-center gap-2 bg-white rounded-full px-5 py-2 border border-amber-200 shadow-sm">
+              <StarRating value={Math.round(avgRating)} />
+              <span className="font-extrabold text-[#0B4F8F] text-lg">
+                {avgRating.toFixed(1)}
+              </span>
+              <span className="text-gray-400 text-sm">
+                ({reviews.length} review{reviews.length !== 1 ? "s" : ""})
+              </span>
+            </div>
+          )}
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+          {/* ===== SUBMIT FORM ===== */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="bg-white rounded-2xl shadow-sm border border-blue-100 overflow-hidden">
+              <div
+                className="px-6 py-5"
+                style={{
+                  background: "linear-gradient(135deg, #0B4F8F, #0EA5A5)",
+                }}
+              >
+                <h3 className="text-xl font-extrabold text-white">
+                  Write a Review
+                </h3>
+                <p className="text-blue-100 text-sm mt-1">
+                  Your feedback helps us serve you better
+                </p>
+              </div>
+
+              <div className="p-6">
+                <AnimatePresence mode="wait">
+                  {submitted ? (
+                    <motion.div
+                      key="success"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="flex flex-col items-center gap-4 py-8 text-center"
+                      data-ocid="reviews.success_state"
+                    >
+                      <div
+                        className="w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #0EA5A5, #0B4F8F)",
+                        }}
+                      >
+                        ✓
+                      </div>
+                      <div>
+                        <div className="font-extrabold text-[#0B4F8F] text-lg mb-1">
+                          Thank you for your review!
+                        </div>
+                        <p className="text-gray-500 text-sm">
+                          Your feedback has been submitted and is now visible to
+                          other customers.
+                        </p>
+                      </div>
+                      <Button
+                        type="button"
+                        onClick={() => setSubmitted(false)}
+                        className="mt-2 bg-[#0B4F8F] hover:bg-[#0E6AAE] text-white"
+                        data-ocid="reviews.submit_button"
+                      >
+                        Write Another Review
+                      </Button>
+                    </motion.div>
+                  ) : (
+                    <motion.form
+                      key="form"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onSubmit={handleSubmit}
+                      className="flex flex-col gap-5"
+                      data-ocid="reviews.modal"
+                    >
+                      <div className="flex flex-col gap-1.5">
+                        <Label
+                          htmlFor="review-name"
+                          className="font-semibold text-gray-700"
+                        >
+                          Your Name <span className="text-red-500">*</span>
+                        </Label>
+                        <Input
+                          id="review-name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          placeholder="e.g. Raju Ahmed"
+                          className="border-gray-200 focus:border-[#0EA5A5] focus:ring-[#0EA5A5]"
+                          data-ocid="reviews.input"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-1.5">
+                        <Label className="font-semibold text-gray-700">
+                          Star Rating <span className="text-red-500">*</span>
+                        </Label>
+                        <div className="flex items-center gap-3">
+                          <StarRating value={rating} onChange={setRating} />
+                          {rating > 0 && (
+                            <span className="text-sm text-gray-500">
+                              {
+                                [
+                                  "Poor",
+                                  "Fair",
+                                  "Good",
+                                  "Very Good",
+                                  "Excellent",
+                                ][rating - 1]
+                              }
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-1.5">
+                        <Label
+                          htmlFor="review-comment"
+                          className="font-semibold text-gray-700"
+                        >
+                          Your Comment <span className="text-red-500">*</span>
+                        </Label>
+                        <Textarea
+                          id="review-comment"
+                          value={comment}
+                          onChange={(e) => setComment(e.target.value)}
+                          placeholder="Share your experience with QS DIGITAL..."
+                          rows={4}
+                          className="border-gray-200 focus:border-[#0EA5A5] focus:ring-[#0EA5A5] resize-none"
+                          data-ocid="reviews.textarea"
+                        />
+                      </div>
+
+                      {error && (
+                        <div
+                          className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-lg"
+                          data-ocid="reviews.error_state"
+                        >
+                          {error}
+                        </div>
+                      )}
+
+                      <Button
+                        type="submit"
+                        disabled={isPending}
+                        className="w-full bg-[#0B4F8F] hover:bg-[#0E6AAE] text-white font-bold py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+                        data-ocid="reviews.submit_button"
+                      >
+                        {isPending ? (
+                          <span className="flex items-center gap-2">
+                            <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                            Submitting...
+                          </span>
+                        ) : (
+                          "Submit Review"
+                        )}
+                      </Button>
+                    </motion.form>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ===== REVIEWS LIST ===== */}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex flex-col gap-4"
+          >
+            {isLoading ? (
+              <div
+                className="flex flex-col gap-4"
+                data-ocid="reviews.loading_state"
+              >
+                {[1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="bg-white rounded-2xl border border-blue-100 p-6 animate-pulse"
+                  >
+                    <div className="flex gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-gray-200" />
+                      <div className="flex-1">
+                        <div className="h-4 bg-gray-200 rounded w-1/3 mb-2" />
+                        <div className="h-3 bg-gray-100 rounded w-1/4" />
+                      </div>
+                    </div>
+                    <div className="h-3 bg-gray-100 rounded w-full mb-2" />
+                    <div className="h-3 bg-gray-100 rounded w-3/4" />
+                  </div>
+                ))}
+              </div>
+            ) : sorted.length === 0 ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="bg-white rounded-2xl border border-dashed border-blue-200 p-12 text-center flex flex-col items-center gap-3"
+                data-ocid="reviews.empty_state"
+              >
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center"
+                  style={{ background: "#EFF6FF" }}
+                >
+                  <Star className="w-7 h-7 text-[#0B4F8F]" />
+                </div>
+                <div className="font-bold text-[#0B4F8F]">No reviews yet</div>
+                <p className="text-gray-500 text-sm">
+                  Be the first to share your experience with QS DIGITAL!
+                </p>
+              </motion.div>
+            ) : (
+              <div
+                className="flex flex-col gap-4 max-h-[600px] overflow-y-auto pr-1"
+                data-ocid="reviews.list"
+              >
+                {sorted.map((review, idx) => (
+                  <ReviewCard
+                    key={String(review.id)}
+                    review={review}
+                    index={idx}
+                  />
+                ))}
+              </div>
+            )}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default function App() {
@@ -142,9 +548,19 @@ export default function App() {
                 </button>
               ))}
               <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-ocid="header.whatsapp.button"
+                className="ml-2 flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#1ebe5d] transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
+              </a>
+              <a
                 href="tel:6000134640"
                 data-ocid="header.phone.button"
-                className="ml-4 flex items-center gap-2 bg-[#0B4F8F] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#0E6AAE] transition-colors"
+                className="ml-2 flex items-center gap-2 bg-[#0B4F8F] text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#0E6AAE] transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 6000134640
@@ -190,8 +606,17 @@ export default function App() {
                   </button>
                 ))}
                 <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 mt-2 bg-[#25D366] text-white px-4 py-3 rounded-md text-sm font-semibold"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp: 6000134640
+                </a>
+                <a
                   href="tel:6000134640"
-                  className="flex items-center gap-2 mt-2 bg-[#0B4F8F] text-white px-4 py-3 rounded-md text-sm font-semibold"
+                  className="flex items-center gap-2 mt-1 bg-[#0B4F8F] text-white px-4 py-3 rounded-md text-sm font-semibold"
                 >
                   <Phone className="w-4 h-4" />
                   Call: 6000134640
@@ -221,7 +646,6 @@ export default function App() {
               backgroundPosition: "center",
             }}
           />
-          {/* Decorative circles */}
           <div
             className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
             style={{
@@ -269,6 +693,17 @@ export default function App() {
                     Explore Services
                   </button>
                   <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-ocid="hero.whatsapp.button"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-bold text-white text-base transition-all hover:scale-105 active:scale-95 shadow-lg"
+                    style={{ background: "#25D366" }}
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    WhatsApp Us
+                  </a>
+                  <a
                     href="tel:6000134640"
                     data-ocid="hero.contact.secondary_button"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-bold text-white text-base border-2 border-white/50 hover:bg-white/10 transition-all"
@@ -281,7 +716,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Wave divider */}
           <div className="relative" aria-hidden="true">
             <svg
               viewBox="0 0 1440 60"
@@ -376,7 +810,6 @@ export default function App() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-start">
-              {/* Left: Why Choose */}
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -419,7 +852,6 @@ export default function App() {
                 </div>
               </motion.div>
 
-              {/* Right: About Us card */}
               <motion.div
                 initial={{ opacity: 0, x: 24 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -480,6 +912,33 @@ export default function App() {
                           </a>
                         </div>
                       </div>
+                      <div className="flex items-center gap-3">
+                        <MessageCircle className="w-5 h-5 text-[#25D366] flex-shrink-0" />
+                        <div>
+                          <div className="font-semibold text-gray-800 text-sm">
+                            WhatsApp
+                          </div>
+                          <a
+                            href={WHATSAPP_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#25D366] font-bold text-sm hover:text-[#1ebe5d] transition-colors"
+                          >
+                            6000134640
+                          </a>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Clock className="w-5 h-5 text-[#F59E0B] flex-shrink-0" />
+                        <div>
+                          <div className="font-semibold text-gray-800 text-sm">
+                            Hours
+                          </div>
+                          <div className="text-gray-600 text-sm font-medium">
+                            7:30 AM – 8:00 PM, All Days
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -509,14 +968,13 @@ export default function App() {
                 Get in Touch
               </h2>
               <p className="text-gray-500 max-w-lg mx-auto">
-                We're here to help. Drop by our shop or give us a call — we'd
-                love to assist you.
+                We're here to help. Drop by our shop, call us, or message us on
+                WhatsApp — we'd love to assist you.
               </p>
             </motion.div>
 
-            <div className="max-w-3xl mx-auto">
-              <div className="grid sm:grid-cols-2 gap-6">
-                {/* Phone card */}
+            <div className="max-w-5xl mx-auto">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -534,23 +992,52 @@ export default function App() {
                     </div>
                     <a
                       href="tel:6000134640"
-                      className="text-2xl font-extrabold text-white hover:text-yellow-300 transition-colors"
+                      className="text-xl font-extrabold text-white hover:text-yellow-300 transition-colors"
                       data-ocid="contact.phone.link"
                     >
                       6000134640
                     </a>
                     <div className="text-blue-200 text-sm mt-1">
-                      Available during business hours
+                      7:30 AM – 8:00 PM
                     </div>
                   </div>
                 </motion.div>
 
-                {/* Address card */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.08 }}
+                  className="bg-gradient-to-br from-[#25D366] to-[#1ebe5d] rounded-2xl p-8 text-white flex flex-col items-center text-center gap-4"
+                  data-ocid="contact.whatsapp.card"
+                >
+                  <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+                    <MessageCircle className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-green-100 font-semibold uppercase tracking-wider mb-1">
+                      WhatsApp
+                    </div>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl font-extrabold text-white hover:text-yellow-300 transition-colors"
+                      data-ocid="contact.whatsapp.link"
+                    >
+                      6000134640
+                    </a>
+                    <div className="text-green-100 text-sm mt-1">
+                      Chat with us anytime
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.16 }}
                   className="bg-gradient-to-br from-[#0EA5A5] to-[#10B6C7] rounded-2xl p-8 text-white flex flex-col items-center text-center gap-4"
                   data-ocid="contact.address.card"
                 >
@@ -573,9 +1060,32 @@ export default function App() {
                     </address>
                   </div>
                 </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.24 }}
+                  className="bg-gradient-to-br from-[#F59E0B] to-[#D97706] rounded-2xl p-8 text-white flex flex-col items-center text-center gap-4"
+                  data-ocid="contact.hours.card"
+                >
+                  <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+                    <Clock className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-amber-100 font-semibold uppercase tracking-wider mb-1">
+                      Business Hours
+                    </div>
+                    <div className="text-xl font-extrabold text-white">
+                      7:30 AM – 8:00 PM
+                    </div>
+                    <div className="text-amber-100 text-sm mt-1">
+                      Mon – Sun (All Days)
+                    </div>
+                  </div>
+                </motion.div>
               </div>
 
-              {/* Map embed */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -609,7 +1119,6 @@ export default function App() {
                 </div>
               </motion.div>
 
-              {/* Services quick list */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -636,13 +1145,15 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* ===== REVIEWS ===== */}
+        <ReviewsSection />
       </main>
 
       {/* ===== FOOTER ===== */}
       <footer className="bg-[#1F2937] text-gray-300" data-ocid="footer.section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-            {/* Brand */}
             <div>
               <div className="text-xl font-extrabold text-white mb-2">
                 QS DIGITAL
@@ -651,16 +1162,30 @@ export default function App() {
                 Your trusted digital service partner in Dimakuchi, Assam. Fast,
                 secure, and reliable services for every citizen.
               </p>
-              <a
-                href="tel:6000134640"
-                className="inline-flex items-center gap-2 text-sm text-[#10B6C7] hover:text-white transition-colors font-semibold"
-              >
-                <Phone className="w-4 h-4" />
-                6000134640
-              </a>
+              <div className="flex flex-col gap-2">
+                <a
+                  href="tel:6000134640"
+                  className="inline-flex items-center gap-2 text-sm text-[#10B6C7] hover:text-white transition-colors font-semibold"
+                >
+                  <Phone className="w-4 h-4" />
+                  6000134640
+                </a>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-[#25D366] hover:text-white transition-colors font-semibold"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp: 6000134640
+                </a>
+                <div className="inline-flex items-center gap-2 text-sm text-amber-400 font-semibold">
+                  <Clock className="w-4 h-4" />
+                  7:30 AM – 8:00 PM, All Days
+                </div>
+              </div>
             </div>
 
-            {/* Quick Links */}
             <div>
               <div className="font-bold text-white mb-4 uppercase tracking-wider text-xs">
                 Quick Links
@@ -681,7 +1206,6 @@ export default function App() {
               </ul>
             </div>
 
-            {/* Services */}
             <div>
               <div className="font-bold text-white mb-4 uppercase tracking-wider text-xs">
                 Our Services
@@ -702,7 +1226,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Bottom bar */}
           <div className="border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-500">
             <div>
               © {new Date().getFullYear()} QS DIGITAL. All rights reserved.
