@@ -5,10 +5,15 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   Briefcase,
   Building2,
+  Camera,
   Car,
   Clock,
+  Copy,
   CreditCard,
+  FileCheck,
   FileText,
+  Fingerprint,
+  Gift,
   HeartHandshake,
   MapPin,
   Menu,
@@ -17,6 +22,7 @@ import {
   Plane,
   RotateCcw,
   Shield,
+  ShoppingBag,
   Star,
   Train,
   Users,
@@ -31,6 +37,7 @@ import type { Review } from "./hooks/useQueries";
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
+  { label: "Products", href: "#products" },
   { label: "About Us", href: "#about" },
   { label: "Contact", href: "#contact" },
   { label: "Reviews", href: "#reviews" },
@@ -84,6 +91,79 @@ const SERVICES = [
     title: "Indian Train Ticket Booking",
     description: "Book IRCTC train tickets easily",
     image: "/assets/generated/service-train-ticket.dim_800x600.jpg",
+  },
+  {
+    icon: <Camera className="w-8 h-8" />,
+    title: "Photo Shop",
+    description: "Passport, ID and studio photo printing services",
+    image: "/assets/generated/service-photo-shop.dim_800x600.jpg",
+  },
+  {
+    icon: <Copy className="w-8 h-8" />,
+    title: "Photostate / Photocopy",
+    description: "Fast and affordable document photocopying",
+    image: "/assets/generated/service-photocopy.dim_800x600.jpg",
+  },
+  {
+    icon: <FileCheck className="w-8 h-8" />,
+    title: "Caste Certificate Apply",
+    description: "Apply for your official caste certificate",
+    image: "/assets/generated/service-caste-certificate.dim_800x600.jpg",
+  },
+  {
+    icon: <FileText className="w-8 h-8" />,
+    title: "Birth Certificate",
+    description: "Apply for birth certificate easily",
+    image: "/assets/generated/service-birth-certificate.dim_800x600.jpg",
+  },
+  {
+    icon: <Fingerprint className="w-8 h-8" />,
+    title: "Aadhaar Card Apply",
+    description: "New Aadhaar card enrollment assistance",
+    image: "/assets/generated/service-aadhaar-apply.dim_800x600.jpg",
+  },
+  {
+    icon: <Fingerprint className="w-8 h-8" />,
+    title: "Aadhaar Card Correction",
+    description: "Update and correct your Aadhaar card details",
+    image: "/assets/generated/service-aadhaar-correction.dim_800x600.jpg",
+  },
+];
+
+const PRODUCTS = [
+  {
+    category: "Daily Use Electricals & Electronics",
+    items: [
+      {
+        title: "Electrical Items",
+        description:
+          "LED bulbs, extension cords, switches, chargers, fans and more daily use electrical items",
+        image: "/assets/generated/product-electricals.dim_800x600.jpg",
+      },
+      {
+        title: "Electronics & Accessories",
+        description:
+          "Mobile accessories, earphones, LED lights, small home appliances and more",
+        image: "/assets/generated/product-electronics.dim_800x600.jpg",
+      },
+    ],
+  },
+  {
+    category: "Gift Items",
+    items: [
+      {
+        title: "Birthday Gifts",
+        description:
+          "Beautiful gift hampers, chocolates, greeting cards and decorative items for birthdays",
+        image: "/assets/generated/product-birthday-gift.dim_800x600.jpg",
+      },
+      {
+        title: "Marriage Gifts",
+        description:
+          "Elegant wedding gift sets, traditional gift hampers and luxury gift items for weddings",
+        image: "/assets/generated/product-marriage-gift.dim_800x600.jpg",
+      },
+    ],
   },
 ];
 
@@ -671,6 +751,24 @@ export default function App() {
             }}
           />
 
+          {/* QS DIGITAL watermark */}
+          <div
+            className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
+            aria-hidden="true"
+          >
+            <span
+              className="text-white font-black uppercase tracking-widest whitespace-nowrap"
+              style={{
+                fontSize: "clamp(4rem, 18vw, 18rem)",
+                opacity: 0.06,
+                letterSpacing: "0.15em",
+                userSelect: "none",
+              }}
+            >
+              QS DIGITAL
+            </span>
+          </div>
+
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
             <div className="max-w-3xl">
               <motion.div
@@ -817,6 +915,95 @@ export default function App() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ===== PRODUCTS ===== */}
+        <section
+          id="products"
+          className="py-16 md:py-24 bg-gray-50"
+          data-ocid="products.section"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
+            >
+              <span className="text-[#0EA5A5] font-bold uppercase tracking-widest text-sm">
+                Shop With Us
+              </span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B4F8F] mt-2 mb-4">
+                Our Products
+              </h2>
+              <p className="text-gray-500 max-w-xl mx-auto">
+                Find daily use electricals, electronics, and thoughtful gift
+                items at QS DIGITAL.
+              </p>
+            </motion.div>
+
+            {PRODUCTS.map((group) => (
+              <div key={group.category} className="mb-12">
+                <div className="flex items-center gap-3 mb-6">
+                  <ShoppingBag className="w-6 h-6 text-[#0EA5A5]" />
+                  <h3 className="text-xl font-bold text-[#0B4F8F]">
+                    {group.category}
+                  </h3>
+                </div>
+                <div
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                  data-ocid="products.list"
+                >
+                  {group.items.map((product, idx) => (
+                    <motion.div
+                      key={product.title}
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: idx * 0.08 }}
+                      data-ocid={`products.item.${idx + 1}`}
+                      className="group bg-white rounded-xl border border-blue-100 overflow-hidden flex flex-col hover:border-[#0EA5A5] hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+                    >
+                      <div className="aspect-video overflow-hidden">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-5 flex flex-col gap-3 flex-1">
+                        <div className="flex items-center gap-3">
+                          <div
+                            className="w-10 h-10 rounded-lg flex items-center justify-center text-[#0B4F8F] flex-shrink-0"
+                            style={{ background: "#EFF6FF" }}
+                          >
+                            <Gift className="w-5 h-5" />
+                          </div>
+                          <h4 className="font-bold text-[#0B4F8F] text-base leading-tight">
+                            {product.title}
+                          </h4>
+                        </div>
+                        <p className="text-gray-500 text-sm leading-relaxed flex-1">
+                          {product.description}
+                        </p>
+                        <a
+                          href={WHATSAPP_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-ocid="products.button"
+                          className="mt-auto inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors self-start"
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                          Enquire on WhatsApp
+                        </a>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
