@@ -723,17 +723,18 @@ export default function App() {
           id="home"
           className="relative overflow-hidden"
           style={{
-            background:
-              "linear-gradient(135deg, #0B4F8F 0%, #0E6AAE 50%, #0EA5A5 100%)",
+            backgroundImage:
+              "url('/assets/generated/hero-bg.dim_1920x900.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
           data-ocid="hero.section"
         >
           <div
-            className="absolute inset-0 opacity-10"
+            className="absolute inset-0"
             style={{
-              backgroundImage: `url('/assets/generated/qs-digital-hero-bg.dim_1200x600.jpg')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              background:
+                "linear-gradient(135deg, rgba(11,79,143,0.75) 0%, rgba(14,106,174,0.65) 50%, rgba(14,165,165,0.60) 100%)",
             }}
           />
           <div
