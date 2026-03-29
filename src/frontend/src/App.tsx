@@ -575,6 +575,40 @@ export default function App() {
                 </motion.div>
               </div>
 
+              {/* Map embed */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="mt-8"
+                data-ocid="contact.map.section"
+              >
+                <div className="rounded-2xl overflow-hidden shadow-md border border-gray-100 h-[250px] md:h-[350px]">
+                  <iframe
+                    title="QS DIGITAL Location"
+                    src="https://maps.google.com/maps?q=Qs+Digital+%26+Electronics,+Budlapara+Chariali,+Dimakuchi,+Assam+784526&output=embed&hl=en"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="text-center mt-3">
+                  <a
+                    href="https://maps.app.goo.gl/SY8pjY8RwSQYLd6k9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0EA5A5] hover:text-[#0B4F8F] transition-colors"
+                    data-ocid="contact.map.link"
+                  >
+                    <MapPin className="w-4 h-4" />
+                    View on Google Maps →
+                  </a>
+                </div>
+              </motion.div>
+
               {/* Services quick list */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
