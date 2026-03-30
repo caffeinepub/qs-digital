@@ -1017,13 +1017,16 @@ export default function App() {
                     <p className="text-gray-500 text-sm leading-relaxed">
                       {service.description}
                     </p>
-                    <button
-                      type="button"
-                      onClick={() => handleNavClick("#contact")}
-                      className="mt-auto text-sm font-bold text-[#0EA5A5] hover:text-[#0B4F8F] transition-colors flex items-center gap-1 text-left"
+                    <a
+                      href={`https://wa.me/916000134640?text=${encodeURIComponent(`Hi, I am interested in ${service.title}`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-ocid={`services.item.${idx + 1}.button`}
+                      className="mt-auto inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors self-start"
                     >
-                      Get Started →
-                    </button>
+                      <MessageCircle className="w-4 h-4" />
+                      Enquire on WhatsApp
+                    </a>
                   </div>
                 </motion.div>
               ))}
