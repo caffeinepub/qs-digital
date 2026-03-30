@@ -303,6 +303,105 @@ function ReviewCard({ review, index }: { review: Review; index: number }) {
   );
 }
 
+const SEED_REVIEWS: import("./hooks/useQueries").Review[] = [
+  {
+    id: -1n,
+    name: "Raju Ahmed",
+    rating: 5n,
+    comment:
+      "QS DIGITAL is the best digital service center in Dimakuchi! Got my Aadhaar card corrected within a day. Very fast and professional service.",
+    timestamp: 1760486400000000000n,
+  },
+  {
+    id: -2n,
+    name: "Priya Sharma",
+    rating: 5n,
+    comment:
+      "Excellent experience getting my PAN card applied here. The staff explained everything clearly and the process was very smooth. Highly recommended!",
+    timestamp: 1762041600000000000n,
+  },
+  {
+    id: -3n,
+    name: "Mohammed Hussain",
+    rating: 5n,
+    comment:
+      "Got my vehicle insurance renewed at QS DIGITAL. Very trustworthy and they gave me the best price. Will definitely come back!",
+    timestamp: 1763596800000000000n,
+  },
+  {
+    id: -4n,
+    name: "Sunita Das",
+    rating: 4n,
+    comment:
+      "Good service for train ticket booking. The staff was helpful and patient. The shop is clean and well-maintained. A great asset to our community!",
+    timestamp: 1765152000000000000n,
+  },
+  {
+    id: -5n,
+    name: "Bikash Borah",
+    rating: 5n,
+    comment:
+      "I applied for my driving licence through QS DIGITAL. The process was simple and they handled all the paperwork. Very satisfied with the service!",
+    timestamp: 1766620800000000000n,
+  },
+  {
+    id: -6n,
+    name: "Fatima Begum",
+    rating: 5n,
+    comment:
+      "Bought an LED bulb and extension board here. The prices are reasonable and the products are good quality. Also love their digital services!",
+    timestamp: 1768003200000000000n,
+  },
+  {
+    id: -7n,
+    name: "Rohit Kalita",
+    rating: 5n,
+    comment:
+      "QS DIGITAL helped me get my caste certificate online. Saved me so many trips to government offices. Super efficient and reliable!",
+    timestamp: 1769558400000000000n,
+  },
+  {
+    id: -8n,
+    name: "Anjali Singh",
+    rating: 4n,
+    comment:
+      "Got my birth certificate applied here. The team was knowledgeable and friendly. Quick turnaround time. Very happy with the service!",
+    timestamp: 1771027200000000000n,
+  },
+  {
+    id: -9n,
+    name: "Imran Sheikh",
+    rating: 5n,
+    comment:
+      "Best place for all digital services in this area! Flight ticket booking done in minutes. The owner is very professional and helpful. 100% recommended!",
+    timestamp: 1772323200000000000n,
+  },
+  {
+    id: -10n,
+    name: "Meena Gogoi",
+    rating: 5n,
+    comment:
+      "Got my PVC voter ID card printed here. It looks amazing and the quality is excellent. QS DIGITAL truly offers top-notch service at affordable prices!",
+    timestamp: 1773792000000000000n,
+  },
+  {
+    id: -11n,
+    name: "Aman Thakur",
+    rating: 5n,
+    comment:
+      "Voter ID correction done quickly and hassle-free. Staff is very cooperative and knows their work well. This shop is a blessing for our locality!",
+    timestamp: 1774396800000000000n,
+  },
+  {
+    id: -12n,
+    name: "Deepika Narzary",
+    rating: 5n,
+    comment:
+      "Great experience overall! Got my RC renewed and the photocopy work done at the same time. One-stop shop for everything digital. Love QS DIGITAL!",
+    timestamp: 1774656000000000000n,
+  },
+];
+
 function ReviewsSection() {
   const { data: reviews = [], isLoading } = useGetReviews();
   const { mutateAsync: submitReview, isPending } = useSubmitReview();
@@ -313,11 +412,13 @@ function ReviewsSection() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
-  const sorted = [...reviews].reverse();
+  const allReviews = [...SEED_REVIEWS, ...reviews];
+  const sorted = [...allReviews].sort((a, b) =>
+    Number(b.timestamp) > Number(a.timestamp) ? 1 : -1,
+  );
   const avgRating =
-    reviews.length > 0
-      ? reviews.reduce((sum, r) => sum + Number(r.rating), 0) / reviews.length
-      : 0;
+    allReviews.reduce((sum, r) => sum + Number(r.rating), 0) /
+    allReviews.length;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -374,14 +475,14 @@ function ReviewsSection() {
             Share your experience with QS DIGITAL and help others know what to
             expect.
           </p>
-          {reviews.length > 0 && (
+          {allReviews.length > 0 && (
             <div className="mt-4 inline-flex items-center gap-2 bg-white rounded-full px-5 py-2 border border-amber-200 shadow-sm">
               <StarRating value={Math.round(avgRating)} />
               <span className="font-extrabold text-[#0B4F8F] text-lg">
                 {avgRating.toFixed(1)}
               </span>
               <span className="text-gray-400 text-sm">
-                ({reviews.length} review{reviews.length !== 1 ? "s" : ""})
+                ({allReviews.length} review{allReviews.length !== 1 ? "s" : ""})
               </span>
             </div>
           )}
@@ -1142,80 +1243,194 @@ export default function App() {
               </h2>
               <div className="mx-auto mb-4 h-1 w-16 rounded-full bg-[#2563EB]" />
               <p className="text-gray-500 max-w-xl mx-auto text-base">
-                We are proud to be associated with these trusted brands and
-                government initiatives.
+                We are proud to be associated with these trusted brands,
+                insurance companies, and government initiatives.
               </p>
             </motion.div>
 
-            <div
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5"
-              data-ocid="partners.list"
-            >
-              {[
-                {
-                  name: "CSC",
-                  img: "/assets/generated/logo-csc-transparent.dim_300x150.png",
-                },
-                {
-                  name: "Digital India",
-                  img: "/assets/generated/logo-digital-india-transparent.dim_300x150.png",
-                },
-                {
-                  name: "Make in India",
-                  img: "/assets/generated/logo-make-in-india-transparent.dim_300x150.png",
-                },
-                {
-                  name: "PB Partners",
-                  img: "/assets/generated/logo-pb-partners.svg",
-                },
-                {
-                  name: "Govt. India",
-                  img: "/assets/generated/logo-govt-india.png",
-                },
-                {
-                  name: "HAVELLS",
-                  img: "/assets/generated/logo-havells.svg",
-                },
-                {
-                  name: "ANCHOR",
-                  img: "/assets/generated/logo-anchor-transparent.dim_300x150.png",
-                },
-                {
-                  name: "RR",
-                  img: "/assets/generated/logo-rr.svg",
-                },
-                {
-                  name: "AMRON",
-                  img: "/assets/generated/logo-amron-transparent.dim_300x150.png",
-                },
-                {
-                  name: "LUMINOUS",
-                  img: "/assets/generated/logo-luminous-transparent.dim_300x150.png",
-                },
-                {
-                  name: "Orient",
-                  img: "/assets/generated/logo-orient.png",
-                },
-              ].map((partner, idx) => (
-                <motion.div
-                  key={partner.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  className="flex flex-col items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
-                  data-ocid={`partners.item.${idx + 1}`}
-                >
-                  <img
-                    src={partner.img}
-                    alt={`${partner.name} logo`}
-                    className="h-16 w-auto object-contain mx-auto"
-                  />
-                  <span className="text-xs text-gray-500 font-medium text-center">
-                    {partner.name}
-                  </span>
-                </motion.div>
-              ))}
+            {/* Government & Digital */}
+            <div className="mb-10" data-ocid="partners.list">
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#2563EB] mb-4 text-center">
+                Government & Digital
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
+                {[
+                  {
+                    name: "CSC",
+                    img: "/assets/generated/logo-csc-transparent.dim_300x150.png",
+                  },
+                  {
+                    name: "Digital India",
+                    img: "/assets/generated/logo-digital-india-transparent.dim_300x150.png",
+                  },
+                  {
+                    name: "Make in India",
+                    img: "/assets/generated/logo-make-in-india-transparent.dim_300x150.png",
+                  },
+                  {
+                    name: "Govt. India",
+                    img: "/assets/generated/logo-govt-india.png",
+                  },
+                ].map((partner, idx) => (
+                  <motion.div
+                    key={partner.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className="flex flex-col items-center justify-center gap-2 rounded-xl border border-blue-100 bg-blue-50/40 p-4 shadow-sm transition-shadow hover:shadow-md"
+                    data-ocid={`partners.item.${idx + 1}`}
+                  >
+                    <img
+                      src={partner.img}
+                      alt={`${partner.name} logo`}
+                      className="h-14 w-auto object-contain mx-auto"
+                    />
+                    <span className="text-xs text-gray-500 font-medium text-center">
+                      {partner.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Insurance */}
+            <div className="mb-10">
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#2563EB] mb-4 text-center">
+                Insurance Partners
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
+                {[
+                  {
+                    name: "Bajaj Allianz",
+                    img: "/assets/generated/partner-bajaj-allianz-transparent.dim_200x120.png",
+                  },
+                  {
+                    name: "LIC",
+                    img: "/assets/generated/partner-lic-transparent.dim_200x120.png",
+                  },
+                  {
+                    name: "New India Assurance",
+                    img: "/assets/generated/partner-new-india-assurance-transparent.dim_200x120.png",
+                  },
+                  {
+                    name: "National Insurance",
+                    img: "/assets/generated/partner-national-insurance-transparent.dim_200x120.png",
+                  },
+                ].map((partner, idx) => (
+                  <motion.div
+                    key={partner.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className="flex flex-col items-center justify-center gap-2 rounded-xl border border-green-100 bg-green-50/40 p-4 shadow-sm transition-shadow hover:shadow-md"
+                    data-ocid={`partners.item.${idx + 5}`}
+                  >
+                    <img
+                      src={partner.img}
+                      alt={`${partner.name} logo`}
+                      className="h-14 w-auto object-contain mx-auto"
+                    />
+                    <span className="text-xs text-gray-500 font-medium text-center">
+                      {partner.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Electricals */}
+            <div className="mb-10">
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#2563EB] mb-4 text-center">
+                Electricals & Electronics
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-5">
+                {[
+                  {
+                    name: "ANCHOR",
+                    img: "/assets/generated/logo-anchor-transparent.dim_300x150.png",
+                  },
+                  {
+                    name: "AMRON",
+                    img: "/assets/generated/logo-amron-transparent.dim_300x150.png",
+                  },
+                  {
+                    name: "LUMINOUS",
+                    img: "/assets/generated/logo-luminous-transparent.dim_300x150.png",
+                  },
+                  { name: "Orient", img: "/assets/generated/logo-orient.png" },
+                  {
+                    name: "Polycab",
+                    img: "/assets/generated/partner-polycab-transparent.dim_200x120.png",
+                  },
+                  {
+                    name: "Bajaj Electricals",
+                    img: "/assets/generated/partner-bajaj-electricals-transparent.dim_200x120.png",
+                  },
+                  {
+                    name: "Finolex",
+                    img: "/assets/generated/partner-finolex-transparent.dim_200x120.png",
+                  },
+                ].map((partner, idx) => (
+                  <motion.div
+                    key={partner.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className="flex flex-col items-center justify-center gap-2 rounded-xl border border-orange-100 bg-orange-50/30 p-4 shadow-sm transition-shadow hover:shadow-md"
+                    data-ocid={`partners.item.${idx + 9}`}
+                  >
+                    <img
+                      src={partner.img}
+                      alt={`${partner.name} logo`}
+                      className="h-14 w-auto object-contain mx-auto"
+                    />
+                    <span className="text-xs text-gray-500 font-medium text-center">
+                      {partner.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Gifts */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#2563EB] mb-4 text-center">
+                Gift & Lifestyle Brands
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 max-w-sm mx-auto gap-5">
+                {[
+                  {
+                    name: "FNP (Ferns N Petals)",
+                    img: "/assets/generated/partner-fnp-transparent.dim_200x120.png",
+                  },
+                  {
+                    name: "Archies",
+                    img: "/assets/generated/partner-archies-transparent.dim_200x120.png",
+                  },
+                ].map((partner, idx) => (
+                  <motion.div
+                    key={partner.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className="flex flex-col items-center justify-center gap-2 rounded-xl border border-pink-100 bg-pink-50/30 p-4 shadow-sm transition-shadow hover:shadow-md"
+                    data-ocid={`partners.item.${idx + 16}`}
+                  >
+                    <img
+                      src={partner.img}
+                      alt={`${partner.name} logo`}
+                      className="h-14 w-auto object-contain mx-auto"
+                    />
+                    <span className="text-xs text-gray-500 font-medium text-center">
+                      {partner.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
