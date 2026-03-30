@@ -15,6 +15,7 @@ import {
   Fingerprint,
   Gift,
   HeartHandshake,
+  Mail,
   MapPin,
   Menu,
   MessageCircle,
@@ -26,6 +27,7 @@ import {
   Star,
   Train,
   Users,
+  Vote,
   X,
   Zap,
 } from "lucide-react";
@@ -38,6 +40,7 @@ const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
   { label: "Products", href: "#products" },
+  { label: "Partners", href: "#partners" },
   { label: "About Us", href: "#about" },
   { label: "Contact", href: "#contact" },
   { label: "Reviews", href: "#reviews" },
@@ -127,6 +130,25 @@ const SERVICES = [
     title: "Aadhaar Card Correction",
     description: "Update and correct your Aadhaar card details",
     image: "/assets/generated/service-aadhaar-correction.dim_800x600.jpg",
+  },
+  {
+    icon: <Vote className="w-8 h-8" />,
+    title: "Voter ID Apply Online",
+    description: "Apply for new Voter ID card online quickly and easily",
+    image: "/assets/generated/service-voter-id-apply.dim_800x600.jpg",
+  },
+  {
+    icon: <FileCheck className="w-8 h-8" />,
+    title: "Voter ID Correction",
+    description: "Update and correct your Voter ID card details online",
+    image: "/assets/generated/service-voter-id-correction.dim_800x600.jpg",
+  },
+  {
+    icon: <CreditCard className="w-8 h-8" />,
+    title: "PVC ID Card Printing",
+    description:
+      "Print durable PVC cards for Aadhaar, PAN, Voter ID, and all government IDs",
+    image: "/assets/generated/service-pvc-card-print.dim_800x600.jpg",
   },
 ];
 
@@ -780,16 +802,17 @@ export default function App() {
                 <span className="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
                   Trusted Digital Services — Dimakuchi, Assam
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-                  Your Trusted{" "}
-                  <span style={{ color: "#F59E0B" }}>Digital Services</span>{" "}
-                  Partner
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
+                  Welcome to{" "}
+                  <span style={{ color: "#F59E0B" }}>QS DIGITAL</span>
                 </h1>
-                <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl leading-relaxed">
-                  QS DIGITAL is your one-stop digital service center in
-                  Budlapara Chowk, Dimakuchi. From vehicle insurance and PAN
-                  card applications to train and flight bookings — we handle it
-                  all, fast and reliably.
+                <p className="text-xl md:text-2xl font-semibold text-blue-100 mb-4">
+                  Your One-Stop Solution for Digital &amp; Lifestyle Services
+                </p>
+                <p className="text-base md:text-lg text-blue-100/90 mb-8 max-w-2xl leading-relaxed">
+                  From government paperwork to electronics and gifts — we make
+                  every service fast, easy, and accessible for the people of
+                  Budlapara Chowk, Dimakuchi.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <button
@@ -840,6 +863,95 @@ export default function App() {
                 fill="white"
               />
             </svg>
+          </div>
+        </section>
+
+        {/* ===== INTRODUCTION ===== */}
+        <section
+          id="introduction"
+          className="py-16 md:py-20 bg-white"
+          data-ocid="intro.section"
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center max-w-3xl mx-auto mb-14"
+            >
+              <span className="text-[#0EA5A5] font-bold uppercase tracking-widest text-sm">
+                About QS DIGITAL
+              </span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B4F8F] mt-3 mb-6 leading-tight">
+                We Make Digital Services{" "}
+                <span style={{ color: "#F59E0B" }}>Simple for Everyone</span>
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                At <strong className="text-[#0B4F8F]">QS DIGITAL</strong>, we
+                believe that navigating official paperwork and finding quality
+                products should never be a hassle. Located at the heart of
+                Budlapara Chowk, Dimakuchi, we are dedicated to providing fast,
+                reliable, and professional assistance for all your digital and
+                personal needs.
+              </p>
+              <p className="text-gray-500 text-base leading-relaxed">
+                Whether you are securing your vehicle with insurance, applying
+                for a government certificate, booking a flight, or looking for
+                the perfect gift — we handle every task with care, speed, and a
+                smile.
+              </p>
+            </motion.div>
+
+            {/* Why Choose Us pillars */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: <Zap className="w-7 h-7" />,
+                  title: "Fast & Efficient",
+                  desc: "We respect your time. Most services are completed on the same day — no long waits.",
+                },
+                {
+                  icon: <Shield className="w-7 h-7" />,
+                  title: "Safe & Trustworthy",
+                  desc: "Your personal data and documents are handled with strict confidentiality and care.",
+                },
+                {
+                  icon: <Users className="w-7 h-7" />,
+                  title: "Expert Guidance",
+                  desc: "Our experienced staff walk you through every step so you never feel confused.",
+                },
+                {
+                  icon: <HeartHandshake className="w-7 h-7" />,
+                  title: "Community First",
+                  desc: "We are a proud local business serving the community of Dimakuchi since day one.",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="flex flex-col items-center text-center p-6 rounded-2xl border border-blue-100 bg-[#F3F6FA] hover:border-[#0EA5A5] hover:shadow-md transition-all duration-300"
+                >
+                  <div
+                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 text-white"
+                    style={{
+                      background: "linear-gradient(135deg, #0B4F8F, #0EA5A5)",
+                    }}
+                  >
+                    {item.icon}
+                  </div>
+                  <h3 className="font-bold text-[#0B4F8F] text-base mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -1005,6 +1117,103 @@ export default function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ===== PARTNERS ===== */}
+        <section
+          id="partners"
+          className="py-16 md:py-20 bg-white"
+          data-ocid="partners.section"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-3">
+                Our Trusted Partners
+              </h2>
+              <div className="mx-auto mb-4 h-1 w-16 rounded-full bg-[#2563EB]" />
+              <p className="text-gray-500 max-w-xl mx-auto text-base">
+                We are proud to be associated with these trusted brands and
+                government initiatives.
+              </p>
+            </motion.div>
+
+            <div
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5"
+              data-ocid="partners.list"
+            >
+              {[
+                {
+                  name: "CSC",
+                  img: "/assets/generated/logo-csc-transparent.dim_300x150.png",
+                },
+                {
+                  name: "Digital India",
+                  img: "/assets/generated/logo-digital-india-transparent.dim_300x150.png",
+                },
+                {
+                  name: "Make in India",
+                  img: "/assets/generated/logo-make-in-india-transparent.dim_300x150.png",
+                },
+                {
+                  name: "PB Partners",
+                  img: "/assets/generated/logo-pb-partners.svg",
+                },
+                {
+                  name: "Govt. India",
+                  img: "/assets/generated/logo-govt-india.png",
+                },
+                {
+                  name: "HAVELLS",
+                  img: "/assets/generated/logo-havells.svg",
+                },
+                {
+                  name: "ANCHOR",
+                  img: "/assets/generated/logo-anchor-transparent.dim_300x150.png",
+                },
+                {
+                  name: "RR",
+                  img: "/assets/generated/logo-rr.svg",
+                },
+                {
+                  name: "AMRON",
+                  img: "/assets/generated/logo-amron-transparent.dim_300x150.png",
+                },
+                {
+                  name: "LUMINOUS",
+                  img: "/assets/generated/logo-luminous-transparent.dim_300x150.png",
+                },
+                {
+                  name: "Orient",
+                  img: "/assets/generated/logo-orient.png",
+                },
+              ].map((partner, idx) => (
+                <motion.div
+                  key={partner.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  className="flex flex-col items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+                  data-ocid={`partners.item.${idx + 1}`}
+                >
+                  <img
+                    src={partner.img}
+                    alt={`${partner.name} logo`}
+                    className="h-16 w-auto object-contain mx-auto"
+                  />
+                  <span className="text-xs text-gray-500 font-medium text-center">
+                    {partner.name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -1181,7 +1390,7 @@ export default function App() {
             </motion.div>
 
             <div className="max-w-5xl mx-auto">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1288,6 +1497,33 @@ export default function App() {
                     </div>
                     <div className="text-amber-100 text-sm mt-1">
                       Mon – Sun (All Days)
+                    </div>
+                  </div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.32 }}
+                  className="bg-gradient-to-br from-[#6D28D9] to-[#5B21B6] rounded-2xl p-8 text-white flex flex-col items-center text-center gap-4"
+                  data-ocid="contact.email.card"
+                >
+                  <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+                    <Mail className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-purple-200 font-semibold uppercase tracking-wider mb-1">
+                      Email Us
+                    </div>
+                    <a
+                      href="mailto:qsdigital.electronics@gmail.com"
+                      className="text-sm font-extrabold text-white hover:text-yellow-300 transition-colors break-all"
+                      data-ocid="contact.email.link"
+                    >
+                      qsdigital.electronics@gmail.com
+                    </a>
+                    <div className="text-purple-200 text-sm mt-1">
+                      We reply promptly
                     </div>
                   </div>
                 </motion.div>
