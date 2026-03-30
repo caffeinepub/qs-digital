@@ -32,6 +32,7 @@ import {
   Zap,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import React from "react";
 import { useState } from "react";
 import { useGetReviews, useSubmitReview } from "./hooks/useQueries";
 import type { Review } from "./hooks/useQueries";
@@ -215,6 +216,279 @@ const FEATURES = [
 const WHATSAPP_URL = "https://wa.me/916000134640";
 const FACEBOOK_URL = "https://www.facebook.com/share/1CbTMFPtXe/";
 const INSTAGRAM_URL = "https://www.instagram.com/hafij__hq";
+
+const JOB_NOTIFICATIONS = [
+  {
+    id: "gnm-2026",
+    badge: "🏥 Nursing Admission",
+    isNew: true,
+    title: "SSUHS GNM Entrance Examination 2026",
+    subtitle: "Srimanta Sankaradeva University of Health Sciences",
+    description:
+      "Official notification for admission into GNM Nursing courses in Government and Private institutes across Assam for 2026-27 session.",
+    dates: [
+      { label: "Application Opens", value: "April 10, 2026" },
+      { label: "Last Date to Apply", value: "May 30, 2026" },
+      { label: "Admit Card Download", value: "June 14, 2026" },
+      {
+        label: "Entrance Exam Date",
+        value: "June 28, 2026 (Sunday) 10:00 AM – 12:00 PM",
+      },
+    ],
+    eligibility: [
+      { label: "Age", value: "Minimum 17 years as of Dec 31, 2026" },
+      {
+        label: "Education",
+        value: "10+2 with English, minimum 40% aggregate marks",
+      },
+      {
+        label: "Relaxation",
+        value: "5% marks relaxation for SC/ST candidates",
+      },
+      {
+        label: "Residency",
+        value: "PRC mandatory for Govt. Institute admissions",
+      },
+    ],
+    examPattern: [
+      { subject: "English", marks: 50 },
+      { subject: "Mathematics", marks: 25 },
+      { subject: "General Science", marks: 25 },
+    ],
+    examNote:
+      "OMR-based paper. Questions in English and Assamese. NO negative marking.",
+    howToApply: {
+      website: "www.ssuhs.ac.in",
+      fees: "Online payment gateway",
+      exemption:
+        "PwD (Divyang) candidates with 40%+ disability are exempt from fees",
+      helpdesk: "08048794953",
+      email: "ssuhs.cee2026@gmail.com",
+    },
+    applyUrl: "https://ssuhs.ac.in",
+    whatsappMsg:
+      "Hi, I need help applying for the SSUHS GNM Entrance Exam 2026. Please assist me.",
+  },
+];
+
+const GOV_JOBS = [
+  {
+    id: "indian-army-agniveer-2026",
+    category: "Defence",
+    categoryColor: "bg-green-100 text-green-800",
+    isUrgent: true,
+    title: "Indian Army Agniveer Recruitment 2026",
+    organization: "Indian Army",
+    posts: "Multiple Vacancies",
+    lastDate: "01 Apr 2026",
+    applyUrl: "https://joinindianarmy.nic.in",
+    whatsappMsg: "Hi, I need help applying for the Indian Army Agniveer 2026.",
+    details: {
+      eligibility:
+        "Age: 17.5–21 years. Education: Class 10th pass with 45% marks (33% for CEE exempt). Must be Indian citizen.",
+      vacancy: "Multiple Vacancies — Varies by regiment and trade",
+      applyStart: "As per official notification",
+      lastDate: "01 Apr 2026",
+      examPattern:
+        "CEE (Common Entrance Exam) — 100 marks. Physical and Medical fitness test required.",
+      howToApply:
+        "Register and apply online at joinindianarmy.nic.in. Fill form, upload documents, pay fee online.",
+    },
+  },
+  {
+    id: "indian-navy-ssr-2026",
+    category: "Defence",
+    categoryColor: "bg-blue-100 text-blue-800",
+    isUrgent: true,
+    title: "Indian Navy Agniveer SSR 2026 (01/2027 & 02/2027 Batch)",
+    organization: "Indian Navy",
+    posts: "Multiple Vacancies",
+    lastDate: "06 Apr 2026",
+    applyUrl: "https://www.joinindiannavy.gov.in",
+    whatsappMsg:
+      "Hi, I need help applying for the Indian Navy Agniveer SSR 2026.",
+    details: {
+      eligibility:
+        "Age: 17–21 years. Education: 10+2 with Math & Physics (and one of Chemistry/Biology/Computer Science). Minimum 50% aggregate.",
+      vacancy: "Multiple Vacancies — 01/2027 and 02/2027 Batch",
+      applyStart: "Check official website",
+      lastDate: "06 Apr 2026",
+      examPattern:
+        "Computer-Based Exam — Science, Math, English, General Awareness. Physical Fitness Test & Medical.",
+      howToApply:
+        "Apply online at joinindiannavy.gov.in. Shortlisted candidates called for exam.",
+    },
+  },
+  {
+    id: "apex-bank-assistant-2026",
+    category: "Banking",
+    categoryColor: "bg-yellow-100 text-yellow-800",
+    isUrgent: false,
+    title: "Assam Co-operative Apex Bank Assistant Recruitment 2026",
+    organization: "Assam Co-operative Apex Bank Limited",
+    posts: "150 Posts",
+    lastDate: "19 Apr 2026",
+    applyUrl: "https://www.assamapexbank.in",
+    whatsappMsg:
+      "Hi, I need help applying for the Assam Apex Bank Assistant Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–38 years (relaxation for SC/ST/OBC). Education: Graduate in any discipline. Basic computer knowledge required.",
+      vacancy: "150 Posts — Assistant (Clerical)",
+      applyStart: "Check official website",
+      lastDate: "19 Apr 2026",
+      examPattern:
+        "Written test + Interview. Subjects: Reasoning, Quantitative Aptitude, English, General Awareness, Banking.",
+      howToApply:
+        "Apply online at assamapexbank.in. Pay application fee via online gateway.",
+    },
+  },
+  {
+    id: "sai-coach-2026",
+    category: "Sports / Central Govt",
+    categoryColor: "bg-orange-100 text-orange-800",
+    isUrgent: false,
+    title: "Sports Authority of India Assistant Coach Recruitment 2026",
+    organization: "Sports Authority of India (SAI)",
+    posts: "323 Posts",
+    lastDate: "21 Apr 2026",
+    applyUrl: "https://sportsauthorityofindia.nic.in",
+    whatsappMsg:
+      "Hi, I need help applying for the SAI Assistant Coach Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–35 years. Education: Sports-related degree or National/International level sports achievement. Experience preferred.",
+      vacancy: "323 Posts — Assistant Coach (various sports disciplines)",
+      applyStart: "Check official website",
+      lastDate: "21 Apr 2026",
+      examPattern: "Document verification, practical test, and interview.",
+      howToApply:
+        "Apply online at sportsauthorityofindia.nic.in. Upload certificates and sports credentials.",
+    },
+  },
+  {
+    id: "gauhati-hc-mts-2026",
+    category: "Judiciary / Assam",
+    categoryColor: "bg-purple-100 text-purple-800",
+    isUrgent: false,
+    title: "Gauhati High Court MTS & Computer Assistant Recruitment 2026",
+    organization: "Gauhati High Court",
+    posts: "28 Posts",
+    lastDate: "Exam: 26 Apr 2026",
+    applyUrl: "https://www.ghconline.gov.in",
+    whatsappMsg:
+      "Hi, I need help with the Gauhati High Court MTS/Computer Assistant 2026 recruitment.",
+    details: {
+      eligibility:
+        "Age: 18–40 years. MTS: Class 8 pass minimum. Computer Assistant: Graduate with computer diploma.",
+      vacancy: "28 Posts — MTS & Computer Assistant",
+      applyStart: "Applications closed; Exam on 26 Apr 2026",
+      lastDate: "Exam: 26 Apr 2026",
+      examPattern:
+        "Written exam on 26 April 2026. MTS: General Knowledge, Reasoning. Computer Asst: Computer knowledge, English.",
+      howToApply:
+        "Applications closed. Download admit card from ghconline.gov.in.",
+    },
+  },
+  {
+    id: "lra-assam-2026",
+    category: "State Govt / Assam",
+    categoryColor: "bg-teal-100 text-teal-800",
+    isUrgent: false,
+    title: "Land Records Assistant (LRA) Recruitment 2026",
+    organization: "Directorate of Land Records & Surveys, Assam",
+    posts: "552 Posts",
+    lastDate: "30 Apr 2026",
+    applyUrl: "https://sebaonline.org",
+    whatsappMsg: "Hi, I need help applying for the LRA Assam Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–38 years (relaxation for SC/ST/OBC/MOBC). Education: Higher Secondary (10+2) pass. Must be Assam domicile.",
+      vacancy: "552 Posts — Land Records Assistant across Assam districts",
+      applyStart: "Check sebaonline.org",
+      lastDate: "30 Apr 2026",
+      examPattern:
+        "Written exam by SEBA — Assamese/Bengali/Bodo language, General Knowledge, Math, and English.",
+      howToApply:
+        "Apply online at sebaonline.org. Pay fee via online payment or bank challan.",
+    },
+  },
+  {
+    id: "nic-scientist-2026",
+    category: "Central Govt / IT",
+    categoryColor: "bg-indigo-100 text-indigo-800",
+    isUrgent: false,
+    title:
+      "National Informatics Centre Scientist-B & Technical Assistant Recruitment 2026",
+    organization: "National Informatics Centre (NIC), Govt. of India",
+    posts: "619 Posts",
+    lastDate: "To be updated",
+    applyUrl: "https://www.nic.in",
+    whatsappMsg:
+      "Hi, I need help applying for the NIC Scientist-B Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–30 years (relaxation applicable). Education: B.E./B.Tech in CS/IT/ECE or MCA/M.Sc. in relevant field.",
+      vacancy: "619 Posts — Scientist-B & Technical Assistant",
+      applyStart: "To be notified",
+      lastDate: "To be updated",
+      examPattern:
+        "CBT (Computer Based Test) — Technical subjects + General Aptitude. Interview for shortlisted candidates.",
+      howToApply:
+        "Apply online at nic.in when notified. Watch official website for updates.",
+    },
+  },
+  {
+    id: "pnrd-assam-2026",
+    category: "State Govt / Assam",
+    categoryColor: "bg-lime-100 text-lime-800",
+    isUrgent: false,
+    title: "PNRD Assam Recruitment 2026",
+    organization: "Panchayat & Rural Development Dept., Assam",
+    posts: "1508 Posts",
+    lastDate: "To be updated",
+    applyUrl: "https://pnrdassam.nic.in",
+    whatsappMsg:
+      "Hi, I need help applying for the PNRD Assam Recruitment 2026.",
+    details: {
+      eligibility:
+        "Varies by post. Generally: 18–38 years. Education: Class 8 to Graduate depending on position. Assam domicile required.",
+      vacancy:
+        "1508 Posts — Various positions across Panchayat & Rural Development",
+      applyStart: "To be notified",
+      lastDate: "To be updated",
+      examPattern:
+        "Written exam/interview as per post. Details in official notification.",
+      howToApply:
+        "Apply online at pnrdassam.nic.in. Follow official notification instructions.",
+    },
+  },
+  {
+    id: "bsnl-set-2026",
+    category: "Central Govt / Telecom",
+    categoryColor: "bg-red-100 text-red-800",
+    isUrgent: false,
+    title: "BSNL Senior Executive Trainee (E2) Recruitment 2026",
+    organization: "Bharat Sanchar Nigam Limited (BSNL)",
+    posts: "120 Posts",
+    lastDate: "To be updated",
+    applyUrl: "https://externalbsnl.tdil.in",
+    whatsappMsg:
+      "Hi, I need help applying for the BSNL Senior Executive Trainee 2026.",
+    details: {
+      eligibility:
+        "Age: 18–30 years. Education: B.E./B.Tech in relevant engineering discipline (ECE, CSE, EEE, Civil, etc.).",
+      vacancy:
+        "120 Posts — Senior Executive Trainee (E2) in various disciplines",
+      applyStart: "To be notified",
+      lastDate: "To be updated",
+      examPattern:
+        "Online exam — Technical subjects (120 marks) + General Ability (30 marks). Total 150 marks, 2.5 hours.",
+      howToApply:
+        "Apply online at externalbsnl.tdil.in when notified. Merit-based selection.",
+    },
+  },
+];
 
 function scrollTo(href: string) {
   const el = document.querySelector(href);
@@ -722,8 +996,483 @@ function ReviewsSection() {
   );
 }
 
+function JobDetailsModal({
+  job,
+  onClose,
+}: {
+  job: (typeof GOV_JOBS)[0];
+  onClose: () => void;
+}) {
+  const d = job.details;
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      onClick={onClose}
+      onKeyDown={(e) => e.key === "Escape" && onClose()}
+      data-ocid="job.details.modal"
+    >
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      {/* Modal */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.94, y: 16 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.94, y: 16 }}
+        transition={{ duration: 0.22 }}
+        className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div
+          className="sticky top-0 z-10 px-6 py-5 rounded-t-2xl"
+          style={{
+            background: "linear-gradient(135deg, #0B4F8F 0%, #0EA5A5 100%)",
+          }}
+        >
+          <button
+            type="button"
+            onClick={onClose}
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors"
+            data-ocid="job.details.close_button"
+            aria-label="Close"
+          >
+            <X className="w-4 h-4" />
+          </button>
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/20 text-white">
+              {job.category}
+            </span>
+            {job.isUrgent && (
+              <span className="text-xs font-bold bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full">
+                ⚡ URGENT
+              </span>
+            )}
+          </div>
+          <h3 className="text-white font-extrabold text-lg leading-snug pr-10">
+            {job.title}
+          </h3>
+          <p className="text-blue-100 text-sm mt-1">{job.organization}</p>
+        </div>
+
+        {/* Body */}
+        <div className="p-6 flex flex-col gap-5">
+          {/* Dates row */}
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg">📅</span>
+                <span className="text-blue-700 font-bold text-sm uppercase tracking-wide">
+                  Important Dates
+                </span>
+              </div>
+              <div className="space-y-2">
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-gray-400 text-xs font-medium">
+                    Apply Start
+                  </span>
+                  <span className="text-gray-800 text-sm font-semibold">
+                    {d.applyStart}
+                  </span>
+                </div>
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-gray-400 text-xs font-medium">
+                    Last Date to Apply
+                  </span>
+                  <span
+                    className={`text-sm font-bold ${job.isUrgent ? "text-red-600" : "text-gray-800"}`}
+                  >
+                    {d.lastDate}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-amber-50 rounded-xl p-4 border border-amber-100">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg">👥</span>
+                <span className="text-amber-700 font-bold text-sm uppercase tracking-wide">
+                  Vacancies
+                </span>
+              </div>
+              <p className="text-gray-800 text-sm font-semibold leading-relaxed">
+                {d.vacancy}
+              </p>
+            </div>
+          </div>
+
+          {/* Eligibility */}
+          <div className="bg-green-50 rounded-xl p-4 border border-green-100">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">🎓</span>
+              <span className="text-green-700 font-bold text-sm uppercase tracking-wide">
+                Eligibility Criteria
+              </span>
+            </div>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              {d.eligibility}
+            </p>
+          </div>
+
+          {/* Exam Pattern (only if not empty) */}
+          {d.examPattern && (
+            <div className="bg-purple-50 rounded-xl p-4 border border-purple-100">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg">📝</span>
+                <span className="text-purple-700 font-bold text-sm uppercase tracking-wide">
+                  Exam Pattern
+                </span>
+              </div>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                {d.examPattern}
+              </p>
+            </div>
+          )}
+
+          {/* How to Apply */}
+          <div className="bg-orange-50 rounded-xl p-4 border border-orange-100">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">🔗</span>
+              <span className="text-orange-700 font-bold text-sm uppercase tracking-wide">
+                How to Apply
+              </span>
+            </div>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              {d.howToApply}
+            </p>
+          </div>
+
+          {/* Action buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 pt-1">
+            <a
+              href={job.applyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+              data-ocid="job.details.apply_button"
+            >
+              Apply Now →
+            </a>
+            <a
+              href={`https://wa.me/916000134640?text=${encodeURIComponent(job.whatsappMsg)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+              data-ocid="job.details.whatsapp_button"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Get Help on WhatsApp
+            </a>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+function GovJobCard({
+  job,
+  onViewDetails,
+}: {
+  job: (typeof GOV_JOBS)[0];
+  onViewDetails: (job: (typeof GOV_JOBS)[0]) => void;
+}) {
+  return (
+    <div className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 p-4">
+        <div className="flex-1 min-w-0">
+          {/* Badges */}
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span
+              className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${job.categoryColor}`}
+            >
+              {job.category}
+            </span>
+            {job.isUrgent && (
+              <span className="text-xs font-bold bg-red-500 text-white px-2 py-0.5 rounded-full animate-pulse">
+                ⚡ URGENT
+              </span>
+            )}
+          </div>
+          {/* Title */}
+          <h4 className="text-gray-900 font-bold text-sm leading-snug mb-1">
+            {job.title}
+          </h4>
+          <p className="text-gray-500 text-xs mb-2">{job.organization}</p>
+          {/* Stats */}
+          <div className="flex flex-wrap gap-4">
+            <div>
+              <span className="text-gray-400 text-xs">Total Posts: </span>
+              <span className="text-gray-800 text-xs font-semibold">
+                {job.posts}
+              </span>
+            </div>
+            <div>
+              <span className="text-gray-400 text-xs">Last Date: </span>
+              <span
+                className={`text-xs font-bold ${job.isUrgent ? "text-red-600" : "text-gray-800"}`}
+              >
+                {job.lastDate}
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* Action Buttons */}
+        <div className="flex flex-row sm:flex-col gap-2 flex-shrink-0">
+          <a
+            href={job.applyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-1 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors"
+            data-ocid="job.card.apply_button"
+          >
+            Apply Now →
+          </a>
+          <button
+            type="button"
+            onClick={() => onViewDetails(job)}
+            className="inline-flex items-center justify-center gap-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold px-3 py-2 rounded-lg transition-colors border border-gray-200"
+            data-ocid="job.card.open_modal_button"
+          >
+            View Details
+          </button>
+        </div>
+      </div>
+      {/* WhatsApp help strip */}
+      <div className="px-4 py-2.5 bg-green-50 border-t border-green-100 flex items-center justify-between gap-2">
+        <span className="text-green-800 text-xs">
+          Need help applying? Contact us on WhatsApp
+        </span>
+        <a
+          href={`https://wa.me/916000134640?text=${encodeURIComponent(job.whatsappMsg)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 bg-green-500 hover:bg-green-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors flex-shrink-0"
+        >
+          <MessageCircle className="w-3.5 h-3.5" />
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function JobNotificationCard({
+  notification,
+}: {
+  notification: (typeof JOB_NOTIFICATIONS)[0];
+}) {
+  return (
+    <div className="rounded-2xl overflow-hidden border-2 border-blue-200 shadow-xl bg-white w-full">
+      {/* Header */}
+      <div
+        className="relative px-6 py-5"
+        style={{
+          background: "linear-gradient(135deg, #0B4F8F 0%, #0EA5A5 100%)",
+        }}
+      >
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <span className="text-white/90 text-sm font-semibold bg-white/20 px-3 py-1 rounded-full">
+                {notification.badge}
+              </span>
+              {notification.isNew && (
+                <span className="text-xs font-bold bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full animate-pulse">
+                  ✨ NEW
+                </span>
+              )}
+            </div>
+            <h3 className="text-white text-xl font-bold leading-tight mb-1">
+              {notification.title}
+            </h3>
+            <p className="text-blue-100 text-sm font-medium mb-2">
+              {notification.subtitle}
+            </p>
+            <p className="text-blue-50/80 text-sm leading-relaxed">
+              {notification.description}
+            </p>
+          </div>
+          <a
+            href={notification.applyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 font-bold px-5 py-3 rounded-xl transition-all hover:shadow-lg hover:scale-105 text-sm"
+            data-ocid="job.apply.button"
+          >
+            Apply Now →
+          </a>
+        </div>
+      </div>
+
+      {/* Info Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+        {/* Important Dates */}
+        <div className="p-5 border-b border-gray-100">
+          <h4 className="flex items-center gap-2 text-blue-700 font-bold text-sm mb-3 uppercase tracking-wide">
+            <span>📅</span> Important Dates
+          </h4>
+          <div className="space-y-2">
+            {notification.dates.map((d) => (
+              <div
+                key={d.label}
+                className="flex flex-col sm:flex-row sm:items-start gap-0.5 sm:gap-2"
+              >
+                <span className="text-gray-500 text-xs font-medium min-w-[120px] flex-shrink-0">
+                  {d.label}:
+                </span>
+                <span className="text-gray-800 text-xs font-semibold">
+                  {d.value}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Eligibility */}
+        <div className="p-5 border-b border-gray-100">
+          <h4 className="flex items-center gap-2 text-green-700 font-bold text-sm mb-3 uppercase tracking-wide">
+            <span>🎓</span> Eligibility Criteria
+          </h4>
+          <div className="space-y-2">
+            {notification.eligibility.map((e) => (
+              <div
+                key={e.label}
+                className="flex flex-col sm:flex-row sm:items-start gap-0.5 sm:gap-2"
+              >
+                <span className="text-gray-500 text-xs font-medium min-w-[80px] flex-shrink-0">
+                  {e.label}:
+                </span>
+                <span className="text-gray-800 text-xs font-semibold">
+                  {e.value}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Exam Pattern */}
+        <div className="p-5 border-b sm:border-b-0 border-gray-100">
+          <h4 className="flex items-center gap-2 text-purple-700 font-bold text-sm mb-3 uppercase tracking-wide">
+            <span>📝</span> Exam Pattern
+          </h4>
+          <div className="space-y-1 mb-2">
+            {notification.examPattern.map((ep) => (
+              <div
+                key={ep.subject}
+                className="flex items-center justify-between bg-purple-50 rounded-lg px-3 py-1.5"
+              >
+                <span className="text-gray-700 text-xs font-medium">
+                  {ep.subject}
+                </span>
+                <span className="text-purple-700 font-bold text-xs">
+                  {ep.marks} Marks
+                </span>
+              </div>
+            ))}
+            <div className="flex items-center justify-between bg-purple-100 rounded-lg px-3 py-1.5 border border-purple-200">
+              <span className="text-purple-800 text-xs font-bold">Total</span>
+              <span className="text-purple-800 font-bold text-xs">
+                100 Marks
+              </span>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs italic">
+            {notification.examNote}
+          </p>
+        </div>
+
+        {/* How to Apply */}
+        <div className="p-5">
+          <h4 className="flex items-center gap-2 text-orange-700 font-bold text-sm mb-3 uppercase tracking-wide">
+            <span>🔗</span> How to Apply
+          </h4>
+          <div className="space-y-1.5">
+            <div className="flex items-start gap-2">
+              <span className="text-gray-500 text-xs font-medium w-20 flex-shrink-0">
+                Website:
+              </span>
+              <a
+                href={notification.applyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline text-xs font-semibold"
+              >
+                {notification.howToApply.website}
+              </a>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-gray-500 text-xs font-medium w-20 flex-shrink-0">
+                Fees:
+              </span>
+              <span className="text-gray-800 text-xs">
+                {notification.howToApply.fees}
+              </span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-gray-500 text-xs font-medium w-20 flex-shrink-0">
+                Exemption:
+              </span>
+              <span className="text-gray-800 text-xs">
+                {notification.howToApply.exemption}
+              </span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-gray-500 text-xs font-medium w-20 flex-shrink-0">
+                Helpdesk:
+              </span>
+              <a
+                href={`tel:${notification.howToApply.helpdesk}`}
+                className="text-blue-600 hover:underline text-xs font-semibold"
+              >
+                {notification.howToApply.helpdesk}
+              </a>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-gray-500 text-xs font-medium w-20 flex-shrink-0">
+                Email:
+              </span>
+              <a
+                href={`mailto:${notification.howToApply.email}`}
+                className="text-blue-600 hover:underline text-xs font-semibold break-all"
+              >
+                {notification.howToApply.email}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* WhatsApp Footer */}
+      <div className="px-5 py-4 bg-green-50 border-t border-green-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div>
+          <p className="text-green-800 text-sm font-semibold">
+            Need help with your application?
+          </p>
+          <p className="text-green-600 text-xs">
+            Our team will guide you through the entire process.
+          </p>
+        </div>
+        <a
+          href={`https://wa.me/916000134640?text=${encodeURIComponent(notification.whatsappMsg)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-shrink-0 inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-2.5 rounded-xl transition-all hover:shadow-md text-sm"
+          data-ocid="job.whatsapp.button"
+        >
+          <MessageCircle className="w-4 h-4" />
+          Get Help Applying
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showJobNotifications, setShowJobNotifications] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<(typeof GOV_JOBS)[0] | null>(
+    null,
+  );
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
@@ -1117,49 +1866,111 @@ export default function App() {
               data-ocid="services.list"
             >
               {SERVICES.map((service, idx) => (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.07 }}
-                  data-ocid={`services.item.${idx + 1}`}
-                  className="group bg-white rounded-xl border border-blue-100 overflow-hidden flex flex-col hover:border-[#0EA5A5] hover:shadow-card hover:scale-[1.02] transition-all duration-300"
-                >
-                  <div className="h-[180px] overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-5 flex flex-col gap-3 flex-1">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-10 h-10 rounded-lg flex items-center justify-center text-[#0B4F8F] group-hover:bg-[#0B4F8F] group-hover:text-white transition-all flex-shrink-0"
-                        style={{ background: "#EFF6FF" }}
-                      >
-                        {service.icon}
-                      </div>
-                      <h3 className="font-bold text-[#0B4F8F] text-base leading-tight">
-                        {service.title}
-                      </h3>
+                <React.Fragment key={service.title}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.07 }}
+                    data-ocid={`services.item.${idx + 1}`}
+                    className="group bg-white rounded-xl border border-blue-100 overflow-hidden flex flex-col hover:border-[#0EA5A5] hover:shadow-card hover:scale-[1.02] transition-all duration-300"
+                  >
+                    <div className="h-[180px] overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                    <a
-                      href={`https://wa.me/916000134640?text=${encodeURIComponent(`Hi, I am interested in ${service.title}`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-ocid={`services.item.${idx + 1}.button`}
-                      className="mt-auto inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors self-start"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      Enquire on WhatsApp
-                    </a>
-                  </div>
-                </motion.div>
+                    <div className="p-5 flex flex-col gap-3 flex-1">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="w-10 h-10 rounded-lg flex items-center justify-center text-[#0B4F8F] group-hover:bg-[#0B4F8F] group-hover:text-white transition-all flex-shrink-0"
+                          style={{ background: "#EFF6FF" }}
+                        >
+                          {service.icon}
+                        </div>
+                        <h3 className="font-bold text-[#0B4F8F] text-base leading-tight">
+                          {service.title}
+                        </h3>
+                      </div>
+                      <p className="text-gray-500 text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+                      <a
+                        href={`https://wa.me/916000134640?text=${encodeURIComponent(`Hi, I am interested in ${service.title}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-ocid={`services.item.${idx + 1}.button`}
+                        className="mt-auto inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors self-start"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        Enquire on WhatsApp
+                      </a>
+                      {service.title === "Online Job Apply" && (
+                        <button
+                          type="button"
+                          onClick={() => setShowJobNotifications((p) => !p)}
+                          data-ocid="job.notifications.toggle"
+                          className="mt-1 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors self-start"
+                        >
+                          {showJobNotifications
+                            ? "🔼 Hide Jobs & Notices"
+                            : `📋 View Jobs & Notices (${JOB_NOTIFICATIONS.length + GOV_JOBS.length})`}
+                        </button>
+                      )}
+                    </div>
+                  </motion.div>
+                  {service.title === "Online Job Apply" &&
+                    showJobNotifications && (
+                      <div className="col-span-1 sm:col-span-2 lg:col-span-4 mt-2">
+                        <AnimatePresence>
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                            className="space-y-6"
+                          >
+                            {/* Exam Notices Section */}
+                            <div>
+                              <div className="flex items-center gap-3 mb-4">
+                                <span className="text-blue-700 font-bold text-sm uppercase tracking-wide">
+                                  📢 Exam Notices
+                                </span>
+                                <div className="flex-1 h-px bg-blue-200" />
+                              </div>
+                              {JOB_NOTIFICATIONS.map((notif) => (
+                                <JobNotificationCard
+                                  key={notif.id}
+                                  notification={notif}
+                                />
+                              ))}
+                            </div>
+
+                            {/* Latest Government Jobs Section */}
+                            <div>
+                              <div className="flex items-center gap-3 mb-4">
+                                <span className="text-gray-700 font-bold text-sm uppercase tracking-wide">
+                                  💼 Latest Government Jobs
+                                </span>
+                                <div className="flex-1 h-px bg-gray-200" />
+                              </div>
+                              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                                {GOV_JOBS.map((job) => (
+                                  <GovJobCard
+                                    key={job.id}
+                                    job={job}
+                                    onViewDetails={(j) => setSelectedJob(j)}
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                          </motion.div>
+                        </AnimatePresence>
+                      </div>
+                    )}
+                </React.Fragment>
               ))}
             </div>
           </div>
@@ -1901,7 +2712,15 @@ export default function App() {
         <ReviewsSection />
       </main>
 
-      {/* ===== FOOTER ===== */}
+      {/* ===== JOB DETAILS MODAL ===== */}
+      <AnimatePresence>
+        {selectedJob && (
+          <JobDetailsModal
+            job={selectedJob}
+            onClose={() => setSelectedJob(null)}
+          />
+        )}
+      </AnimatePresence>
       <footer className="bg-[#1F2937] text-gray-300" data-ocid="footer.section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
