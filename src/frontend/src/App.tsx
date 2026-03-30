@@ -404,7 +404,11 @@ const SEED_REVIEWS: import("./hooks/useQueries").Review[] = [
 
 function ReviewsSection() {
   const { data: reviews = [], isLoading } = useGetReviews();
-  const { mutateAsync: submitReview, isPending } = useSubmitReview();
+  const {
+    mutateAsync: submitReview,
+    isPending,
+    isActorReady,
+  } = useSubmitReview();
 
   const [name, setName] = useState("");
   const [rating, setRating] = useState(0);
@@ -627,11 +631,13 @@ function ReviewsSection() {
 
                       <Button
                         type="submit"
-                        disabled={isPending}
+                        disabled={isPending || !isActorReady}
                         className="w-full bg-[#0B4F8F] hover:bg-[#0E6AAE] text-white font-bold py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
                         data-ocid="reviews.submit_button"
                       >
-                        {isPending ? (
+                        {!isActorReady ? (
+                          "Connecting..."
+                        ) : isPending ? (
                           <span className="flex items-center gap-2">
                             <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
                             Submitting...

@@ -22,9 +22,9 @@ export function useGetReviews() {
 }
 
 export function useSubmitReview() {
-  const { actor } = useActor();
+  const { actor, isFetching } = useActor();
   const queryClient = useQueryClient();
-  return useMutation({
+  const mutation = useMutation({
     mutationFn: async ({
       name,
       rating,
@@ -45,4 +45,5 @@ export function useSubmitReview() {
       queryClient.invalidateQueries({ queryKey: ["reviews"] });
     },
   });
+  return { ...mutation, isActorReady: !!actor && !isFetching };
 }
