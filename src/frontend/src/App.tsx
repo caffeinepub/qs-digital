@@ -971,6 +971,30 @@ export default function App() {
               />
             </svg>
           </div>
+          {/* Assamese pride text - bottom right of hero */}
+          <div
+            className="absolute bottom-16 right-6 md:right-10 text-right pointer-events-none select-none"
+            aria-hidden="true"
+          >
+            <p
+              className="text-xl md:text-2xl font-extrabold"
+              style={{
+                color: "#FFD700",
+                textShadow: "1px 1px 4px rgba(0,0,0,0.6)",
+              }}
+            >
+              জয় আই অসম
+            </p>
+            <p
+              className="text-xl md:text-2xl font-extrabold"
+              style={{
+                color: "#FFD700",
+                textShadow: "1px 1px 4px rgba(0,0,0,0.6)",
+              }}
+            >
+              জয় জুবিন দা
+            </p>
+          </div>
         </section>
 
         {/* ===== INTRODUCTION ===== */}
