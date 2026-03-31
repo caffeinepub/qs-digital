@@ -51,102 +51,119 @@ const SERVICES = [
   {
     icon: <Car className="w-8 h-8" />,
     title: "Vehicle Insurance",
+    fee: 200,
     description: "Renew or apply for vehicle insurance quickly",
     image: "/assets/generated/service-vehicle-insurance.dim_800x600.jpg",
   },
   {
     icon: <FileText className="w-8 h-8" />,
     title: "Driving Licence",
+    fee: 300,
     description: "Apply for new or renew your driving licence",
     image: "/assets/generated/service-driving-licence.dim_800x600.jpg",
   },
   {
     icon: <RotateCcw className="w-8 h-8" />,
     title: "RC Renew",
+    fee: 200,
     description: "Hassle-free RC renewal assistance",
     image: "/assets/generated/service-rc-renewal.dim_800x600.jpg",
   },
   {
     icon: <CreditCard className="w-8 h-8" />,
     title: "PAN Card Apply",
+    fee: 250,
     description: "Apply for PAN card with ease",
     image: "/assets/generated/service-pan-card.dim_800x600.jpg",
   },
   {
     icon: <Building2 className="w-8 h-8" />,
     title: "Banking",
+    fee: 0,
     description: "Banking assistance and services",
     image: "/assets/generated/service-banking.dim_800x600.jpg",
   },
   {
     icon: <Briefcase className="w-8 h-8" />,
     title: "Online Job Apply",
+    fee: 150,
     description: "Get help applying for jobs online",
     image: "/assets/generated/service-online-job-apply.dim_800x600.jpg",
   },
   {
     icon: <Plane className="w-8 h-8" />,
     title: "Flight Ticket Booking",
+    fee: 100,
     description: "Book domestic and international flights",
     image: "/assets/generated/service-flight-ticket.dim_800x600.jpg",
   },
   {
     icon: <Train className="w-8 h-8" />,
     title: "Indian Train Ticket Booking",
+    fee: 50,
     description: "Book IRCTC train tickets easily",
     image: "/assets/generated/service-train-ticket.dim_800x600.jpg",
   },
   {
     icon: <Camera className="w-8 h-8" />,
     title: "Photo Shop",
+    fee: 50,
     description: "Passport, ID and studio photo printing services",
     image: "/assets/generated/service-photo-shop.dim_800x600.jpg",
   },
   {
     icon: <Copy className="w-8 h-8" />,
     title: "Photostate / Photocopy",
+    fee: 20,
     description: "Fast and affordable document photocopying",
     image: "/assets/generated/service-photocopy.dim_800x600.jpg",
   },
   {
     icon: <FileCheck className="w-8 h-8" />,
     title: "Caste Certificate Apply",
+    fee: 150,
     description: "Apply for your official caste certificate",
     image: "/assets/generated/service-caste-certificate.dim_800x600.jpg",
   },
   {
     icon: <FileText className="w-8 h-8" />,
     title: "Birth Certificate",
+    fee: 150,
     description: "Apply for birth certificate easily",
     image: "/assets/generated/service-birth-certificate.dim_800x600.jpg",
   },
   {
     icon: <Fingerprint className="w-8 h-8" />,
     title: "Aadhaar Card Apply",
+    fee: 250,
     description: "New Aadhaar card enrollment assistance",
     image: "/assets/generated/service-aadhaar-apply.dim_800x600.jpg",
   },
   {
     icon: <Fingerprint className="w-8 h-8" />,
     title: "Aadhaar Card Correction",
+    fee: 250,
     description: "Update and correct your Aadhaar card details",
     image: "/assets/generated/service-aadhaar-correction.dim_800x600.jpg",
   },
   {
     icon: <Vote className="w-8 h-8" />,
     title: "Voter ID Apply Online",
+    fee: 120,
     description: "Apply for new Voter ID card online quickly and easily",
     image: "/assets/generated/service-voter-id-apply.dim_800x600.jpg",
   },
   {
     icon: <FileCheck className="w-8 h-8" />,
     title: "Voter ID Correction",
+    fee: 100,
     description: "Update and correct your Voter ID card details online",
     image: "/assets/generated/service-voter-id-correction.dim_800x600.jpg",
   },
   {
     icon: <CreditCard className="w-8 h-8" />,
     title: "PVC ID Card Printing",
+    fee: 100,
     description:
       "Print durable PVC cards for Aadhaar, PAN, Voter ID, and all government IDs",
     image: "/assets/generated/service-pvc-card-print.dim_800x600.jpg",
@@ -271,32 +288,395 @@ const JOB_NOTIFICATIONS = [
   },
 ];
 
-const GOV_JOBS = [
+const BANKING_SUB_SERVICES = [
   {
-    id: "assam-police-constable-2026",
-    category: "Assam Police",
-    categoryColor: "bg-blue-100 text-blue-800",
-    isUrgent: true,
-    title: "Assam Police AB/UB Constable Recruitment 2026",
-    organization: "State Level Police Recruitment Board (SLPRB), Assam",
-    posts: "6674 Posts",
-    lastDate: "30 Apr 2026",
-    notificationUrl: "https://slprbassam.in",
-    applyUrl: "https://slprbassam.in",
+    id: 1,
+    title: "ATM Withdrawal",
+    description:
+      "Withdraw cash from any ATM using your debit card quickly and securely. We assist you with the process and ensure smooth transactions at all bank ATMs.",
+    whatsappMsg: "Hi, I am interested in ATM Withdrawal service at QS DIGITAL.",
+  },
+  {
+    id: 2,
+    title: "Withdrawal With Aadhaar",
+    description:
+      "Withdraw money directly using your Aadhaar number and fingerprint — no debit card needed. This is a biometric-based cash withdrawal service available at our center.",
     whatsappMsg:
-      "Hi, I need help applying for the Assam Police Constable Recruitment 2026.",
+      "Hi, I am interested in Aadhaar-based Withdrawal service at QS DIGITAL.",
+  },
+  {
+    id: 3,
+    title: "DMT – Domestic Money Transfer",
+    description:
+      "Send money instantly to any bank account across India using cash deposit at our center. Ideal for migrant workers and families who need fast, reliable remittance services.",
+    whatsappMsg:
+      "Hi, I am interested in DMT (Domestic Money Transfer) service at QS DIGITAL.",
+  },
+  {
+    id: 4,
+    title: "Aadhaar Seeding With Bank Account",
+    description:
+      "Link your Aadhaar number to your bank account to receive DBT (Direct Benefit Transfer) payments and government scheme benefits directly into your account.",
+    whatsappMsg:
+      "Hi, I am interested in Aadhaar Seeding With Bank Account service at QS DIGITAL.",
+  },
+];
+
+const GOV_JOBS = [
+  // ── 1 ─────────────────────────────────────────────────────────────────
+  {
+    id: "asseb-jaa-2026",
+    category: "State Govt / Assam",
+    categoryColor: "bg-amber-100 text-amber-800",
+    isUrgent: true,
+    title: "ASSEB Recruitment 2026 — Junior Administrative Assistant",
+    organization: "Assam State School Education Board (ASSEB), Guwahati",
+    posts: "4 Posts (Contractual)",
+    lastDate: "04 Apr 2026",
+    notificationUrl: "https://asseb.org",
+    applyUrl: "https://asseb.org",
+    whatsappMsg:
+      "Hi, I need help applying for the ASSEB Junior Administrative Assistant Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 18–25 years (relaxation for SC/ST/OBC/MOBC). Education: HSSLC (10+2) for UB, HSLC (Class 10) for AB. Physical standards apply.",
-      vacancy: "6674 Posts — Armed Branch (AB) & Unarmed Branch (UB) Constable",
+        "Age: 18–43 years (relaxation for SC/ST/OBC/MOBC as per Govt. norms). Education: Graduate in any discipline from a recognized university. Working knowledge of computers required.",
+      vacancy:
+        "4 Posts — Junior Administrative Assistant cum Program Assistant & Junior Administrative Assistant cum Accounts Assistant (Contractual basis).",
+      applyStart: "March 2026",
+      lastDate: "04 Apr 2026",
+      examPattern:
+        "Written test / Interview as per board norms. Shortlisted candidates will be called for document verification.",
+      howToApply:
+        "Apply online at asseb.org. Fill in the application form, upload required documents (photo, signature, certificates), and submit before 04 April 2026.",
+    },
+  },
+  // ── 2 ─────────────────────────────────────────────────────────────────
+  {
+    id: "indian-army-agniveer-2026",
+    category: "Defence",
+    categoryColor: "bg-green-100 text-green-800",
+    isUrgent: true,
+    title: "Indian Army Agniveer Recruitment 2026",
+    organization: "Indian Army (Agnipath Scheme)",
+    posts: "Multiple Vacancies",
+    lastDate: "01 Apr 2026",
+    notificationUrl: "https://joinindianarmy.nic.in",
+    applyUrl: "https://joinindianarmy.nic.in",
+    whatsappMsg:
+      "Hi, I need help applying for the Indian Army Agniveer Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 17.5–21 years (as on enrollment date). Education: Class 10th pass with minimum 45% aggregate marks and 33% in each subject. Must be Indian citizen. Physical and medical fitness mandatory. Unmarried at time of enrolment.",
+      vacancy:
+        "Multiple Vacancies — Agniveer General Duty (GD), Technical, Clerk / Store Keeper Technical (SKT), Tradesman (various trades) across all army regiments.",
+      applyStart: "13 February 2026",
+      lastDate: "01 Apr 2026",
+      examPattern:
+        "Common Entrance Exam (CEE) — Online/OMR, 100 marks. Followed by Physical Fitness Test (PFT), Physical Measurement Test (PMT), and Medical Examination.",
+      howToApply:
+        "Register and apply online at joinindianarmy.nic.in. Select ARO (Army Recruiting Office) as per your district. Upload documents, pay fee, and note rally dates.",
+    },
+  },
+  // ── 3 ─────────────────────────────────────────────────────────────────
+  {
+    id: "indian-navy-ssr-2026",
+    category: "Defence",
+    categoryColor: "bg-sky-100 text-sky-800",
+    isUrgent: true,
+    title: "Indian Navy Agniveer SSR Recruitment 2026",
+    organization: "Indian Navy (Agnipath Scheme — 01/2027 & 02/2027 Batch)",
+    posts: "Multiple Vacancies",
+    lastDate: "06 Apr 2026",
+    notificationUrl: "https://www.joinindiannavy.gov.in",
+    applyUrl: "https://www.joinindiannavy.gov.in",
+    whatsappMsg:
+      "Hi, I need help applying for the Indian Navy Agniveer SSR Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 17.5–21 years (born between 01 Nov 2005 – 30 Apr 2009). Education: 10+2 / equivalent with Physics & Mathematics as core subjects and minimum 50% aggregate marks. Unmarried male and female Indian citizens. Physical standards as per Navy norms.",
+      vacancy:
+        "Multiple Vacancies — Agniveer Senior Secondary Recruit (SSR) for 01/2027 and 02/2027 batches. Branches: Seaman, Naval Armament Inspectorate (Sailor), Stores, and Medical Assistant.",
+      applyStart: "March 2026",
+      lastDate: "06 Apr 2026",
+      examPattern:
+        "Computer Based Test (CBT): Science & Maths (25 marks each), General Knowledge & English (25 marks each). Negative marking: -0.25 per wrong answer. Followed by Physical Fitness Test (PFT) and Medical Examination.",
+      howToApply:
+        "Apply online at www.joinindiannavy.gov.in. Fill form with 10th/12th details, upload photo & signature, pay exam fee, and download admit card from official website.",
+    },
+  },
+  // ── 4 ─────────────────────────────────────────────────────────────────
+  {
+    id: "apex-bank-asst-2026",
+    category: "Banking",
+    categoryColor: "bg-blue-100 text-blue-800",
+    isUrgent: false,
+    title: "Apex Bank Assistant Recruitment 2026 — 150 Posts",
+    organization: "Assam Co-Operative Apex Bank Limited",
+    posts: "150 Assistant Posts",
+    lastDate: "19 Apr 2026",
+    notificationUrl: "https://apexbankassam.com",
+    applyUrl: "https://apexbankassam.com",
+    whatsappMsg:
+      "Hi, I need help applying for the Assam Apex Bank Assistant Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 21–38 years (relaxation: SC/ST 5 years, OBC/MOBC 3 years, PwBD 10 years, Ex-Serviceman as per rules). Education: Bachelor's degree (any discipline) from a recognized university. Assam domicile required. Basic computer knowledge preferred.",
+      vacancy:
+        "150 Posts — Assistant (General Banking). Posts distributed across branches of Assam Co-Operative Apex Bank in various districts of Assam.",
+      applyStart: "March 2026",
+      lastDate: "19 Apr 2026",
+      examPattern:
+        "Online Written Exam: Reasoning Ability, Quantitative Aptitude, English Language, General/Financial Awareness, Computer Knowledge. Followed by Interview for shortlisted candidates.",
+      howToApply:
+        "Apply online at apexbankassam.com. Pay application fee online (₹500 for General/OBC; ₹300 for SC/ST). Upload photo, signature, and educational certificates before 19 April 2026.",
+    },
+  },
+  // ── 5 ─────────────────────────────────────────────────────────────────
+  {
+    id: "sai-coach-2026",
+    category: "Central Govt / Sports",
+    categoryColor: "bg-orange-100 text-orange-800",
+    isUrgent: false,
+    title: "SAI Assistant Coach Recruitment 2026 — 323 Posts",
+    organization:
+      "Sports Authority of India (SAI), Ministry of Youth Affairs & Sports",
+    posts: "323 Assistant Coach Posts",
+    lastDate: "21 Apr 2026",
+    notificationUrl: "https://sai.gov.in",
+    applyUrl: "https://sai.gov.in",
+    whatsappMsg:
+      "Hi, I need help applying for the Sports Authority of India Assistant Coach Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: Below 45 years (as on closing date; relaxation for SC/ST/OBC/PwBD/Ex-S as per Central Govt. norms). Education: Bachelor's degree in any stream from a recognized university + NIS Diploma / equivalent sports coaching qualification. Must have represented State or National level in the relevant sport.",
+      vacancy:
+        "323 Posts — Assistant Coach in 25+ sports disciplines including Athletics, Badminton, Basketball, Boxing, Football, Gymnastics, Hockey, Judo, Kabaddi, Shooting, Swimming, Volleyball, Weightlifting, Wrestling, and more.",
+      applyStart: "March 2026",
+      lastDate: "21 Apr 2026",
+      examPattern:
+        "Shortlisting based on qualifications and sports achievements → Practical/skill demonstration → Interview by selection panel. No written examination.",
+      howToApply:
+        "Apply online at sai.gov.in. Upload detailed sports certificates, coaching qualification, and experience documents. Application fee: ₹500 (General/OBC); NIL for SC/ST/PwBD/Women.",
+    },
+  },
+  // ── 6 ─────────────────────────────────────────────────────────────────
+  {
+    id: "lra-assam-2026",
+    category: "State Govt / Assam",
+    categoryColor: "bg-lime-100 text-lime-800",
+    isUrgent: false,
+    title: "Land Records Assistant (LRA) Recruitment 2026 — 552 Posts",
+    organization: "Directorate of Land Records & Surveys, Govt. of Assam",
+    posts: "552 Posts",
+    lastDate: "30 Apr 2026",
+    notificationUrl: "https://sebaonline.org",
+    applyUrl: "https://sebaonline.org",
+    whatsappMsg:
+      "Hi, I need help applying for the Land Records Assistant (LRA) Assam Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–38 years (relaxation: SC/ST 5 years, OBC/MOBC 3 years). Education: Higher Secondary (10+2) pass AND must have successfully completed 6-month Recorders Certificate Class Course (RCCC) Training from Assam Surveys and Settlement Training Centre, Dakhingaon (except Sixth Schedule areas). Assam domicile required.",
+      vacancy:
+        "552 Posts — Land Records Assistant (LRA) distributed across revenue circles and districts of Assam. Post is under Directorate of Land Records & Surveys.",
       applyStart: "March 2026",
       lastDate: "30 Apr 2026",
       examPattern:
-        "Written exam (OMR based) + Physical Standard Test (PST) + Physical Efficiency Test (PET) + Medical Exam.",
+        "Written Exam conducted by SEBA (Board of Secondary Education Assam) — Assamese/Bengali/Bodo Language (40 marks), General Knowledge & Current Affairs (20 marks), Mathematics (20 marks), English (20 marks). Total: 100 marks.",
       howToApply:
-        "Apply online at slprbassam.in. Fill form, upload photo/signature, pay fee online.",
+        "Apply online at sebaonline.org. Pay application fee (₹200 General; ₹150 SC/ST/OBC) via online payment or bank challan. Upload RCCC Training certificate mandatorily.",
     },
   },
+  // ── 7 ─────────────────────────────────────────────────────────────────
+  {
+    id: "btc-forester-2026",
+    category: "State Govt / BTC",
+    categoryColor: "bg-emerald-100 text-emerald-800",
+    isUrgent: false,
+    title: "BTC Forester & Forest Guard Recruitment 2026 — 157 Posts",
+    organization: "Bodoland Territorial Council (BTC) Forest Department",
+    posts: "157 Posts",
+    lastDate: "May 2026",
+    notificationUrl: "https://btcassam.nic.in",
+    applyUrl: "https://btcassam.nic.in",
+    whatsappMsg:
+      "Hi, I need help applying for the BTC Forester and Forest Guard Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–38 years (relaxation for SC/ST/OBC/MOBC/PwBD as per BTC norms). Education: HSSLC (10+2) pass for Forester posts; HSLC (Class 10) pass for Forest Guard posts. BTC domicile / Permanent Resident Certificate (PRC) of Bodoland Territorial Area Districts (BTAD) required. Physical standards apply.",
+      vacancy:
+        "157 Posts — Forester and Forest Guard distributed across forest ranges within the Bodoland Territorial Area Districts (BTAD): Kokrajhar, Chirang, Baksa, and Udalguri.",
+      applyStart: "March / April 2026",
+      lastDate: "May 2026 (as per official notification)",
+      examPattern:
+        "Written Exam (General Knowledge, Reasoning, Language) + Physical Efficiency Test (PET) — running, long jump, etc. + Medical Examination. Marks vary by post.",
+      howToApply:
+        "Apply online or offline as per BTC official notification at btcassam.nic.in. Candidates from Udalguri district are especially eligible. Check official notification for exact dates.",
+    },
+  },
+  // ── 8 ─────────────────────────────────────────────────────────────────
+  {
+    id: "indian-navy-mr-2026",
+    category: "Defence",
+    categoryColor: "bg-cyan-100 text-cyan-800",
+    isUrgent: false,
+    title: "Indian Navy Agniveer MR Recruitment 2026",
+    organization: "Indian Navy (Agnipath Scheme — MR Batch)",
+    posts: "Multiple Vacancies",
+    lastDate: "Check Official Site",
+    notificationUrl: "https://www.joinindiannavy.gov.in",
+    applyUrl: "https://www.joinindiannavy.gov.in",
+    whatsappMsg:
+      "Hi, I need help applying for the Indian Navy Agniveer MR Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 17.5–21 years. Education: Class 10th pass with minimum 50% marks in total and 50% in Mathematics & Science. Unmarried male candidates only. Must be Indian citizen. Physical and medical fitness as per Navy standards.",
+      vacancy:
+        "Multiple Vacancies — Agniveer Matric Recruit (MR) in two trades: (1) Chef and (2) Steward. Selected candidates undergo 14 weeks training at INS Chilka.",
+      applyStart: "As per latest batch notification",
+      lastDate: "Check joinindiannavy.gov.in for exact date",
+      examPattern:
+        "Computer Based Test (CBT): Science & Mathematics (25 marks), General Knowledge (25 marks), English (25 marks). Total: 75 marks. Negative marking applies. Followed by PFT and Medical.",
+      howToApply:
+        "Apply online at www.joinindiannavy.gov.in. Select MR category. Upload photo, signature, 10th marksheet, and other required documents. Pay fee and download admit card.",
+    },
+  },
+  // ── 9 ─────────────────────────────────────────────────────────────────
+  {
+    id: "indian-airforce-agniveer-2026",
+    category: "Defence",
+    categoryColor: "bg-indigo-100 text-indigo-800",
+    isUrgent: false,
+    title: "Indian Air Force Agniveer Vayu Recruitment 2026",
+    organization: "Indian Air Force (Agnipath Scheme)",
+    posts: "Multiple Vacancies",
+    lastDate: "Check Official Site",
+    notificationUrl: "https://agnipathvayu.cdac.in",
+    applyUrl: "https://agnipathvayu.cdac.in",
+    whatsappMsg:
+      "Hi, I need help applying for the Indian Air Force Agniveer Vayu Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 17.5–21 years. Group X (Technical): 10+2 with Physics, Mathematics & English (minimum 50% aggregate and 50% in each). Group Y (Non-Technical): 10+2 / equivalent in any stream with minimum 50% aggregate marks and 50% in English. Unmarried male and female candidates. Indian citizenship required.",
+      vacancy:
+        "Multiple Vacancies — Agniveer Vayu Group X Trades (Technical: Mechanical, Electrical & Avionics) and Group Y Trades (Logistics, Accounts, Admin, Security, Medical Assistant, etc.).",
+      applyStart: "As per latest official intake notification",
+      lastDate: "Check agnipathvayu.cdac.in for exact date",
+      examPattern:
+        "Phase 1: Online Written Test — Reasoning, English, Physics & Mathematics (for Group X). Phase 2: Physical Fitness Test (PFT), Adaptability Test (AT-1 & AT-2). Medical Examination.",
+      howToApply:
+        "Apply online at agnipathvayu.cdac.in. Register with Aadhaar, fill form, select trade, pay fee, and appear for the online exam at designated centres.",
+    },
+  },
+  // ── 10 ────────────────────────────────────────────────────────────────
+  {
+    id: "rrb-group-d-2026",
+    category: "Railway / RRB",
+    categoryColor: "bg-red-100 text-red-800",
+    isUrgent: false,
+    title: "RRB Group D Recruitment 2026 — 22,195 Posts",
+    organization: "Railway Recruitment Board (RRB), Ministry of Railways",
+    posts: "22,195 Posts",
+    lastDate: "Check RRB Portal",
+    notificationUrl: "https://indianrailways.gov.in",
+    applyUrl: "https://www.rrbapplyreg.in",
+    whatsappMsg:
+      "Hi, I need help applying for the RRB Group D Railway Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–33 years (relaxation: SC/ST 5 years, OBC 3 years, PwBD 10 years, Ex-S as per rules). Education: Class 10th pass (HSLC) from a recognized board OR ITI certificate from a recognized institution or equivalent. Must be Indian citizen.",
+      vacancy:
+        "22,195 Posts — Track Maintainer Grade IV, Helper/Assistant in various departments (Electrical, Mechanical, Signal & Telecom, Engineering, S&T), Porter, and other Level 1 posts across all Railway zones including NFR (Northeast Frontier Railway).",
+      applyStart: "As per official RRB notification",
+      lastDate: "Check www.rrbapplyreg.in for exact date",
+      examPattern:
+        "Computer Based Test (CBT): General Science (25 marks), Mathematics (25 marks), General Intelligence & Reasoning (30 marks), General Awareness (20 marks) — 90 minutes. Followed by Physical Efficiency Test (PET) and Document Verification.",
+      howToApply:
+        "Apply online at www.rrbapplyreg.in. Select preferred RRB (NFR for Assam/NE India). Pay fee: ₹500 for General/OBC (refund ₹400 on appearing); ₹250 for SC/ST/Ex-S/Women/PwBD (fully refunded).",
+    },
+  },
+  // ── 11 ────────────────────────────────────────────────────────────────
+  {
+    id: "nic-recruitment-2026",
+    category: "Central Govt / IT",
+    categoryColor: "bg-violet-100 text-violet-800",
+    isUrgent: false,
+    title: "NIC Scientist-B & Technical Assistant Recruitment 2026 — 619 Posts",
+    organization:
+      "National Informatics Centre (NIC), Ministry of Electronics & IT",
+    posts: "619 Posts",
+    lastDate: "Check NIC Portal",
+    notificationUrl: "https://www.nic.in",
+    applyUrl: "https://www.nic.in",
+    whatsappMsg:
+      "Hi, I need help applying for the NIC Scientist-B / Technical Assistant Recruitment 2026.",
+    details: {
+      eligibility:
+        "Scientist-B: Age up to 30 years. Qualification: B.E./B.Tech or M.Sc/MCA in Computer Science/IT/Electronics/Electrical/Communication Engineering from a recognized university with minimum 60% marks. Scientific/Technical Assistant-A: Age up to 27 years. Qualification: B.Sc (CS/IT) or BCA or Diploma in Engineering (CS/IT/Electronics) with minimum 60% marks. Relaxation for SC/ST/OBC as per Central Govt. norms.",
+      vacancy:
+        "619 Posts — Scientist-B (IT & Electronics) and Scientific/Technical Assistant-A (IT & Electronics). Posts are distributed across NIC State Centres and headquarters.",
+      applyStart: "March 2026",
+      lastDate: "Check nic.in for exact closing date",
+      examPattern:
+        "Computer Based Test (CBT): Technical knowledge in CS/IT/Electronics + General Intelligence & Reasoning + English. Followed by Document Verification and possible Interview for Scientist-B.",
+      howToApply:
+        "Apply online at www.nic.in. Two separate notifications issued for Scientist-B and STA-A. Pay fee, upload documents, and submit application before closing date.",
+    },
+  },
+  // ── 12 ────────────────────────────────────────────────────────────────
+  {
+    id: "aiims-norcet-10-2026",
+    category: "Health / AIIMS",
+    categoryColor: "bg-teal-100 text-teal-800",
+    isUrgent: false,
+    title: "AIIMS Nursing Officer Recruitment 2026 — NORCET-10",
+    organization: "All India Institute of Medical Sciences (AIIMS), New Delhi",
+    posts: "Multiple Posts",
+    lastDate: "Check AIIMS Portal",
+    notificationUrl: "https://aiimsexams.ac.in",
+    applyUrl: "https://aiimsexams.ac.in",
+    whatsappMsg:
+      "Hi, I need help applying for the AIIMS Nursing Officer NORCET-10 Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–35 years (relaxation for SC/ST 5 years, OBC 3 years, PwBD 10 years). Education: B.Sc Nursing (4-year regular course) from an Indian Nursing Council recognized institution with minimum 60% marks OR Post Basic B.Sc Nursing (2-year course) with minimum 60% marks. Must be registered as a Nurse & Midwife with State Nursing Council.",
+      vacancy:
+        "Multiple Nursing Officer posts across various AIIMS institutions (AIIMS New Delhi, AIIMS Guwahati, AIIMS Bhubaneswar, AIIMS Jodhpur, AIIMS Patna, AIIMS Rishikesh, and other AIIMS). Pay Scale: Level 7 (₹44,900–₹1,42,400 per month + allowances).",
+      applyStart: "As per NORCET-10 notification",
+      lastDate: "Check aiimsexams.ac.in for exact date",
+      examPattern:
+        "NORCET (Nursing Officer Recruitment Common Eligibility Test): Computer Based Test — Nursing subject questions (100 marks) + General Intelligence (20 marks) + General Awareness (10 marks). No negative marking. 2 hours duration.",
+      howToApply:
+        "Apply online at aiimsexams.ac.in. AIIMS Guwahati is a major centre relevant for Assam candidates. Pay exam fee ₹3000 (General/OBC); ₹2500 (SC/ST/EWS); ₹200 (PwBD) online.",
+    },
+  },
+  // ── 13 ────────────────────────────────────────────────────────────────
+  {
+    id: "assam-police-2026",
+    category: "Assam Police",
+    categoryColor: "bg-blue-100 text-blue-800",
+    isUrgent: false,
+    title: "Assam Police Recruitment 2026 — Constable, SI, Driver & Grade IV",
+    organization: "State Level Police Recruitment Board (SLPRB), Assam",
+    posts: "Multiple Posts",
+    lastDate: "Check SLPRB Portal",
+    notificationUrl: "https://slprbassam.in",
+    applyUrl: "https://slprbassam.in",
+    whatsappMsg:
+      "Hi, I need help applying for the Assam Police Recruitment 2026.",
+    details: {
+      eligibility:
+        "AB Constable: Age 18–25 years; HSLC (Class 10) pass; Physical standards. UB Constable: Age 18–25 years; HSSLC (10+2) pass. Sub-Inspector (SI): Age 20–26 years; Bachelor's degree. Driver: Class 10 + valid commercial driving licence. Grade IV: Class 8 pass. Relaxation for SC/ST/OBC/MOBC/Ex-S as per Assam Govt. norms. Assam domicile required.",
+      vacancy:
+        "Multiple Posts across categories — Armed Branch (AB) Constable, Unarmed Branch (UB) Constable, Sub-Inspector (SI), Driver Constable, and Grade IV posts in various districts and battalions of Assam Police.",
+      applyStart: "As per SLPRB official notification",
+      lastDate: "Check slprbassam.in for exact date",
+      examPattern:
+        "Stage 1: Physical Standard Test (PST) — height, chest, weight. Stage 2: Physical Efficiency Test (PET) — running (1600m men/800m women), long jump, high jump. Stage 3: Written Exam (OMR) — GK, Maths, Reasoning, English/Assamese. Stage 4: Medical Examination.",
+      howToApply:
+        "Apply online at slprbassam.in. Application fee: ₹200 (General); ₹150 (SC/ST/OBC). Upload photo, signature, certificates. Candidates from Udalguri district apply under respective zone.",
+    },
+  },
+  // ── 14 ────────────────────────────────────────────────────────────────
   {
     id: "apsc-cce-2026",
     category: "APSC / State PSC",
@@ -311,216 +691,42 @@ const GOV_JOBS = [
     whatsappMsg: "Hi, I need help applying for the APSC CCE 2026.",
     details: {
       eligibility:
-        "Age: 21–38 years (relaxation for SC/ST/OBC/MOBC). Education: Bachelor's degree from a recognized university. Assam domicile required.",
+        "Age: 21–38 years (relaxation: SC/ST 5 years, OBC/MOBC 3 years, PwBD 10 years, Ex-Serviceman as per rules). Education: Bachelor's degree in any discipline from a recognized university. Assam domicile / PRC required. Candidates must have knowledge of Assamese or any other regional language listed in 8th schedule.",
       vacancy:
-        "400+ Posts — ACS, APS, Finance Service, Agriculture Service and other allied services.",
+        "400+ Posts — Assam Civil Service (ACS), Assam Police Service (APS), Assam Finance Service, Assam Agriculture Service, Assam Rural Development Service, and other Group-A & Group-B allied services.",
       applyStart: "March 2026",
       lastDate: "15 May 2026",
       examPattern:
-        "Preliminary Exam (Objective, 200 marks) → Mains (Written, 9 papers) → Personality Test/Interview.",
+        "Stage 1: Preliminary Exam — 2 papers (GS + CSAT), 200 marks each, objective type, 2 hours each. Stage 2: Mains Exam — 9 descriptive papers (language, essay, GS I–IV, optional subject). Stage 3: Personality Test / Interview (200 marks). Fee: ₹297.20 (General); ₹172.20 (SC/ST/OBC/MOBC).",
       howToApply:
-        "Apply online at apsc.nic.in. Download notification, fill online form, pay fee via payment gateway.",
+        "Apply online at apsc.nic.in. Download detailed notification, fill online application, select optional subject for Mains, pay fee via payment gateway, and submit before 15 May 2026.",
     },
   },
-  {
-    id: "ssc-chsl-2026",
-    category: "Central Govt / SSC",
-    categoryColor: "bg-orange-100 text-orange-800",
-    isUrgent: false,
-    title: "SSC CHSL 2026 — Combined Higher Secondary Level",
-    organization: "Staff Selection Commission (SSC), Govt. of India",
-    posts: "3712 Posts",
-    lastDate: "14 Apr 2026",
-    notificationUrl: "https://ssc.nic.in",
-    applyUrl: "https://ssc.nic.in",
-    whatsappMsg: "Hi, I need help applying for the SSC CHSL 2026.",
-    details: {
-      eligibility:
-        "Age: 18–27 years (relaxation for SC/ST/OBC). Education: 10+2 (Higher Secondary) from a recognized board.",
-      vacancy:
-        "3712 Posts — LDC, JSA, DEO, PA/SA across Central Govt Departments.",
-      applyStart: "March 2026",
-      lastDate: "14 Apr 2026",
-      examPattern:
-        "Tier I (CBT, 200 marks) → Tier II (CBT, descriptive + skill test) → Document Verification.",
-      howToApply:
-        "Apply online at ssc.nic.in. Register, fill form, pay ₹100 fee (exempted for women/SC/ST/Ex-S).",
-    },
-  },
-  {
-    id: "rrb-ntpc-2026",
-    category: "Railway / RRB",
-    categoryColor: "bg-red-100 text-red-800",
-    isUrgent: false,
-    title: "Railway NTPC Recruitment 2026 — RRB Guwahati Zone",
-    organization: "Railway Recruitment Board (RRB) Guwahati",
-    posts: "11558 Posts (All India)",
-    lastDate: "30 Apr 2026",
-    notificationUrl: "https://rrbguwahati.gov.in",
-    applyUrl: "https://rrbapplyreg.in",
-    whatsappMsg:
-      "Hi, I need help applying for the Railway NTPC Recruitment 2026 via RRB Guwahati.",
-    details: {
-      eligibility:
-        "Age: 18–36 years depending on post (relaxation for SC/ST/OBC). Education: Graduate for UG posts, 10+2 for Level 2/3 posts.",
-      vacancy:
-        "11558 Posts (All India) — Junior Clerk, Accounts Clerk, Junior Time Keeper, Commercial & Ticket Clerk, Station Master, Goods Guard, etc.",
-      applyStart: "March 2026",
-      lastDate: "30 Apr 2026",
-      examPattern:
-        "CBT Stage 1 (100 marks) → CBT Stage 2 (90 marks) → Skill Test (if applicable) → Document Verification.",
-      howToApply:
-        "Apply online at rrbapplyreg.in. Select RRB Guwahati zone for Northeast India preference.",
-    },
-  },
-  {
-    id: "nhm-assam-2026",
-    category: "Health / NHM",
-    categoryColor: "bg-teal-100 text-teal-800",
-    isUrgent: false,
-    title: "NHM Assam Staff Nurse & ANM Recruitment 2026",
-    organization: "National Health Mission (NHM), Assam",
-    posts: "2000+ Posts",
-    lastDate: "25 Apr 2026",
-    notificationUrl: "https://nhm.assam.gov.in",
-    applyUrl: "https://nhm.assam.gov.in",
-    whatsappMsg:
-      "Hi, I need help applying for the NHM Assam Staff Nurse / ANM Recruitment 2026.",
-    details: {
-      eligibility:
-        "Staff Nurse: GNM/B.Sc Nursing with NMC registration. ANM: ANM certificate, 10+2 pass. Age: 18–43 years. Assam domicile required.",
-      vacancy:
-        "2000+ Posts — Staff Nurse, ANM, Community Health Officer (CHO), MO, and other health worker positions.",
-      applyStart: "March 2026",
-      lastDate: "25 Apr 2026",
-      examPattern:
-        "Written exam + Merit-based shortlisting. Document verification for selected candidates.",
-      howToApply:
-        "Apply online at nhm.assam.gov.in. Assam domicile certificate mandatory. Upload nursing qualification certificates.",
-    },
-  },
-  {
-    id: "lra-assam-2026",
-    category: "State Govt / Assam",
-    categoryColor: "bg-lime-100 text-lime-800",
-    isUrgent: false,
-    title: "Land Records Assistant (LRA) Recruitment 2026",
-    organization: "Directorate of Land Records & Surveys, Assam",
-    posts: "552 Posts",
-    lastDate: "30 Apr 2026",
-    notificationUrl: "https://sebaonline.org",
-    applyUrl: "https://sebaonline.org",
-    whatsappMsg: "Hi, I need help applying for the LRA Assam Recruitment 2026.",
-    details: {
-      eligibility:
-        "Age: 18–38 years (relaxation for SC/ST/OBC/MOBC). Education: Higher Secondary (10+2) pass. Must be Assam domicile.",
-      vacancy: "552 Posts — Land Records Assistant across Assam districts",
-      applyStart: "Check sebaonline.org",
-      lastDate: "30 Apr 2026",
-      examPattern:
-        "Written exam by SEBA — Assamese/Bengali/Bodo language, General Knowledge, Math, and English.",
-      howToApply:
-        "Apply online at sebaonline.org. Pay fee via online payment or bank challan.",
-    },
-  },
-  {
-    id: "gauhati-hc-mts-2026",
-    category: "Judiciary / Assam",
-    categoryColor: "bg-violet-100 text-violet-800",
-    isUrgent: false,
-    title: "Gauhati High Court MTS & Computer Assistant Recruitment 2026",
-    organization: "Gauhati High Court",
-    posts: "28 Posts",
-    lastDate: "Exam: 26 Apr 2026",
-    notificationUrl: "https://www.ghconline.gov.in",
-    applyUrl: "https://www.ghconline.gov.in",
-    whatsappMsg:
-      "Hi, I need help with the Gauhati High Court MTS/Computer Assistant 2026 recruitment.",
-    details: {
-      eligibility:
-        "Age: 18–40 years. MTS: Class 8 pass minimum. Computer Assistant: Graduate with computer diploma.",
-      vacancy: "28 Posts — MTS & Computer Assistant",
-      applyStart: "Applications closed; Exam on 26 Apr 2026",
-      lastDate: "Exam: 26 Apr 2026",
-      examPattern:
-        "Written exam on 26 April 2026. MTS: General Knowledge, Reasoning. Computer Asst: Computer knowledge, English.",
-      howToApply:
-        "Applications closed. Download admit card from ghconline.gov.in.",
-    },
-  },
-  {
-    id: "ssc-cgl-2026",
-    category: "Central Govt / SSC",
-    categoryColor: "bg-indigo-100 text-indigo-800",
-    isUrgent: false,
-    title: "SSC CGL 2026 — Combined Graduate Level Exam",
-    organization: "Staff Selection Commission (SSC), Govt. of India",
-    posts: "Approx. 14582 Posts",
-    lastDate: "To be notified",
-    notificationUrl: "https://ssc.nic.in",
-    applyUrl: "https://ssc.nic.in",
-    whatsappMsg: "Hi, I need help applying for the SSC CGL 2026.",
-    details: {
-      eligibility:
-        "Age: 18–32 years (varies by post; relaxation for SC/ST/OBC). Education: Bachelor's degree from a recognized university.",
-      vacancy:
-        "Approx. 14582 Posts — Inspector, Auditor, Accountant, Sub-Inspector CBI, Assistant Section Officer, etc.",
-      applyStart: "To be notified",
-      lastDate: "To be notified",
-      examPattern:
-        "Tier I (CBT, 200 marks, 60 min) → Tier II (CBT, 300 marks, 2 hours).",
-      howToApply:
-        "Apply online at ssc.nic.in when notification released. Register, fill form, upload documents, pay fee.",
-    },
-  },
-  {
-    id: "indian-army-agniveer-2026",
-    category: "Defence",
-    categoryColor: "bg-green-100 text-green-800",
-    isUrgent: true,
-    title: "Indian Army Agniveer Recruitment 2026",
-    organization: "Indian Army",
-    posts: "Multiple Vacancies",
-    lastDate: "01 Apr 2026",
-    notificationUrl: "https://joinindianarmy.nic.in",
-    applyUrl: "https://joinindianarmy.nic.in",
-    whatsappMsg: "Hi, I need help applying for the Indian Army Agniveer 2026.",
-    details: {
-      eligibility:
-        "Age: 17.5–21 years. Education: Class 10th pass with 45% marks (33% for CEE exempt). Must be Indian citizen.",
-      vacancy: "Multiple Vacancies — Varies by regiment and trade",
-      applyStart: "As per official notification",
-      lastDate: "01 Apr 2026",
-      examPattern:
-        "CEE (Common Entrance Exam) — 100 marks. Physical and Medical fitness test required.",
-      howToApply:
-        "Register and apply online at joinindianarmy.nic.in. Fill form, upload documents, pay fee online.",
-    },
-  },
+  // ── 15 ────────────────────────────────────────────────────────────────
   {
     id: "pnrd-assam-2026",
     category: "State Govt / Assam",
     categoryColor: "bg-yellow-100 text-yellow-800",
     isUrgent: false,
-    title: "PNRD Assam Recruitment 2026",
-    organization: "Panchayat & Rural Development Dept., Assam",
+    title: "PNRD Assam Recruitment 2026 — 1508 Contractual Posts",
+    organization: "Panchayat & Rural Development Department, Govt. of Assam",
     posts: "1508 Posts",
-    lastDate: "To be updated",
+    lastDate: "Check PNRD Portal",
     notificationUrl: "https://pnrdassam.nic.in",
     applyUrl: "https://pnrdassam.nic.in",
     whatsappMsg:
       "Hi, I need help applying for the PNRD Assam Recruitment 2026.",
     details: {
       eligibility:
-        "Varies by post. Generally: 18–38 years. Education: Class 8 to Graduate depending on position. Assam domicile required.",
+        "Age: 18–38 years (relaxation for SC/ST/OBC/MOBC/PwBD/Ex-S as per Assam Govt. norms). Education: Class 8 to Graduate depending on the post applied for. Assam domicile / PRC required. Preference may be given to candidates from respective Gram Panchayat / Block jurisdiction.",
       vacancy:
-        "1508 Posts — Various positions across Panchayat & Rural Development",
-      applyStart: "To be notified",
-      lastDate: "To be updated",
+        "1508 Posts (Contractual) — Various positions under Panchayat & Rural Development including Block Coordinator, Data Entry Operator (DEO), Account Assistant, Gram Rozgar Sevak (GRS), and other support staff across all Assam districts.",
+      applyStart: "As per official PNRD notification",
+      lastDate: "Check pnrdassam.nic.in for exact date",
       examPattern:
-        "Written exam/interview as per post. Details in official notification.",
+        "Shortlisting based on merit / written exam / interview depending on post. For DEO posts, computer proficiency test may be conducted. Document verification for selected candidates.",
       howToApply:
-        "Apply online at pnrdassam.nic.in. Follow official notification instructions.",
+        "Apply online at pnrdassam.nic.in. Fill application form for preferred post and district, upload required certificates (domicile, educational, caste if applicable), pay fee if any, and submit before deadline.",
     },
   },
 ];
@@ -1539,6 +1745,10 @@ export default function App() {
   const [selectedJob, setSelectedJob] = useState<(typeof GOV_JOBS)[0] | null>(
     null,
   );
+  const [showBankingServices, setShowBankingServices] = useState(false);
+  const [selectedBankingService, setSelectedBankingService] = useState<
+    (typeof BANKING_SUB_SERVICES)[0] | null
+  >(null);
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
@@ -1973,6 +2183,34 @@ export default function App() {
                         <MessageCircle className="w-4 h-4" />
                         Enquire on WhatsApp
                       </a>
+                      <a
+                        href={
+                          service.fee
+                            ? `upi://pay?pa=6000134640@okbizaxis&pn=QS+DIGITAL&am=${service.fee}&cu=INR`
+                            : "upi://pay?pa=6000134640@okbizaxis&pn=QS+DIGITAL&cu=INR"
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-ocid={`services.item.${idx + 1}.upi`}
+                        className="mt-1 inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors self-start"
+                      >
+                        <span className="text-base">💳</span>
+                        {service.fee
+                          ? `Pay Rs ${service.fee} via UPI`
+                          : "Pay Service Fee via UPI"}
+                      </a>
+                      {service.title === "Banking" && (
+                        <button
+                          type="button"
+                          onClick={() => setShowBankingServices((p) => !p)}
+                          data-ocid="banking.services.toggle"
+                          className="mt-1 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors self-start"
+                        >
+                          {showBankingServices
+                            ? "🔼 Hide Banking Services"
+                            : `🏦 View Banking Services (${BANKING_SUB_SERVICES.length})`}
+                        </button>
+                      )}
                       {service.title === "Online Job Apply" && (
                         <button
                           type="button"
@@ -1987,6 +2225,63 @@ export default function App() {
                       )}
                     </div>
                   </motion.div>
+                  {service.title === "Banking" && showBankingServices && (
+                    <div className="col-span-1 sm:col-span-2 lg:col-span-4 mt-2">
+                      <AnimatePresence>
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="flex items-center gap-3 mb-4">
+                            <span className="text-blue-700 font-bold text-sm uppercase tracking-wide">
+                              🏦 Banking Sub-Services
+                            </span>
+                            <div className="flex-1 h-px bg-blue-200" />
+                          </div>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            {BANKING_SUB_SERVICES.map((sub) => (
+                              <div
+                                key={sub.id}
+                                className="bg-white rounded-xl border border-blue-100 p-4 flex flex-col gap-3 hover:border-[#0EA5A5] hover:shadow-md transition-all duration-300"
+                                data-ocid={`banking.item.${sub.id}`}
+                              >
+                                <h4 className="font-bold text-[#0B4F8F] text-sm">
+                                  {sub.title}
+                                </h4>
+                                <p className="text-gray-500 text-xs leading-relaxed line-clamp-2">
+                                  {sub.description}
+                                </p>
+                                <div className="flex flex-col gap-2 mt-auto">
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      setSelectedBankingService(sub)
+                                    }
+                                    data-ocid={`banking.item.${sub.id}.button`}
+                                    className="inline-flex items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors"
+                                  >
+                                    📋 View Details
+                                  </button>
+                                  <a
+                                    href={`https://wa.me/916000134640?text=${encodeURIComponent(sub.whatsappMsg)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    data-ocid={`banking.item.${sub.id}.whatsapp`}
+                                    className="inline-flex items-center gap-1 bg-green-500 hover:bg-green-600 text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors"
+                                  >
+                                    <MessageCircle className="w-3 h-3" />
+                                    Enquire on WhatsApp
+                                  </a>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      </AnimatePresence>
+                    </div>
+                  )}
                   {service.title === "Online Job Apply" &&
                     showJobNotifications && (
                       <div className="col-span-1 sm:col-span-2 lg:col-span-4 mt-2">
@@ -2777,6 +3072,60 @@ export default function App() {
         {/* ===== REVIEWS ===== */}
         <ReviewsSection />
       </main>
+
+      {/* ===== BANKING SUB-SERVICE MODAL ===== */}
+      <AnimatePresence>
+        {selectedBankingService && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+            onClick={() => setSelectedBankingService(null)}
+            data-ocid="banking.modal"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.2 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedBankingService(null)}
+                data-ocid="banking.modal.close_button"
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              <div className="mb-4">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl mb-3">
+                  🏦
+                </div>
+                <h3 className="text-xl font-bold text-[#0B4F8F] mb-2">
+                  {selectedBankingService.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {selectedBankingService.description}
+                </p>
+              </div>
+              <a
+                href={`https://wa.me/916000134640?text=${encodeURIComponent(selectedBankingService.whatsappMsg)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-ocid="banking.modal.whatsapp"
+                className="w-full inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-3 rounded-xl transition-colors text-sm"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Enquire on WhatsApp
+              </a>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ===== JOB DETAILS MODAL ===== */}
       <AnimatePresence>
