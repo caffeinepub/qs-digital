@@ -273,108 +273,166 @@ const JOB_NOTIFICATIONS = [
 
 const GOV_JOBS = [
   {
-    id: "indian-army-agniveer-2026",
-    category: "Defence",
-    categoryColor: "bg-green-100 text-green-800",
-    isUrgent: true,
-    title: "Indian Army Agniveer Recruitment 2026",
-    organization: "Indian Army",
-    posts: "Multiple Vacancies",
-    lastDate: "01 Apr 2026",
-    applyUrl: "https://joinindianarmy.nic.in",
-    whatsappMsg: "Hi, I need help applying for the Indian Army Agniveer 2026.",
-    details: {
-      eligibility:
-        "Age: 17.5–21 years. Education: Class 10th pass with 45% marks (33% for CEE exempt). Must be Indian citizen.",
-      vacancy: "Multiple Vacancies — Varies by regiment and trade",
-      applyStart: "As per official notification",
-      lastDate: "01 Apr 2026",
-      examPattern:
-        "CEE (Common Entrance Exam) — 100 marks. Physical and Medical fitness test required.",
-      howToApply:
-        "Register and apply online at joinindianarmy.nic.in. Fill form, upload documents, pay fee online.",
-    },
-  },
-  {
-    id: "indian-navy-ssr-2026",
-    category: "Defence",
+    id: "assam-police-constable-2026",
+    category: "Assam Police",
     categoryColor: "bg-blue-100 text-blue-800",
     isUrgent: true,
-    title: "Indian Navy Agniveer SSR 2026 (01/2027 & 02/2027 Batch)",
-    organization: "Indian Navy",
-    posts: "Multiple Vacancies",
-    lastDate: "06 Apr 2026",
-    applyUrl: "https://www.joinindiannavy.gov.in",
+    title: "Assam Police AB/UB Constable Recruitment 2026",
+    organization: "State Level Police Recruitment Board (SLPRB), Assam",
+    posts: "6674 Posts",
+    lastDate: "30 Apr 2026",
+    notificationUrl: "https://slprbassam.in",
+    applyUrl: "https://slprbassam.in",
     whatsappMsg:
-      "Hi, I need help applying for the Indian Navy Agniveer SSR 2026.",
+      "Hi, I need help applying for the Assam Police Constable Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 17–21 years. Education: 10+2 with Math & Physics (and one of Chemistry/Biology/Computer Science). Minimum 50% aggregate.",
-      vacancy: "Multiple Vacancies — 01/2027 and 02/2027 Batch",
-      applyStart: "Check official website",
-      lastDate: "06 Apr 2026",
+        "Age: 18–25 years (relaxation for SC/ST/OBC/MOBC). Education: HSSLC (10+2) for UB, HSLC (Class 10) for AB. Physical standards apply.",
+      vacancy: "6674 Posts — Armed Branch (AB) & Unarmed Branch (UB) Constable",
+      applyStart: "March 2026",
+      lastDate: "30 Apr 2026",
       examPattern:
-        "Computer-Based Exam — Science, Math, English, General Awareness. Physical Fitness Test & Medical.",
+        "Written exam (OMR based) + Physical Standard Test (PST) + Physical Efficiency Test (PET) + Medical Exam.",
       howToApply:
-        "Apply online at joinindiannavy.gov.in. Shortlisted candidates called for exam.",
+        "Apply online at slprbassam.in. Fill form, upload photo/signature, pay fee online.",
     },
   },
   {
-    id: "apex-bank-assistant-2026",
-    category: "Banking",
-    categoryColor: "bg-yellow-100 text-yellow-800",
+    id: "apsc-cce-2026",
+    category: "APSC / State PSC",
+    categoryColor: "bg-purple-100 text-purple-800",
     isUrgent: false,
-    title: "Assam Co-operative Apex Bank Assistant Recruitment 2026",
-    organization: "Assam Co-operative Apex Bank Limited",
-    posts: "150 Posts",
-    lastDate: "19 Apr 2026",
-    applyUrl: "https://www.assamapexbank.in",
-    whatsappMsg:
-      "Hi, I need help applying for the Assam Apex Bank Assistant Recruitment 2026.",
+    title: "APSC Combined Competitive Exam (CCE) 2026",
+    organization: "Assam Public Service Commission (APSC)",
+    posts: "400+ Posts",
+    lastDate: "15 May 2026",
+    notificationUrl: "https://apsc.nic.in",
+    applyUrl: "https://apsc.nic.in",
+    whatsappMsg: "Hi, I need help applying for the APSC CCE 2026.",
     details: {
       eligibility:
-        "Age: 18–38 years (relaxation for SC/ST/OBC). Education: Graduate in any discipline. Basic computer knowledge required.",
-      vacancy: "150 Posts — Assistant (Clerical)",
-      applyStart: "Check official website",
-      lastDate: "19 Apr 2026",
+        "Age: 21–38 years (relaxation for SC/ST/OBC/MOBC). Education: Bachelor's degree from a recognized university. Assam domicile required.",
+      vacancy:
+        "400+ Posts — ACS, APS, Finance Service, Agriculture Service and other allied services.",
+      applyStart: "March 2026",
+      lastDate: "15 May 2026",
       examPattern:
-        "Written test + Interview. Subjects: Reasoning, Quantitative Aptitude, English, General Awareness, Banking.",
+        "Preliminary Exam (Objective, 200 marks) → Mains (Written, 9 papers) → Personality Test/Interview.",
       howToApply:
-        "Apply online at assamapexbank.in. Pay application fee via online gateway.",
+        "Apply online at apsc.nic.in. Download notification, fill online form, pay fee via payment gateway.",
     },
   },
   {
-    id: "sai-coach-2026",
-    category: "Sports / Central Govt",
+    id: "ssc-chsl-2026",
+    category: "Central Govt / SSC",
     categoryColor: "bg-orange-100 text-orange-800",
     isUrgent: false,
-    title: "Sports Authority of India Assistant Coach Recruitment 2026",
-    organization: "Sports Authority of India (SAI)",
-    posts: "323 Posts",
-    lastDate: "21 Apr 2026",
-    applyUrl: "https://sportsauthorityofindia.nic.in",
-    whatsappMsg:
-      "Hi, I need help applying for the SAI Assistant Coach Recruitment 2026.",
+    title: "SSC CHSL 2026 — Combined Higher Secondary Level",
+    organization: "Staff Selection Commission (SSC), Govt. of India",
+    posts: "3712 Posts",
+    lastDate: "14 Apr 2026",
+    notificationUrl: "https://ssc.nic.in",
+    applyUrl: "https://ssc.nic.in",
+    whatsappMsg: "Hi, I need help applying for the SSC CHSL 2026.",
     details: {
       eligibility:
-        "Age: 18–35 years. Education: Sports-related degree or National/International level sports achievement. Experience preferred.",
-      vacancy: "323 Posts — Assistant Coach (various sports disciplines)",
-      applyStart: "Check official website",
-      lastDate: "21 Apr 2026",
-      examPattern: "Document verification, practical test, and interview.",
+        "Age: 18–27 years (relaxation for SC/ST/OBC). Education: 10+2 (Higher Secondary) from a recognized board.",
+      vacancy:
+        "3712 Posts — LDC, JSA, DEO, PA/SA across Central Govt Departments.",
+      applyStart: "March 2026",
+      lastDate: "14 Apr 2026",
+      examPattern:
+        "Tier I (CBT, 200 marks) → Tier II (CBT, descriptive + skill test) → Document Verification.",
       howToApply:
-        "Apply online at sportsauthorityofindia.nic.in. Upload certificates and sports credentials.",
+        "Apply online at ssc.nic.in. Register, fill form, pay ₹100 fee (exempted for women/SC/ST/Ex-S).",
+    },
+  },
+  {
+    id: "rrb-ntpc-2026",
+    category: "Railway / RRB",
+    categoryColor: "bg-red-100 text-red-800",
+    isUrgent: false,
+    title: "Railway NTPC Recruitment 2026 — RRB Guwahati Zone",
+    organization: "Railway Recruitment Board (RRB) Guwahati",
+    posts: "11558 Posts (All India)",
+    lastDate: "30 Apr 2026",
+    notificationUrl: "https://rrbguwahati.gov.in",
+    applyUrl: "https://rrbapplyreg.in",
+    whatsappMsg:
+      "Hi, I need help applying for the Railway NTPC Recruitment 2026 via RRB Guwahati.",
+    details: {
+      eligibility:
+        "Age: 18–36 years depending on post (relaxation for SC/ST/OBC). Education: Graduate for UG posts, 10+2 for Level 2/3 posts.",
+      vacancy:
+        "11558 Posts (All India) — Junior Clerk, Accounts Clerk, Junior Time Keeper, Commercial & Ticket Clerk, Station Master, Goods Guard, etc.",
+      applyStart: "March 2026",
+      lastDate: "30 Apr 2026",
+      examPattern:
+        "CBT Stage 1 (100 marks) → CBT Stage 2 (90 marks) → Skill Test (if applicable) → Document Verification.",
+      howToApply:
+        "Apply online at rrbapplyreg.in. Select RRB Guwahati zone for Northeast India preference.",
+    },
+  },
+  {
+    id: "nhm-assam-2026",
+    category: "Health / NHM",
+    categoryColor: "bg-teal-100 text-teal-800",
+    isUrgent: false,
+    title: "NHM Assam Staff Nurse & ANM Recruitment 2026",
+    organization: "National Health Mission (NHM), Assam",
+    posts: "2000+ Posts",
+    lastDate: "25 Apr 2026",
+    notificationUrl: "https://nhm.assam.gov.in",
+    applyUrl: "https://nhm.assam.gov.in",
+    whatsappMsg:
+      "Hi, I need help applying for the NHM Assam Staff Nurse / ANM Recruitment 2026.",
+    details: {
+      eligibility:
+        "Staff Nurse: GNM/B.Sc Nursing with NMC registration. ANM: ANM certificate, 10+2 pass. Age: 18–43 years. Assam domicile required.",
+      vacancy:
+        "2000+ Posts — Staff Nurse, ANM, Community Health Officer (CHO), MO, and other health worker positions.",
+      applyStart: "March 2026",
+      lastDate: "25 Apr 2026",
+      examPattern:
+        "Written exam + Merit-based shortlisting. Document verification for selected candidates.",
+      howToApply:
+        "Apply online at nhm.assam.gov.in. Assam domicile certificate mandatory. Upload nursing qualification certificates.",
+    },
+  },
+  {
+    id: "lra-assam-2026",
+    category: "State Govt / Assam",
+    categoryColor: "bg-lime-100 text-lime-800",
+    isUrgent: false,
+    title: "Land Records Assistant (LRA) Recruitment 2026",
+    organization: "Directorate of Land Records & Surveys, Assam",
+    posts: "552 Posts",
+    lastDate: "30 Apr 2026",
+    notificationUrl: "https://sebaonline.org",
+    applyUrl: "https://sebaonline.org",
+    whatsappMsg: "Hi, I need help applying for the LRA Assam Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–38 years (relaxation for SC/ST/OBC/MOBC). Education: Higher Secondary (10+2) pass. Must be Assam domicile.",
+      vacancy: "552 Posts — Land Records Assistant across Assam districts",
+      applyStart: "Check sebaonline.org",
+      lastDate: "30 Apr 2026",
+      examPattern:
+        "Written exam by SEBA — Assamese/Bengali/Bodo language, General Knowledge, Math, and English.",
+      howToApply:
+        "Apply online at sebaonline.org. Pay fee via online payment or bank challan.",
     },
   },
   {
     id: "gauhati-hc-mts-2026",
     category: "Judiciary / Assam",
-    categoryColor: "bg-purple-100 text-purple-800",
+    categoryColor: "bg-violet-100 text-violet-800",
     isUrgent: false,
     title: "Gauhati High Court MTS & Computer Assistant Recruitment 2026",
     organization: "Gauhati High Court",
     posts: "28 Posts",
     lastDate: "Exam: 26 Apr 2026",
+    notificationUrl: "https://www.ghconline.gov.in",
     applyUrl: "https://www.ghconline.gov.in",
     whatsappMsg:
       "Hi, I need help with the Gauhati High Court MTS/Computer Assistant 2026 recruitment.",
@@ -391,62 +449,64 @@ const GOV_JOBS = [
     },
   },
   {
-    id: "lra-assam-2026",
-    category: "State Govt / Assam",
-    categoryColor: "bg-teal-100 text-teal-800",
+    id: "ssc-cgl-2026",
+    category: "Central Govt / SSC",
+    categoryColor: "bg-indigo-100 text-indigo-800",
     isUrgent: false,
-    title: "Land Records Assistant (LRA) Recruitment 2026",
-    organization: "Directorate of Land Records & Surveys, Assam",
-    posts: "552 Posts",
-    lastDate: "30 Apr 2026",
-    applyUrl: "https://sebaonline.org",
-    whatsappMsg: "Hi, I need help applying for the LRA Assam Recruitment 2026.",
+    title: "SSC CGL 2026 — Combined Graduate Level Exam",
+    organization: "Staff Selection Commission (SSC), Govt. of India",
+    posts: "Approx. 14582 Posts",
+    lastDate: "To be notified",
+    notificationUrl: "https://ssc.nic.in",
+    applyUrl: "https://ssc.nic.in",
+    whatsappMsg: "Hi, I need help applying for the SSC CGL 2026.",
     details: {
       eligibility:
-        "Age: 18–38 years (relaxation for SC/ST/OBC/MOBC). Education: Higher Secondary (10+2) pass. Must be Assam domicile.",
-      vacancy: "552 Posts — Land Records Assistant across Assam districts",
-      applyStart: "Check sebaonline.org",
-      lastDate: "30 Apr 2026",
+        "Age: 18–32 years (varies by post; relaxation for SC/ST/OBC). Education: Bachelor's degree from a recognized university.",
+      vacancy:
+        "Approx. 14582 Posts — Inspector, Auditor, Accountant, Sub-Inspector CBI, Assistant Section Officer, etc.",
+      applyStart: "To be notified",
+      lastDate: "To be notified",
       examPattern:
-        "Written exam by SEBA — Assamese/Bengali/Bodo language, General Knowledge, Math, and English.",
+        "Tier I (CBT, 200 marks, 60 min) → Tier II (CBT, 300 marks, 2 hours).",
       howToApply:
-        "Apply online at sebaonline.org. Pay fee via online payment or bank challan.",
+        "Apply online at ssc.nic.in when notification released. Register, fill form, upload documents, pay fee.",
     },
   },
   {
-    id: "nic-scientist-2026",
-    category: "Central Govt / IT",
-    categoryColor: "bg-indigo-100 text-indigo-800",
-    isUrgent: false,
-    title:
-      "National Informatics Centre Scientist-B & Technical Assistant Recruitment 2026",
-    organization: "National Informatics Centre (NIC), Govt. of India",
-    posts: "619 Posts",
-    lastDate: "To be updated",
-    applyUrl: "https://www.nic.in",
-    whatsappMsg:
-      "Hi, I need help applying for the NIC Scientist-B Recruitment 2026.",
+    id: "indian-army-agniveer-2026",
+    category: "Defence",
+    categoryColor: "bg-green-100 text-green-800",
+    isUrgent: true,
+    title: "Indian Army Agniveer Recruitment 2026",
+    organization: "Indian Army",
+    posts: "Multiple Vacancies",
+    lastDate: "01 Apr 2026",
+    notificationUrl: "https://joinindianarmy.nic.in",
+    applyUrl: "https://joinindianarmy.nic.in",
+    whatsappMsg: "Hi, I need help applying for the Indian Army Agniveer 2026.",
     details: {
       eligibility:
-        "Age: 18–30 years (relaxation applicable). Education: B.E./B.Tech in CS/IT/ECE or MCA/M.Sc. in relevant field.",
-      vacancy: "619 Posts — Scientist-B & Technical Assistant",
-      applyStart: "To be notified",
-      lastDate: "To be updated",
+        "Age: 17.5–21 years. Education: Class 10th pass with 45% marks (33% for CEE exempt). Must be Indian citizen.",
+      vacancy: "Multiple Vacancies — Varies by regiment and trade",
+      applyStart: "As per official notification",
+      lastDate: "01 Apr 2026",
       examPattern:
-        "CBT (Computer Based Test) — Technical subjects + General Aptitude. Interview for shortlisted candidates.",
+        "CEE (Common Entrance Exam) — 100 marks. Physical and Medical fitness test required.",
       howToApply:
-        "Apply online at nic.in when notified. Watch official website for updates.",
+        "Register and apply online at joinindianarmy.nic.in. Fill form, upload documents, pay fee online.",
     },
   },
   {
     id: "pnrd-assam-2026",
     category: "State Govt / Assam",
-    categoryColor: "bg-lime-100 text-lime-800",
+    categoryColor: "bg-yellow-100 text-yellow-800",
     isUrgent: false,
     title: "PNRD Assam Recruitment 2026",
     organization: "Panchayat & Rural Development Dept., Assam",
     posts: "1508 Posts",
     lastDate: "To be updated",
+    notificationUrl: "https://pnrdassam.nic.in",
     applyUrl: "https://pnrdassam.nic.in",
     whatsappMsg:
       "Hi, I need help applying for the PNRD Assam Recruitment 2026.",
@@ -461,31 +521,6 @@ const GOV_JOBS = [
         "Written exam/interview as per post. Details in official notification.",
       howToApply:
         "Apply online at pnrdassam.nic.in. Follow official notification instructions.",
-    },
-  },
-  {
-    id: "bsnl-set-2026",
-    category: "Central Govt / Telecom",
-    categoryColor: "bg-red-100 text-red-800",
-    isUrgent: false,
-    title: "BSNL Senior Executive Trainee (E2) Recruitment 2026",
-    organization: "Bharat Sanchar Nigam Limited (BSNL)",
-    posts: "120 Posts",
-    lastDate: "To be updated",
-    applyUrl: "https://externalbsnl.tdil.in",
-    whatsappMsg:
-      "Hi, I need help applying for the BSNL Senior Executive Trainee 2026.",
-    details: {
-      eligibility:
-        "Age: 18–30 years. Education: B.E./B.Tech in relevant engineering discipline (ECE, CSE, EEE, Civil, etc.).",
-      vacancy:
-        "120 Posts — Senior Executive Trainee (E2) in various disciplines",
-      applyStart: "To be notified",
-      lastDate: "To be updated",
-      examPattern:
-        "Online exam — Technical subjects (120 marks) + General Ability (30 marks). Total 150 marks, 2.5 hours.",
-      howToApply:
-        "Apply online at externalbsnl.tdil.in when notified. Merit-based selection.",
     },
   },
 ];
@@ -1142,21 +1177,30 @@ function JobDetailsModal({
           </div>
 
           {/* Action buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 pt-1">
+          <div className="flex flex-col sm:flex-row gap-3 pt-1 flex-wrap">
             <a
               href={job.applyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] text-sm"
               data-ocid="job.details.apply_button"
             >
               Apply Now →
             </a>
             <a
+              href={job.notificationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold py-3 px-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] text-sm"
+              data-ocid="job.details.notification_button"
+            >
+              📄 View Notification
+            </a>
+            <a
               href={`https://wa.me/916000134640?text=${encodeURIComponent(job.whatsappMsg)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] text-sm"
               data-ocid="job.details.whatsapp_button"
             >
               <MessageCircle className="w-4 h-4" />
@@ -1214,6 +1258,28 @@ function GovJobCard({
                 {job.lastDate}
               </span>
             </div>
+          </div>
+          {/* Important Links */}
+          <div className="flex flex-wrap items-center gap-3 mt-2">
+            <span className="text-gray-400 text-xs font-medium">
+              Important Links:
+            </span>
+            <a
+              href={job.notificationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 hover:text-blue-900 underline underline-offset-2 transition-colors"
+            >
+              📄 Official Notification
+            </a>
+            <a
+              href={job.applyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-green-700 hover:text-green-900 underline underline-offset-2 transition-colors"
+            >
+              🔗 Apply Online
+            </a>
           </div>
         </div>
         {/* Action Buttons */}
