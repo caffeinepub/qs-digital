@@ -1755,6 +1755,7 @@ export default function App() {
   );
   const [showBankingServices, setShowBankingServices] = useState(false);
   const [showPassportDocs, setShowPassportDocs] = useState(false);
+  const [showVoterIdDocs, setShowVoterIdDocs] = useState(false);
   const [selectedBankingService, setSelectedBankingService] = useState<
     (typeof BANKING_SUB_SERVICES)[0] | null
   >(null);
@@ -2197,6 +2198,18 @@ export default function App() {
                           type="button"
                           onClick={() => setShowPassportDocs(true)}
                           data-ocid="passport.docs.button"
+                          className="mt-1 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors self-start"
+                        >
+                          <BookOpen className="w-4 h-4" />
+                          View Required Documents
+                        </button>
+                      )}
+                      {(service.title === "Voter ID Apply Online" ||
+                        service.title === "Voter ID Correction") && (
+                        <button
+                          type="button"
+                          onClick={() => setShowVoterIdDocs(true)}
+                          data-ocid="voterid.docs.button"
                           className="mt-1 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors self-start"
                         >
                           <BookOpen className="w-4 h-4" />
@@ -3210,6 +3223,78 @@ export default function App() {
         )}
       </AnimatePresence>
 
+      {/* ===== VOTER ID DOCS MODAL ===== */}
+      <AnimatePresence>
+        {showVoterIdDocs && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+            onClick={() => setShowVoterIdDocs(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.2 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative max-h-[85vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setShowVoterIdDocs(false)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              <div className="mb-4">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl mb-3">
+                  🗳️
+                </div>
+                <h3 className="text-xl font-bold text-[#0B4F8F] mb-1">
+                  Voter ID — Required Documents
+                </h3>
+                <p className="text-gray-500 text-sm mb-4">
+                  Please bring the following documents for Voter ID Apply /
+                  Correction
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    "Aadhaar Card (DOB &amp; Address Proof)",
+                    "Photo — 1 Copy (Recent Passport Size)",
+                    "Mobile Number Linked with Aadhaar Card",
+                  ].map((doc) => (
+                    <li
+                      key={doc}
+                      className="flex items-start gap-3 p-2 rounded-lg bg-blue-50"
+                    >
+                      <span className="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                        ✓
+                      </span>
+                      <span className="text-gray-700 text-sm">{doc}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs text-gray-400 mt-4">
+                  * Bring originals along with photocopies. Additional documents
+                  may be required based on your application type.
+                </p>
+              </div>
+              <a
+                href={`https://wa.me/916000134640?text=${encodeURIComponent("Hi, I am interested in Voter ID Apply / Correction")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-3 rounded-xl transition-colors text-sm"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Enquire on WhatsApp
+              </a>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* ===== JOB DETAILS MODAL ===== */}
       <AnimatePresence>
         {selectedJob && (
