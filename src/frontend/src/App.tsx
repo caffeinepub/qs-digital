@@ -333,15 +333,79 @@ const BANKING_SUB_SERVICES = [
 const GOV_JOBS = [
   // ── 1 ─────────────────────────────────────────────────────────────────
   {
+    id: "punjab-sind-bank-lbo-2026",
+    category: "Central Govt / Banking",
+    categoryColor: "bg-purple-100 text-purple-800",
+    isUrgent: true,
+    title: "Punjab & Sind Bank LBO Recruitment 2026 — 1000 Posts (50 in Assam)",
+    organization: "Punjab & Sind Bank",
+    posts: "1000 Posts (LBO) — 50 Posts in Assam",
+    lastDate: "20 Apr 2026",
+    notificationUrl: "https://punjabandsindbank.co.in",
+    advertisementUrl:
+      "https://punjabandsind.bank.in/system/uploads/recruitment/2150_2026033023383438181.pdf",
+    applyUrl: "https://ibpsreg.ibps.in/psbmar26/",
+    whatsappMsg:
+      "Hi, I need help applying for the Punjab & Sind Bank LBO Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 20–30 years as on 01.03.2026 (born not earlier than 02.03.1996, not later than 01.03.2006). Education: Graduation (any discipline) from a recognized university. Experience: Minimum 18 months post-qualification experience as an officer in any Scheduled Commercial Bank or Regional Rural Bank.",
+      vacancy:
+        "1000 Posts — Local Bank Officer (LBO). Category-wise: SC-145, ST-68, OBC-264, EWS-98, UR-425. Posts available in Assam: 50.",
+      applyStart: "31 March 2026",
+      lastDate: "20 Apr 2026",
+      fee: "UR / OBC / EWS: ₹850 + Taxes + Gateway Charges | SC / ST / PwBD: ₹100 + Taxes + Gateway Charges",
+      casteRelaxation:
+        "OBC: 3 years | SC: 5 years | ST: 5 years | PwBD: 10 years",
+      examPattern:
+        "Written Test (120 marks, 120 min): English Language (30Q), Banking Knowledge (40Q), General Awareness/Economy (30Q), Computer Aptitude (20Q). Followed by Screening → Personal Interview → Proficiency in Local Language → Final Merit List.",
+      howToApply:
+        "Apply online at ibpsreg.ibps.in/psbmar26. Fill personal and educational details, upload documents, pay application fee as per category, and submit before 20 April 2026. Take printout of application form.",
+    },
+  },
+  // ── 2 ─────────────────────────────────────────────────────────────────
+  {
+    id: "ssb-constable-2026",
+    category: "Central Paramilitary",
+    categoryColor: "bg-teal-100 text-teal-800",
+    isUrgent: true,
+    title: "SSB Constable Recruitment 2026 — 827 Posts",
+    organization: "Sashastra Seema Bal (SSB), Ministry of Home Affairs",
+    posts: "827 Constable Posts",
+    lastDate: "20 Apr 2026",
+    notificationUrl: "https://ssb.gov.in",
+    advertisementUrl:
+      "https://ssb.gov.in/assets/document/Rect/Advertisement/Admitcard_210326_130657.pdf",
+    applyUrl: "https://applyssb.com/SSB_CT_25/applicationIndex",
+    whatsappMsg:
+      "Hi, I need help applying for the SSB Constable Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–27 years (Driver/Veterinary/Nursing Orderly); 18–23 years (Gardener, Water Carrier, Cobbler, Tailor, Washerman, Barber, Waiter); 18–25 years (Carpenter). Education: 10th class pass from a recognized Board + relevant trade experience/certificate as applicable. Constable Driver must have valid Heavy Vehicle Driving License.",
+      vacancy:
+        "827 Posts: Constable (Driver)-553, Constable (Washerman)-74, Constable (Barber)-43, Constable (Gardener)-41, Constable (Tailor)-41, Constable (Cobbler)-25, Constable (Veterinary)-34, Constable (Carpenter)-07, Constable (Water Carrier)-05, Constable (Waiter)-03, Constable (Nursing Orderly)-01.",
+      applyStart: "21 March 2026",
+      lastDate: "20 Apr 2026",
+      fee: "UR / OBC / EWS: ₹100 | SC / ST / Female: Nil. Payment via Net Banking / Credit Card / Debit Card.",
+      casteRelaxation: "OBC: 3 years | SC: 5 years | ST: 5 years",
+      examPattern:
+        "Physical Standard Test (PST) / Physical Efficiency Test (PET) → Written Exam (OMR-based) → Trade Test / Skill Test → Medical Examination → Document Verification → Final Merit List.",
+      howToApply:
+        "Apply online at applyssb.com/SSB_CT_25/applicationIndex. Fill registration form, upload photograph and signature, pay application fee, and submit before 20 April 2026. Print completed application form for records.",
+    },
+  },
+  // ── 3 ─────────────────────────────────────────────────────────────────
+  {
     id: "asseb-jaa-2026",
     category: "State Govt / Assam",
     categoryColor: "bg-amber-100 text-amber-800",
-    isUrgent: true,
+    isUrgent: false,
     title: "ASSEB Recruitment 2026 — Junior Administrative Assistant",
     organization: "Assam State School Education Board (ASSEB), Guwahati",
     posts: "4 Posts (Contractual)",
     lastDate: "04 Apr 2026",
     notificationUrl: "https://asseb.org",
+    advertisementUrl: "https://asseb.org",
     applyUrl: "https://asseb.org",
     whatsappMsg:
       "Hi, I need help applying for the ASSEB Junior Administrative Assistant Recruitment 2026.",
@@ -349,43 +413,50 @@ const GOV_JOBS = [
       eligibility:
         "Age: 18–43 years (relaxation for SC/ST/OBC/MOBC as per Govt. norms). Education: Graduate in any discipline from a recognized university. Working knowledge of computers required.",
       vacancy:
-        "4 Posts — Junior Administrative Assistant cum Program Assistant & Junior Administrative Assistant cum Accounts Assistant (Contractual basis).",
+        "4 Posts — Junior Administrative Assistant cum Program Assistant (2) & Junior Administrative Assistant cum Accounts Assistant (2). Contractual basis at Bamunimaidam, Guwahati-21.",
       applyStart: "March 2026",
       lastDate: "04 Apr 2026",
+      fee: "As per ASSEB official notification. Check official website for fee details.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC/MOBC: 3 years | PwBD: As per Govt. norms",
       examPattern:
-        "Written test / Interview as per board norms. Shortlisted candidates will be called for document verification.",
+        "Written test followed by Interview as per board norms. Shortlisted candidates will be called for document verification.",
       howToApply:
-        "Apply online at asseb.org. Fill in the application form, upload required documents (photo, signature, certificates), and submit before 04 April 2026.",
+        "Apply online at asseb.org. Fill in the application form, upload required documents (photo, signature, educational certificates), and submit before the last date.",
     },
   },
-  // ── 2 ─────────────────────────────────────────────────────────────────
+  // ── 4 ─────────────────────────────────────────────────────────────────
   {
     id: "indian-army-agniveer-2026",
     category: "Defence",
     categoryColor: "bg-green-100 text-green-800",
-    isUrgent: true,
+    isUrgent: false,
     title: "Indian Army Agniveer Recruitment 2026",
     organization: "Indian Army (Agnipath Scheme)",
     posts: "Multiple Vacancies",
-    lastDate: "01 Apr 2026",
+    lastDate: "10 Apr 2026",
     notificationUrl: "https://joinindianarmy.nic.in",
+    advertisementUrl: "https://joinindianarmy.nic.in",
     applyUrl: "https://joinindianarmy.nic.in",
     whatsappMsg:
       "Hi, I need help applying for the Indian Army Agniveer Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 17.5–21 years (as on enrollment date). Education: Class 10th pass with minimum 45% aggregate marks and 33% in each subject. Must be Indian citizen. Physical and medical fitness mandatory. Unmarried at time of enrolment.",
+        "Age: 17.5–21 years (as on enrollment date). Education: Class 10th pass with minimum 45% aggregate marks and 33% in each subject (for GD); 10+2 for Technical/Clerk posts. Must be Indian citizen. Physical and medical fitness mandatory. Unmarried at time of enrolment.",
       vacancy:
-        "Multiple Vacancies — Agniveer General Duty (GD), Technical, Clerk / Store Keeper Technical (SKT), Tradesman (various trades) across all army regiments.",
+        "Multiple Vacancies — Agniveer General Duty (GD), Technical, Clerk/Store Keeper Technical (SKT), Tradesman (various trades) across all army regiments and AROs.",
       applyStart: "13 February 2026",
-      lastDate: "01 Apr 2026",
+      lastDate: "10 Apr 2026",
+      fee: "As per ARO notification. Refer to your local Army Recruiting Office (ARO) for district-specific fee details.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC: 3 years | Ex-Serviceman wards: As per Army rules",
       examPattern:
-        "Common Entrance Exam (CEE) — Online/OMR, 100 marks. Followed by Physical Fitness Test (PFT), Physical Measurement Test (PMT), and Medical Examination.",
+        "Common Entrance Exam (CEE) — Online/OMR, 100 marks. Followed by Physical Fitness Test (PFT), Physical Measurement Test (PMT), and Medical Examination. Rally schedule varies by ARO.",
       howToApply:
-        "Register and apply online at joinindianarmy.nic.in. Select ARO (Army Recruiting Office) as per your district. Upload documents, pay fee, and note rally dates.",
+        "Register and apply online at joinindianarmy.nic.in. Select ARO (Army Recruiting Office) as per your district. Upload documents, pay fee, and note rally dates announced by your ARO.",
     },
   },
-  // ── 3 ─────────────────────────────────────────────────────────────────
+  // ── 5 ─────────────────────────────────────────────────────────────────
   {
     id: "indian-navy-ssr-2026",
     category: "Defence",
@@ -396,23 +467,27 @@ const GOV_JOBS = [
     posts: "Multiple Vacancies",
     lastDate: "06 Apr 2026",
     notificationUrl: "https://www.joinindiannavy.gov.in",
+    advertisementUrl: "https://www.joinindiannavy.gov.in",
     applyUrl: "https://www.joinindiannavy.gov.in",
     whatsappMsg:
       "Hi, I need help applying for the Indian Navy Agniveer SSR Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 17.5–21 years (born between 01 Nov 2005 – 30 Apr 2009). Education: 10+2 / equivalent with Physics & Mathematics as core subjects and minimum 50% aggregate marks. Unmarried male and female Indian citizens. Physical standards as per Navy norms.",
+        "Age: 17.5–21 years (born between 01 Nov 2005 – 30 Apr 2009). Education: 10+2/equivalent with Physics & Mathematics as core subjects and minimum 50% aggregate marks. Unmarried male and female Indian citizens. Physical standards as per Navy norms.",
       vacancy:
-        "Multiple Vacancies — Agniveer Senior Secondary Recruit (SSR) for 01/2027 and 02/2027 batches. Branches: Seaman, Naval Armament Inspectorate (Sailor), Stores, and Medical Assistant.",
+        "Multiple Vacancies — Agniveer Senior Secondary Recruit (SSR) for 01/2027 and 02/2027 batches. Branches: Seaman, Naval Armament Inspectorate (Sailor), Stores, Medical Assistant.",
       applyStart: "March 2026",
       lastDate: "06 Apr 2026",
+      fee: "As per official notification. Refer to joinindiannavy.gov.in for current fee structure.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC: 3 years | PwBD: 10 years | Ex-Serviceman wards: As per Navy rules",
       examPattern:
-        "Computer Based Test (CBT): Science & Maths (25 marks each), General Knowledge & English (25 marks each). Negative marking: -0.25 per wrong answer. Followed by Physical Fitness Test (PFT) and Medical Examination.",
+        "Computer Based Test (CBT): Science & Maths (25 marks each), General Knowledge (25 marks), English (25 marks). Total: 100 marks. Negative marking: -0.25 per wrong answer. Followed by Physical Fitness Test (PFT) and Medical Examination.",
       howToApply:
-        "Apply online at www.joinindiannavy.gov.in. Fill form with 10th/12th details, upload photo & signature, pay exam fee, and download admit card from official website.",
+        "Apply online at www.joinindiannavy.gov.in. Fill form with 10th/12th details, upload photo and signature, pay exam fee, and download admit card from official website after announcement.",
     },
   },
-  // ── 4 ─────────────────────────────────────────────────────────────────
+  // ── 6 ─────────────────────────────────────────────────────────────────
   {
     id: "apex-bank-asst-2026",
     category: "Banking",
@@ -423,23 +498,28 @@ const GOV_JOBS = [
     posts: "150 Assistant Posts",
     lastDate: "19 Apr 2026",
     notificationUrl: "https://apexbankassam.com",
-    applyUrl: "https://apexbankassam.com",
+    advertisementUrl:
+      "https://www.acab.bank.in/Advertisement_Recruitment_Assistant_10.03.2026.pdf",
+    applyUrl: "https://www.acab-recruitment.in/",
     whatsappMsg:
       "Hi, I need help applying for the Assam Apex Bank Assistant Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 21–38 years (relaxation: SC/ST 5 years, OBC/MOBC 3 years, PwBD 10 years, Ex-Serviceman as per rules). Education: Bachelor's degree (any discipline) from a recognized university. Assam domicile required. Basic computer knowledge preferred.",
+        "Age: 21–38 years as on 01.01.2026. Education: Graduate (any discipline) from a recognized university with minimum 45% marks + Computer Proficiency Certificate mandatory. Must be well conversant with local language. Indian National.",
       vacancy:
-        "150 Posts — Assistant (General Banking). Posts distributed across branches of Assam Co-Operative Apex Bank in various districts of Assam.",
-      applyStart: "March 2026",
+        "150 Posts — Assistant (General Banking). Pay: ₹18,730–68,040 + GP ₹4,400 with other allowances. Posts distributed across branches of Assam Co-Operative Apex Bank in various districts of Assam.",
+      applyStart: "20 March 2026",
       lastDate: "19 Apr 2026",
+      fee: "All candidates: ₹750 (Online payment only via official portal)",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC/MOBC: 3 years | PwBD: 10 years | Ex-Serviceman: As per rules",
       examPattern:
-        "Online Written Exam: Reasoning Ability, Quantitative Aptitude, English Language, General/Financial Awareness, Computer Knowledge. Followed by Interview for shortlisted candidates.",
+        "Written Examination (100 marks, 100 min): General/Financial Awareness (20Q), General English (20Q), Reasoning Ability/Computer Aptitude (30Q), Numerical Ability (30Q). Medium: English. Followed by Personal Interview.",
       howToApply:
-        "Apply online at apexbankassam.com. Pay application fee online (₹500 for General/OBC; ₹300 for SC/ST). Upload photo, signature, and educational certificates before 19 April 2026.",
+        "Apply online at acab-recruitment.in. Complete registration process, login and fill personal/educational details, upload documents, pay ₹750 application fee online, and submit before 19 April 2026.",
     },
   },
-  // ── 5 ─────────────────────────────────────────────────────────────────
+  // ── 7 ─────────────────────────────────────────────────────────────────
   {
     id: "sai-coach-2026",
     category: "Central Govt / Sports",
@@ -451,290 +531,336 @@ const GOV_JOBS = [
     posts: "323 Assistant Coach Posts",
     lastDate: "21 Apr 2026",
     notificationUrl: "https://sai.gov.in",
+    advertisementUrl: "https://sai.gov.in",
     applyUrl: "https://sai.gov.in",
     whatsappMsg:
       "Hi, I need help applying for the Sports Authority of India Assistant Coach Recruitment 2026.",
     details: {
       eligibility:
-        "Age: Below 45 years (as on closing date; relaxation for SC/ST/OBC/PwBD/Ex-S as per Central Govt. norms). Education: Bachelor's degree in any stream from a recognized university + NIS Diploma / equivalent sports coaching qualification. Must have represented State or National level in the relevant sport.",
+        "Age: Below 45 years as on closing date (relaxation for SC/ST/OBC/PwBD/Ex-Serviceman as per Central Govt. norms). Education: Bachelor's degree from a recognized university + NIS Diploma or equivalent sports coaching qualification. Must have represented State or National level in the relevant sport.",
       vacancy:
-        "323 Posts — Assistant Coach in 25+ sports disciplines including Athletics, Badminton, Basketball, Boxing, Football, Gymnastics, Hockey, Judo, Kabaddi, Shooting, Swimming, Volleyball, Weightlifting, Wrestling, and more.",
+        "323 Posts — Assistant Coach in 25+ sports disciplines: Athletics, Badminton, Basketball, Boxing, Football, Gymnastics, Hockey, Judo, Kabaddi, Shooting, Swimming, Volleyball, Weightlifting, Wrestling, and more.",
       applyStart: "March 2026",
       lastDate: "21 Apr 2026",
+      fee: "As per SAI official notification. Refer to sai.gov.in for current fee details.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC: 3 years | PwBD: 10 years | Ex-Serviceman: As per Central Govt. rules",
       examPattern:
-        "Shortlisting based on qualifications and sports achievements → Practical/skill demonstration → Interview by selection panel. No written examination.",
+        "Shortlisting based on qualifications and sports achievements → Practical/skill demonstration → Interview by Selection Committee → Final merit list prepared category-wise.",
       howToApply:
-        "Apply online at sai.gov.in. Upload detailed sports certificates, coaching qualification, and experience documents. Application fee: ₹500 (General/OBC); NIL for SC/ST/PwBD/Women.",
-    },
-  },
-  // ── 6 ─────────────────────────────────────────────────────────────────
-  {
-    id: "lra-assam-2026",
-    category: "State Govt / Assam",
-    categoryColor: "bg-lime-100 text-lime-800",
-    isUrgent: false,
-    title: "Land Records Assistant (LRA) Recruitment 2026 — 552 Posts",
-    organization: "Directorate of Land Records & Surveys, Govt. of Assam",
-    posts: "552 Posts",
-    lastDate: "30 Apr 2026",
-    notificationUrl: "https://sebaonline.org",
-    applyUrl: "https://sebaonline.org",
-    whatsappMsg:
-      "Hi, I need help applying for the Land Records Assistant (LRA) Assam Recruitment 2026.",
-    details: {
-      eligibility:
-        "Age: 18–38 years (relaxation: SC/ST 5 years, OBC/MOBC 3 years). Education: Higher Secondary (10+2) pass AND must have successfully completed 6-month Recorders Certificate Class Course (RCCC) Training from Assam Surveys and Settlement Training Centre, Dakhingaon (except Sixth Schedule areas). Assam domicile required.",
-      vacancy:
-        "552 Posts — Land Records Assistant (LRA) distributed across revenue circles and districts of Assam. Post is under Directorate of Land Records & Surveys.",
-      applyStart: "March 2026",
-      lastDate: "30 Apr 2026",
-      examPattern:
-        "Written Exam conducted by SEBA (Board of Secondary Education Assam) — Assamese/Bengali/Bodo Language (40 marks), General Knowledge & Current Affairs (20 marks), Mathematics (20 marks), English (20 marks). Total: 100 marks.",
-      howToApply:
-        "Apply online at sebaonline.org. Pay application fee (₹200 General; ₹150 SC/ST/OBC) via online payment or bank challan. Upload RCCC Training certificate mandatorily.",
-    },
-  },
-  // ── 7 ─────────────────────────────────────────────────────────────────
-  {
-    id: "btc-forester-2026",
-    category: "State Govt / BTC",
-    categoryColor: "bg-emerald-100 text-emerald-800",
-    isUrgent: false,
-    title: "BTC Forester & Forest Guard Recruitment 2026 — 157 Posts",
-    organization: "Bodoland Territorial Council (BTC) Forest Department",
-    posts: "157 Posts",
-    lastDate: "May 2026",
-    notificationUrl: "https://btcassam.nic.in",
-    applyUrl: "https://btcassam.nic.in",
-    whatsappMsg:
-      "Hi, I need help applying for the BTC Forester and Forest Guard Recruitment 2026.",
-    details: {
-      eligibility:
-        "Age: 18–38 years (relaxation for SC/ST/OBC/MOBC/PwBD as per BTC norms). Education: HSSLC (10+2) pass for Forester posts; HSLC (Class 10) pass for Forest Guard posts. BTC domicile / Permanent Resident Certificate (PRC) of Bodoland Territorial Area Districts (BTAD) required. Physical standards apply.",
-      vacancy:
-        "157 Posts — Forester and Forest Guard distributed across forest ranges within the Bodoland Territorial Area Districts (BTAD): Kokrajhar, Chirang, Baksa, and Udalguri.",
-      applyStart: "March / April 2026",
-      lastDate: "May 2026 (as per official notification)",
-      examPattern:
-        "Written Exam (General Knowledge, Reasoning, Language) + Physical Efficiency Test (PET) — running, long jump, etc. + Medical Examination. Marks vary by post.",
-      howToApply:
-        "Apply online or offline as per BTC official notification at btcassam.nic.in. Candidates from Udalguri district are especially eligible. Check official notification for exact dates.",
+        "Apply online at sai.gov.in. Fill in personal, educational, and sports achievement details. Upload required documents including NIS Diploma and sports certificates. Submit before 21 April 2026.",
     },
   },
   // ── 8 ─────────────────────────────────────────────────────────────────
   {
+    id: "lra-assam-2026",
+    category: "State Govt / Assam",
+    categoryColor: "bg-amber-100 text-amber-800",
+    isUrgent: false,
+    title: "Land Records Assistant (LRA) Recruitment 2026 — 552 Posts",
+    organization: "Directorate of Land Records & Surveys, Assam",
+    posts: "552 LRA Posts",
+    lastDate: "30 Apr 2026",
+    notificationUrl: "https://sebaonline.org",
+    advertisementUrl:
+      "https://jobassam.in/wp-content/uploads/2026/03/lra-recruitment-2026.pdf",
+    applyUrl: "https://formsrec.in/DLRS/?r",
+    whatsappMsg:
+      "Hi, I need help applying for the Land Records Assistant (LRA) Assam Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 21–40 years as on 01.01.2025 (age relaxation for reserved categories). Education: HSLC or equivalent from a Central/State recognized Board + RCCC (Recorders Certificate Class Course) certificate from Assam Survey & Settlement Training Centre, Dakhingaon, Guwahati-40. Computer proficiency with typing speed 30 wpm in Assamese or Bengali. Candidates from Sixth Schedule districts not eligible.",
+      vacancy:
+        "552 Posts — Land Records Assistant (LRA) distributed across revenue circles and districts of Assam. Pay: PB-2 (₹14,000–70,000) + Grade Pay ₹6,200 with usual government allowances.",
+      applyStart: "15 March 2026",
+      lastDate: "30 Apr 2026",
+      fee: "No Application Fee (Nil)",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC/MOBC: 3 years | PH/PwBD: As per Govt. rules",
+      examPattern:
+        "Paper-I (Written, 80 marks, MCQ): Mathematics-Class X (10), Conventional Survey (50), Modern Survey (20). Negative marking: -0.25 per wrong answer. Minimum qualifying: UR-32, SC/ST/OBC/MOBC/PwBD-24. Paper-II (Skill Test, 20 marks): Assamese/Bengali Unicode typing, computer operations, data entry, file handling. Total: 100 marks.",
+      howToApply:
+        "Apply online only at sebaonline.org. Upload passport photo, signature, and RCCC certificate. Review all details carefully before final submission. Print application form for records. No TA/DA provided for any stage.",
+    },
+  },
+  // ── 9 ─────────────────────────────────────────────────────────────────
+  {
+    id: "nic-recruitment-2026",
+    category: "Central Govt / IT",
+    categoryColor: "bg-indigo-100 text-indigo-800",
+    isUrgent: false,
+    title: "NIC Scientist-B & Technical Assistant Recruitment 2026 — 619 Posts",
+    organization: "National Informatics Centre (NIC), MeitY, Govt. of India",
+    posts: "619 Posts",
+    lastDate: "24 Apr 2026",
+    notificationUrl: "https://nic.in",
+    advertisementUrl: "https://nic.in",
+    applyUrl: "https://nic.in",
+    whatsappMsg:
+      "Hi, I need help applying for the NIC Scientist-B and Technical Assistant Recruitment 2026.",
+    details: {
+      eligibility:
+        "Scientist-B: Age up to 30 years. B.E./B.Tech. in CS/IT/Electronics or MCA/M.Sc. (CS/IT) with minimum 60% marks. Technical Assistant-A: Age up to 27 years. B.E./B.Tech. in CS/IT/Electronics or MCA with minimum 60% marks. Both: Indian citizens; SC/ST/OBC relaxation as per Govt. rules.",
+      vacancy:
+        "619 Posts — Scientist-B: 338 posts; Scientific/Technical Assistant-A: 281 posts. Posts across NIC offices pan-India including North East region.",
+      applyStart: "March 2026",
+      lastDate: "24 Apr 2026",
+      fee: "UR / OBC / EWS: ₹1000 | SC / ST / PwBD / Female: Nil. Online payment via SBI Collect.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC (NCL): 3 years | PwBD: 10 years | Ex-Serviceman: As per Central Govt. rules",
+      examPattern:
+        "Written Examination (Computer Based Test): Professional Knowledge (100 marks) + Reasoning Ability + English Language + General Awareness. Duration: 2 hours. Negative marking applies. Followed by Document Verification.",
+      howToApply:
+        "Apply online at nic.in. Fill registration details, choose post, upload photo, signature, and educational documents. Pay application fee as per category. Submit before 24 April 2026.",
+    },
+  },
+  // ── 10 ─────────────────────────────────────────────────────────────────
+  {
+    id: "btc-forester-2026",
+    category: "State Govt / Assam",
+    categoryColor: "bg-emerald-100 text-emerald-800",
+    isUrgent: false,
+    title: "BTC Forester & Forest Guard Recruitment 2026 — 157 Posts",
+    organization: "BTC Forest Department, Bodoland Territorial Council",
+    posts: "157 Posts",
+    lastDate: "May 2026",
+    notificationUrl: "https://btc.assam.gov.in",
+    advertisementUrl: "https://btc.assam.gov.in",
+    applyUrl: "https://btc.assam.gov.in",
+    whatsappMsg:
+      "Hi, I need help applying for the BTC Forester & Forest Guard Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–38 years (relaxation as per Govt. norms for SC/ST/OBC). Education: HSLC (10th pass) for Forest Guard; HSSLC (12th pass) for Forester. Must be physically fit. Preference to those with knowledge of local wildlife and forest areas.",
+      vacancy:
+        "157 Posts — Forester and Forest Guard under BTC Forest Department. Posts distributed across BTC districts: Baksa, Chirang, Kokrajhar, Udalguri.",
+      applyStart: "April 2026",
+      lastDate: "May 2026",
+      fee: "As per BTC official notification. Refer to btc.assam.gov.in for fee details.",
+      casteRelaxation:
+        "ST: 5 years | SC: 5 years | OBC/MOBC: 3 years | PwBD: As per Govt. norms",
+      examPattern:
+        "Written Test (OMR-based) → Physical Standard Test (PST) → Physical Efficiency Test (PET) → Medical Examination → Document Verification → Final Merit List.",
+      howToApply:
+        "Apply online at btc.assam.gov.in. Fill application form, upload required documents, pay application fee as applicable, and submit before the last date. Check official website for exact dates.",
+    },
+  },
+  // ── 11 ─────────────────────────────────────────────────────────────────
+  {
     id: "indian-navy-mr-2026",
     category: "Defence",
-    categoryColor: "bg-cyan-100 text-cyan-800",
+    categoryColor: "bg-sky-100 text-sky-800",
     isUrgent: false,
     title: "Indian Navy Agniveer MR Recruitment 2026",
-    organization: "Indian Navy (Agnipath Scheme — MR Batch)",
+    organization: "Indian Navy (Agnipath Scheme)",
     posts: "Multiple Vacancies",
     lastDate: "Check Official Site",
     notificationUrl: "https://www.joinindiannavy.gov.in",
+    advertisementUrl: "https://www.joinindiannavy.gov.in",
     applyUrl: "https://www.joinindiannavy.gov.in",
     whatsappMsg:
       "Hi, I need help applying for the Indian Navy Agniveer MR Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 17.5–21 years. Education: Class 10th pass with minimum 50% marks in total and 50% in Mathematics & Science. Unmarried male candidates only. Must be Indian citizen. Physical and medical fitness as per Navy standards.",
+        "Age: 17.5–21 years. Education: 10th class pass with minimum 50% aggregate marks and 50% in each subject from a recognized Board. Unmarried male Indian citizens only. Physical and medical fitness mandatory.",
       vacancy:
-        "Multiple Vacancies — Agniveer Matric Recruit (MR) in two trades: (1) Chef and (2) Steward. Selected candidates undergo 14 weeks training at INS Chilka.",
-      applyStart: "As per latest batch notification",
-      lastDate: "Check joinindiannavy.gov.in for exact date",
+        "Multiple Vacancies — Agniveer Matric Recruit (MR): Chef, Steward, and Hygienist trades under Indian Navy.",
+      applyStart: "Check official site",
+      lastDate: "Check joinindiannavy.gov.in",
+      fee: "As per official notification. Refer to joinindiannavy.gov.in for fee details.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC: 3 years | Ex-Serviceman wards: As per Navy rules",
       examPattern:
-        "Computer Based Test (CBT): Science & Mathematics (25 marks), General Knowledge (25 marks), English (25 marks). Total: 75 marks. Negative marking applies. Followed by PFT and Medical.",
+        "Computer Based Test (CBT): Science & Maths, General Knowledge, English. Negative marking: -0.25 per wrong answer. Followed by Physical Fitness Test (PFT), Medical Examination, and Document Verification.",
       howToApply:
-        "Apply online at www.joinindiannavy.gov.in. Select MR category. Upload photo, signature, 10th marksheet, and other required documents. Pay fee and download admit card.",
+        "Apply online at www.joinindiannavy.gov.in. Register with personal and educational details, upload photo and signature, pay fee, and submit application. Download admit card from official site.",
     },
   },
-  // ── 9 ─────────────────────────────────────────────────────────────────
+  // ── 12 ─────────────────────────────────────────────────────────────────
   {
     id: "indian-airforce-agniveer-2026",
     category: "Defence",
-    categoryColor: "bg-indigo-100 text-indigo-800",
+    categoryColor: "bg-blue-100 text-blue-800",
     isUrgent: false,
     title: "Indian Air Force Agniveer Vayu Recruitment 2026",
     organization: "Indian Air Force (Agnipath Scheme)",
     posts: "Multiple Vacancies",
     lastDate: "Check Official Site",
     notificationUrl: "https://agnipathvayu.cdac.in",
+    advertisementUrl: "https://agnipathvayu.cdac.in",
     applyUrl: "https://agnipathvayu.cdac.in",
     whatsappMsg:
       "Hi, I need help applying for the Indian Air Force Agniveer Vayu Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 17.5–21 years. Group X (Technical): 10+2 with Physics, Mathematics & English (minimum 50% aggregate and 50% in each). Group Y (Non-Technical): 10+2 / equivalent in any stream with minimum 50% aggregate marks and 50% in English. Unmarried male and female candidates. Indian citizenship required.",
+        "Age: 17.5–21 years (born between specific dates as per notification). Education: 10+2 with Physics & Mathematics (Science stream) OR 10+2 any stream for non-technical trades. Unmarried male and female Indian citizens. Physical and medical fitness as per IAF norms.",
       vacancy:
-        "Multiple Vacancies — Agniveer Vayu Group X Trades (Technical: Mechanical, Electrical & Avionics) and Group Y Trades (Logistics, Accounts, Admin, Security, Medical Assistant, etc.).",
-      applyStart: "As per latest official intake notification",
-      lastDate: "Check agnipathvayu.cdac.in for exact date",
+        "Multiple Vacancies — Agniveer Vayu (Science: Technical and Non-Technical; Other than Science). Various trades across IAF stations nationwide.",
+      applyStart: "Check official site",
+      lastDate: "Check agnipathvayu.cdac.in",
+      fee: "As per official notification. Refer to agnipathvayu.cdac.in for fee details.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC: 3 years | Ex-Serviceman wards: As per IAF rules",
       examPattern:
-        "Phase 1: Online Written Test — Reasoning, English, Physics & Mathematics (for Group X). Phase 2: Physical Fitness Test (PFT), Adaptability Test (AT-1 & AT-2). Medical Examination.",
+        "Online Test (CBT): English, Reasoning & General Awareness, Mathematics, Physics. Separate papers for Science and Non-Science streams. Negative marking applies. Followed by Physical Fitness Test and Medical Examination.",
       howToApply:
-        "Apply online at agnipathvayu.cdac.in. Register with Aadhaar, fill form, select trade, pay fee, and appear for the online exam at designated centres.",
+        "Apply online at agnipathvayu.cdac.in. Complete registration, select trade preference, upload photo and signature, pay exam fee, and submit before closing date. Download admit card from official website.",
     },
   },
-  // ── 10 ────────────────────────────────────────────────────────────────
+  // ── 13 ─────────────────────────────────────────────────────────────────
   {
     id: "rrb-group-d-2026",
-    category: "Railway / RRB",
+    category: "Central Govt / Railway",
     categoryColor: "bg-red-100 text-red-800",
     isUrgent: false,
     title: "RRB Group D Recruitment 2026 — 22,195 Posts",
     organization: "Railway Recruitment Board (RRB), Ministry of Railways",
     posts: "22,195 Posts",
-    lastDate: "Check RRB Portal",
+    lastDate: "Check Official Site",
     notificationUrl: "https://indianrailways.gov.in",
-    applyUrl: "https://www.rrbapplyreg.in",
+    advertisementUrl: "https://indianrailways.gov.in",
+    applyUrl: "https://www.rrbapply.gov.in",
     whatsappMsg:
-      "Hi, I need help applying for the RRB Group D Railway Recruitment 2026.",
+      "Hi, I need help applying for the RRB Group D Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 18–33 years (relaxation: SC/ST 5 years, OBC 3 years, PwBD 10 years, Ex-S as per rules). Education: Class 10th pass (HSLC) from a recognized board OR ITI certificate from a recognized institution or equivalent. Must be Indian citizen.",
+        "Age: 18–36 years (relaxation: SC/ST 5 years, OBC 3 years, PwBD 10 years, Ex-Serviceman as per rules). Education: 10th class pass (HSLC) from a recognized institution OR ITI certificate OR National Apprenticeship Certificate (NAC).",
       vacancy:
-        "22,195 Posts — Track Maintainer Grade IV, Helper/Assistant in various departments (Electrical, Mechanical, Signal & Telecom, Engineering, S&T), Porter, and other Level 1 posts across all Railway zones including NFR (Northeast Frontier Railway).",
-      applyStart: "As per official RRB notification",
-      lastDate: "Check www.rrbapplyreg.in for exact date",
+        "22,195 Posts across multiple Level-1 categories: Track Maintainer Grade-IV, Helper/Assistant in various departments (Electrical, Engineering, Mechanical, Signal & Telecom), Porter, and others under all RRBs including RRB Guwahati.",
+      applyStart: "Check official site",
+      lastDate: "Check rrbapply.gov.in",
+      fee: "Minority Communities / Female / SC / ST / Ex-Serviceman / PwBD / Economically Backward: ₹250 (refundable on appearing in exam) | Others: ₹500 (partial refund on appearing). Online payment.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC (NCL): 3 years | PwBD: 10 years | Ex-Serviceman: As per Railway Board rules",
       examPattern:
-        "Computer Based Test (CBT): General Science (25 marks), Mathematics (25 marks), General Intelligence & Reasoning (30 marks), General Awareness (20 marks) — 90 minutes. Followed by Physical Efficiency Test (PET) and Document Verification.",
+        "CBT-1 (100Q, 90 min): General Science, Mathematics, General Intelligence & Reasoning, General Awareness & Current Affairs. Negative marking: -0.33. CBT-2 (100Q, 90 min): Similar with more technical focus. Physical Efficiency Test (PET). Document Verification.",
       howToApply:
-        "Apply online at www.rrbapplyreg.in. Select preferred RRB (NFR for Assam/NE India). Pay fee: ₹500 for General/OBC (refund ₹400 on appearing); ₹250 for SC/ST/Ex-S/Women/PwBD (fully refunded).",
+        "Apply online at rrbapply.gov.in. Select your nearest RRB zone. Fill personal and educational details, upload photo and signature, pay fee, and submit. Print application for reference.",
     },
   },
-  // ── 11 ────────────────────────────────────────────────────────────────
-  {
-    id: "nic-recruitment-2026",
-    category: "Central Govt / IT",
-    categoryColor: "bg-violet-100 text-violet-800",
-    isUrgent: false,
-    title: "NIC Scientist-B & Technical Assistant Recruitment 2026 — 619 Posts",
-    organization:
-      "National Informatics Centre (NIC), Ministry of Electronics & IT",
-    posts: "619 Posts",
-    lastDate: "Check NIC Portal",
-    notificationUrl: "https://www.nic.in",
-    applyUrl: "https://www.nic.in",
-    whatsappMsg:
-      "Hi, I need help applying for the NIC Scientist-B / Technical Assistant Recruitment 2026.",
-    details: {
-      eligibility:
-        "Scientist-B: Age up to 30 years. Qualification: B.E./B.Tech or M.Sc/MCA in Computer Science/IT/Electronics/Electrical/Communication Engineering from a recognized university with minimum 60% marks. Scientific/Technical Assistant-A: Age up to 27 years. Qualification: B.Sc (CS/IT) or BCA or Diploma in Engineering (CS/IT/Electronics) with minimum 60% marks. Relaxation for SC/ST/OBC as per Central Govt. norms.",
-      vacancy:
-        "619 Posts — Scientist-B (IT & Electronics) and Scientific/Technical Assistant-A (IT & Electronics). Posts are distributed across NIC State Centres and headquarters.",
-      applyStart: "March 2026",
-      lastDate: "Check nic.in for exact closing date",
-      examPattern:
-        "Computer Based Test (CBT): Technical knowledge in CS/IT/Electronics + General Intelligence & Reasoning + English. Followed by Document Verification and possible Interview for Scientist-B.",
-      howToApply:
-        "Apply online at www.nic.in. Two separate notifications issued for Scientist-B and STA-A. Pay fee, upload documents, and submit application before closing date.",
-    },
-  },
-  // ── 12 ────────────────────────────────────────────────────────────────
+  // ── 14 ─────────────────────────────────────────────────────────────────
   {
     id: "aiims-norcet-10-2026",
-    category: "Health / AIIMS",
-    categoryColor: "bg-teal-100 text-teal-800",
+    category: "Central Govt / Health",
+    categoryColor: "bg-pink-100 text-pink-800",
     isUrgent: false,
     title: "AIIMS Nursing Officer Recruitment 2026 — NORCET-10",
     organization: "All India Institute of Medical Sciences (AIIMS), New Delhi",
     posts: "Multiple Posts",
-    lastDate: "Check AIIMS Portal",
+    lastDate: "Check Official Site",
     notificationUrl: "https://aiimsexams.ac.in",
+    advertisementUrl: "https://aiimsexams.ac.in",
     applyUrl: "https://aiimsexams.ac.in",
     whatsappMsg:
       "Hi, I need help applying for the AIIMS Nursing Officer NORCET-10 Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 18–35 years (relaxation for SC/ST 5 years, OBC 3 years, PwBD 10 years). Education: B.Sc Nursing (4-year regular course) from an Indian Nursing Council recognized institution with minimum 60% marks OR Post Basic B.Sc Nursing (2-year course) with minimum 60% marks. Must be registered as a Nurse & Midwife with State Nursing Council.",
+        "Age: 18–30 years (relaxation: SC/ST 5 years, OBC 3 years, PwBD 10 years). Education: B.Sc. Nursing (4-year course) from a recognized university/institution OR B.Sc. (Post-Certificate) Nursing from a recognized university. Valid Registration Certificate from State Nursing Council.",
       vacancy:
-        "Multiple Nursing Officer posts across various AIIMS institutions (AIIMS New Delhi, AIIMS Guwahati, AIIMS Bhubaneswar, AIIMS Jodhpur, AIIMS Patna, AIIMS Rishikesh, and other AIIMS). Pay Scale: Level 7 (₹44,900–₹1,42,400 per month + allowances).",
-      applyStart: "As per NORCET-10 notification",
-      lastDate: "Check aiimsexams.ac.in for exact date",
+        "Multiple Posts — Nursing Officer (Staff Nurse Grade-II) across AIIMS institutions pan-India. NORCET-10 centralizes recruitment for all AIIMS. Pay: Level 7 (₹44,900–1,42,400).",
+      applyStart: "Check official site",
+      lastDate: "Check aiimsexams.ac.in",
+      fee: "UR / OBC / EWS: ₹3000 | SC / ST / PwBD: ₹1000. Online payment via debit card/credit card/net banking.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC (NCL): 3 years | PwBD: 10 years | Ex-Serviceman: As per Central Govt. norms",
       examPattern:
-        "NORCET (Nursing Officer Recruitment Common Eligibility Test): Computer Based Test — Nursing subject questions (100 marks) + General Intelligence (20 marks) + General Awareness (10 marks). No negative marking. 2 hours duration.",
+        "CBT (200Q, 180 min): Nursing (100Q), General Aptitude including General English and Reasoning (50Q), Computer Based Proficiency (50Q). Negative marking: -0.25 per wrong answer.",
       howToApply:
-        "Apply online at aiimsexams.ac.in. AIIMS Guwahati is a major centre relevant for Assam candidates. Pay exam fee ₹3000 (General/OBC); ₹2500 (SC/ST/EWS); ₹200 (PwBD) online.",
+        "Apply online at aiimsexams.ac.in. Register, fill application form, upload photo and signature, pay fee online, and submit. Print confirmation page. Admit card released before exam date.",
     },
   },
-  // ── 13 ────────────────────────────────────────────────────────────────
+  // ── 15 ─────────────────────────────────────────────────────────────────
   {
     id: "assam-police-2026",
-    category: "Assam Police",
-    categoryColor: "bg-blue-100 text-blue-800",
+    category: "State Govt / Assam",
+    categoryColor: "bg-amber-100 text-amber-800",
     isUrgent: false,
     title: "Assam Police Recruitment 2026 — Constable, SI, Driver & Grade IV",
     organization: "State Level Police Recruitment Board (SLPRB), Assam",
     posts: "Multiple Posts",
-    lastDate: "Check SLPRB Portal",
+    lastDate: "Check SLPRB Site",
     notificationUrl: "https://slprbassam.in",
+    advertisementUrl: "https://slprbassam.in",
     applyUrl: "https://slprbassam.in",
     whatsappMsg:
       "Hi, I need help applying for the Assam Police Recruitment 2026.",
     details: {
       eligibility:
-        "AB Constable: Age 18–25 years; HSLC (Class 10) pass; Physical standards. UB Constable: Age 18–25 years; HSSLC (10+2) pass. Sub-Inspector (SI): Age 20–26 years; Bachelor's degree. Driver: Class 10 + valid commercial driving licence. Grade IV: Class 8 pass. Relaxation for SC/ST/OBC/MOBC/Ex-S as per Assam Govt. norms. Assam domicile required.",
+        "Constable/Grade IV: Age 18–25 years; Education: HSLC pass. Sub-Inspector (SI): Age 20–26 years; Education: Graduation from a recognized university. Driver: Valid Heavy Vehicle License + HSLC pass. Physical standards mandatory for all posts.",
       vacancy:
-        "Multiple Posts across categories — Armed Branch (AB) Constable, Unarmed Branch (UB) Constable, Sub-Inspector (SI), Driver Constable, and Grade IV posts in various districts and battalions of Assam Police.",
-      applyStart: "As per SLPRB official notification",
-      lastDate: "Check slprbassam.in for exact date",
+        "Multiple Posts — Constable (UB/AB), Sub-Inspector, Driver Constable, and Grade IV posts in various districts and battalions of Assam Police.",
+      applyStart: "Check SLPRB official site",
+      lastDate: "Check slprbassam.in",
+      fee: "As per SLPRB notification. Online payment via official portal. SC/ST/OBC exemptions as per Assam Govt. rules.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC/MOBC: 3 years | PwBD: As per Assam Govt. norms | Ex-Serviceman: As per rules",
       examPattern:
-        "Stage 1: Physical Standard Test (PST) — height, chest, weight. Stage 2: Physical Efficiency Test (PET) — running (1600m men/800m women), long jump, high jump. Stage 3: Written Exam (OMR) — GK, Maths, Reasoning, English/Assamese. Stage 4: Medical Examination.",
+        "Written Test (MCQ) → Physical Standard Test (PST) → Physical Efficiency Test (PET) → Medical Examination → Document Verification → Final Merit List. SI posts additionally include Interview.",
       howToApply:
-        "Apply online at slprbassam.in. Application fee: ₹200 (General); ₹150 (SC/ST/OBC). Upload photo, signature, certificates. Candidates from Udalguri district apply under respective zone.",
+        "Apply online at slprbassam.in. Fill in personal, educational, and physical details. Upload photo, signature, and required documents. Pay application fee and submit before closing date. Print application for reference.",
     },
   },
-  // ── 14 ────────────────────────────────────────────────────────────────
+  // ── 16 ─────────────────────────────────────────────────────────────────
   {
     id: "apsc-cce-2026",
-    category: "APSC / State PSC",
-    categoryColor: "bg-purple-100 text-purple-800",
+    category: "State Govt / Assam",
+    categoryColor: "bg-amber-100 text-amber-800",
     isUrgent: false,
     title: "APSC Combined Competitive Exam (CCE) 2026",
     organization: "Assam Public Service Commission (APSC)",
     posts: "400+ Posts",
     lastDate: "15 May 2026",
     notificationUrl: "https://apsc.nic.in",
+    advertisementUrl: "https://apsc.nic.in",
     applyUrl: "https://apsc.nic.in",
-    whatsappMsg: "Hi, I need help applying for the APSC CCE 2026.",
+    whatsappMsg:
+      "Hi, I need help applying for the APSC Combined Competitive Exam (CCE) 2026.",
     details: {
       eligibility:
-        "Age: 21–38 years (relaxation: SC/ST 5 years, OBC/MOBC 3 years, PwBD 10 years, Ex-Serviceman as per rules). Education: Bachelor's degree in any discipline from a recognized university. Assam domicile / PRC required. Candidates must have knowledge of Assamese or any other regional language listed in 8th schedule.",
+        "Age: 21–38 years as on 01.01.2026 (relaxation: SC/ST 5 years, OBC/MOBC 3 years, PwBD 10 years, Ex-Serviceman as per rules). Education: Graduation (any discipline) from a recognized university. Assam domicile / PRC required for most posts.",
       vacancy:
-        "400+ Posts — Assam Civil Service (ACS), Assam Police Service (APS), Assam Finance Service, Assam Agriculture Service, Assam Rural Development Service, and other Group-A & Group-B allied services.",
-      applyStart: "March 2026",
+        "400+ Posts across various categories: ACS (Assam Civil Service), APS (Assam Police Service), Assam Finance Service, and allied cadres under Government of Assam.",
+      applyStart: "March/April 2026",
       lastDate: "15 May 2026",
+      fee: "UR/OBC/EWS: ₹297.20 | SC/ST/OBC-NCL/PwBD: ₹197.20 (includes GST). Online payment via official APSC portal.",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC/MOBC: 3 years | PwBD: 10 years | Ex-Serviceman: As per Assam Govt. rules",
       examPattern:
-        "Stage 1: Preliminary Exam — 2 papers (GS + CSAT), 200 marks each, objective type, 2 hours each. Stage 2: Mains Exam — 9 descriptive papers (language, essay, GS I–IV, optional subject). Stage 3: Personality Test / Interview (200 marks). Fee: ₹297.20 (General); ₹172.20 (SC/ST/OBC/MOBC).",
+        "Preliminary Exam (Objective, 200 marks) → Main Exam (Written, multiple papers including GS, Essay, Optional subjects) → Viva/Interview (200 marks). Negative marking in Prelims: -0.25 per wrong answer.",
       howToApply:
-        "Apply online at apsc.nic.in. Download detailed notification, fill online application, select optional subject for Mains, pay fee via payment gateway, and submit before 15 May 2026.",
+        "Apply online at apsc.nic.in. Fill in personal and educational details, upload photo and signature, pay application fee online, and submit before 15 May 2026. Print application for records. Check official site for detailed notification.",
     },
   },
-  // ── 15 ────────────────────────────────────────────────────────────────
+  // ── 17 ─────────────────────────────────────────────────────────────────
   {
     id: "pnrd-assam-2026",
     category: "State Govt / Assam",
-    categoryColor: "bg-yellow-100 text-yellow-800",
+    categoryColor: "bg-amber-100 text-amber-800",
     isUrgent: false,
     title: "PNRD Assam Recruitment 2026 — 1508 Contractual Posts",
-    organization: "Panchayat & Rural Development Department, Govt. of Assam",
-    posts: "1508 Posts",
-    lastDate: "Check PNRD Portal",
-    notificationUrl: "https://pnrdassam.nic.in",
-    applyUrl: "https://pnrdassam.nic.in",
+    organization: "Commissioner, Panchayat & Rural Development (CP&RD), Assam",
+    posts: "1508 Contractual Posts",
+    lastDate: "22 Mar 2026",
+    notificationUrl: "https://rural.assam.gov.in",
+    advertisementUrl:
+      "https://rural.assam.gov.in/sites/default/files/public_utility/Advertisement%20GPC%20GRS%20AE%20CA.pdf",
+    applyUrl: "https://rural.assam.gov.in/recruitment-career",
     whatsappMsg:
-      "Hi, I need help applying for the PNRD Assam Recruitment 2026.",
+      "Hi, I need help applying for the PNRD Assam Contractual Recruitment 2026.",
     details: {
       eligibility:
-        "Age: 18–38 years (relaxation for SC/ST/OBC/MOBC/PwBD/Ex-S as per Assam Govt. norms). Education: Class 8 to Graduate depending on the post applied for. Assam domicile / PRC required. Preference may be given to candidates from respective Gram Panchayat / Block jurisdiction.",
+        "Age: 18–40 years (SC/ST: +5 years, OBC/MOBC: +3 years, PH: +10 years). Accredited Engineer: Diploma in Civil Engineering + Diploma in Computer Application. GRS/Computer Assistant/GPC: Graduate (any discipline) with minimum 50% marks from recognized university + Diploma in Computer Application (min. 6 months). Must be well-versed in mobile applications.",
       vacancy:
-        "1508 Posts (Contractual) — Various positions under Panchayat & Rural Development including Block Coordinator, Data Entry Operator (DEO), Account Assistant, Gram Rozgar Sevak (GRS), and other support staff across all Assam districts.",
-      applyStart: "As per official PNRD notification",
-      lastDate: "Check pnrdassam.nic.in for exact date",
+        "1508 Posts: Accredited Engineer (MGNREGA)-291 @ ₹18,000/month, Gram Rozgar Sahayak (MGNREGA)-464 @ ₹15,000/month, Computer Assistant (MGNREGA)-291 @ ₹15,000/month, Gram Panchayat Coordinator (PMAY-G/FC)-462 @ ₹15,000/month. 30% reserved for women (RFW) in each category.",
+      applyStart: "22 February 2026",
+      lastDate: "22 Mar 2026",
+      fee: "No Application Fee (Nil)",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC/MOBC: 3 years | PH (PwBD): 10 years",
       examPattern:
-        "Shortlisting based on merit / written exam / interview depending on post. For DEO posts, computer proficiency test may be conducted. Document verification for selected candidates.",
+        "Written Examination (75 marks, OMR, 2 hours): Domain Knowledge, Computer Proficiency, Logical Reasoning & Aptitude, History & Culture of Assam/India, General Knowledge. Negative marking: -0.25 per wrong answer. Paper-2 for Accredited Engineer includes additional technical questions. Followed by Viva/Interview (25 marks). Total: 100 marks.",
       howToApply:
-        "Apply online at pnrdassam.nic.in. Fill application form for preferred post and district, upload required certificates (domicile, educational, caste if applicable), pay fee if any, and submit before deadline.",
+        "Apply online only at rural.assam.gov.in. Register with basic details, fill application form, upload passport photo (white background, JPEG, max 100KB) and signature. Upload educational certificates, caste certificate if applicable, and computer diploma certificate. Click Complete and download registration slip.",
     },
   },
 ];
@@ -1362,6 +1488,30 @@ function JobDetailsModal({
             </p>
           </div>
 
+          {/* Fee */}
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg">💰</span>
+              <span className="text-slate-700 font-bold text-sm uppercase tracking-wide">
+                Application Fee
+              </span>
+            </div>
+            <p className="text-gray-800 text-sm font-semibold">{d.fee}</p>
+          </div>
+
+          {/* Caste Relaxation */}
+          <div className="bg-yellow-50 rounded-xl p-4 border border-yellow-100">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-lg">🏷️</span>
+              <span className="text-yellow-700 font-bold text-sm uppercase tracking-wide">
+                Age Relaxation
+              </span>
+            </div>
+            <p className="text-gray-800 text-sm font-semibold">
+              {d.casteRelaxation}
+            </p>
+          </div>
+
           {/* Exam Pattern (only if not empty) */}
           {d.examPattern && (
             <div className="bg-purple-50 rounded-xl p-4 border border-purple-100">
@@ -1410,6 +1560,18 @@ function JobDetailsModal({
             >
               📄 View Notification
             </a>
+            {job.advertisementUrl &&
+              job.advertisementUrl !== job.notificationUrl && (
+                <a
+                  href={job.advertisementUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-slate-400 text-slate-600 hover:bg-slate-50 font-bold py-3 px-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] text-sm"
+                  data-ocid="job.details.advertisement_button"
+                >
+                  📢 Official Advertisement
+                </a>
+              )}
             <a
               href={`https://wa.me/916000134640?text=${encodeURIComponent(job.whatsappMsg)}`}
               target="_blank"

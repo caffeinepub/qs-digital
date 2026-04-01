@@ -1,45 +1,29 @@
-# QS Digital — Job Listings Update
+# QS Digital
 
 ## Current State
-The Online Job Apply service section has:
-- GNM 2026 exam notification card (JobNotificationCard)
-- GOV_JOBS array with 9 job listings (Indian Army, Navy, Apex Bank, SAI, Gauhati HC, LRA, NIC, PNRD, BSNL)
-- GovJobCard component showing: category badge, title, org, posts, last date, Apply Now button, View Details button, WhatsApp strip
-- JobDetailsModal with: dates, vacancies, eligibility, exam pattern, how to apply, Apply Now + WhatsApp buttons
-- Each job has only one URL field: `applyUrl`
+Online Job Apply section has 15 job listings (GOV_JOBS array in App.tsx). Each has a View Details modal with eligibility, vacancy, dates, exam pattern, how-to-apply. Apply Now links to official sites.
 
 ## Requested Changes (Diff)
 
 ### Add
-- `notificationUrl` field to each job in GOV_JOBS (Official Notification PDF/page link)
-- "Important Links" row in GovJobCard showing: "📄 Official Notification" link + "🔗 Apply Online" link (both as small text links or chips)
-- New jobs: Assam Police AB/UB Constable 2026 (SLPRB), APSC CCE 2026, SSC CHSL 2026, RRB NTPC 2026 (RRB Guwahati), NHM Assam Staff Nurse/ANM 2026, SSC CGL 2026
-- "View Notification" button in JobDetailsModal alongside Apply Now
+- SSB Constable Recruitment 2026 – 827 Posts (Last Date: 20 Apr 2026) – official site: ssb.gov.in
+- Punjab & Sind Bank LBO Recruitment 2026 – 1000 Posts (50 in Assam) (Last Date: 20 Apr 2026) – official site: punjabandsindbank.co.in
+- "View Official Advertisement" link inside each modal (links to official PDF advertisement URL)
 
 ### Modify
-- GOV_JOBS: Replace NIC, BSNL, Apex Bank, SAI, Indian Navy entries with the new Assam-centric ones (keep LRA, Gauhati HC, Indian Army, PNRD; add Assam Police, APSC, SSC CHSL, RRB NTPC, NHM Assam, SSC CGL)
-- GovJobCard: Add "Important Links" section showing notificationUrl and applyUrl as separate clickable links before the action buttons
-- JobDetailsModal: Add "View Official Notification" button in the footer action buttons row
-- All existing jobs: add `notificationUrl` field (can be same as applyUrl for jobs where they share one URL)
+- Apex Bank: fix fee to ₹750 (current data had wrong fee), add official ad PDF link
+- LRA Assam: update with full exam pattern (negative marking 0.25, subject-wise breakdown), full caste details, official ad PDF link
+- PNRD: update with category-wise vacancies, full selection process
+- Indian Army Agniveer: update last date to reflect 10 Apr 2026 (extended), add full details
+- ASSEB JAA: last date was 04 Apr (passed) – mark isUrgent: false, update status
+- All existing modals: add fee structure, caste/age relaxation table, original advertisement PDF link
 
 ### Remove
-- Indian Navy Agniveer SSR 2026
-- Assam Co-operative Apex Bank Assistant 2026
-- SAI Assistant Coach 2026
-- NIC Scientist-B 2026
-- BSNL Senior Executive Trainee 2026
+- Nothing removed
 
 ## Implementation Plan
-1. Update GOV_JOBS array:
-   - Add `notificationUrl` to type/data for all entries
-   - Keep: Indian Army Agniveer, LRA Assam, Gauhati HC MTS, PNRD Assam
-   - Add new: Assam Police Constable (SLPRB), APSC CCE, SSC CHSL, RRB NTPC (RRB Guwahati), NHM Assam, SSC CGL
-   - Total: ~10 jobs, Assam-focused first, then Central govt
-2. Update GovJobCard:
-   - Below the posts/last-date stats row, add an "Important Links" row with:
-     - 📄 Official Notification → notificationUrl (small blue text link)
-     - 🔗 Apply Online → applyUrl (small green text link)
-   - Keep Apply Now button and View Details button as is
-3. Update JobDetailsModal:
-   - In the footer action buttons, add a third button: "📄 View Notification" linking to job.notificationUrl (outline style)
-   - Or make it 3 buttons on larger screens, stacked on mobile
+1. Update GOV_JOBS array in App.tsx with 2 new entries (SSB, Punjab & Sind Bank) and updated details for existing ones
+2. Add `advertisementUrl` field to each job entry (official PDF link)
+3. In GovJobCard modal, add "Official Advertisement" button/link row alongside Apply Now
+4. Add fee and caste relaxation fields to details object
+5. Display fee table and caste relaxation in modal in structured format
