@@ -3609,6 +3609,7 @@ export default function App() {
                     "PAN Card (Original + Photocopy)",
                     "Voter ID Card (Original + Photocopy)",
                     "NRC Final Draft / NRC Certificate",
+                    "Voter List (1996 / 1971 / 2005 / 2025 — Any Electoral Roll Copy)",
                     "Land Record Documents (Jamabandi / Patta)",
                     "Gaon Burha Certificate (Village Head Certificate)",
                     "Birth Certificate",
