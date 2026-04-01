@@ -1371,6 +1371,209 @@ function ReviewsSection() {
   );
 }
 
+function JobDetailPage({
+  job,
+  onBack,
+}: {
+  job: (typeof GOV_JOBS)[0];
+  onBack: () => void;
+}) {
+  const d = job.details;
+  return (
+    <div className="min-h-screen bg-gray-50" data-ocid="job.detail.page">
+      {/* Back button */}
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
+        <div className="max-w-3xl mx-auto px-4 py-3">
+          <button
+            type="button"
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors"
+            data-ocid="job.detail.back_button"
+          >
+            ← Back to Jobs
+          </button>
+        </div>
+      </div>
+
+      <div className="max-w-3xl mx-auto px-4 py-6 flex flex-col gap-5">
+        {/* Header */}
+        <div
+          className="rounded-2xl px-6 py-6 shadow-lg"
+          style={{
+            background: "linear-gradient(135deg, #0B4F8F 0%, #0EA5A5 100%)",
+          }}
+        >
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/20 text-white">
+              {job.category}
+            </span>
+            {job.isUrgent && (
+              <span className="text-xs font-bold bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full">
+                ⚡ URGENT
+              </span>
+            )}
+          </div>
+          <h2 className="text-white font-extrabold text-xl leading-snug mb-1">
+            {job.title}
+          </h2>
+          <p className="text-blue-100 text-sm">{job.organization}</p>
+        </div>
+
+        {/* Dates & Vacancies */}
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">📅</span>
+              <span className="text-blue-700 font-bold text-sm uppercase tracking-wide">
+                Important Dates
+              </span>
+            </div>
+            <div className="space-y-2">
+              <div className="flex flex-col gap-0.5">
+                <span className="text-gray-400 text-xs font-medium">
+                  Apply Start
+                </span>
+                <span className="text-gray-800 text-sm font-semibold">
+                  {d.applyStart}
+                </span>
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <span className="text-gray-400 text-xs font-medium">
+                  Last Date to Apply
+                </span>
+                <span
+                  className={`text-sm font-bold ${job.isUrgent ? "text-red-600" : "text-gray-800"}`}
+                >
+                  {d.lastDate}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="bg-amber-50 rounded-xl p-4 border border-amber-100">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">👥</span>
+              <span className="text-amber-700 font-bold text-sm uppercase tracking-wide">
+                Vacancies
+              </span>
+            </div>
+            <p className="text-gray-800 text-sm font-semibold leading-relaxed">
+              {d.vacancy}
+            </p>
+          </div>
+        </div>
+
+        {/* Eligibility */}
+        <div className="bg-green-50 rounded-xl p-4 border border-green-100">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg">🎓</span>
+            <span className="text-green-700 font-bold text-sm uppercase tracking-wide">
+              Eligibility Criteria
+            </span>
+          </div>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            {d.eligibility}
+          </p>
+        </div>
+
+        {/* Fee */}
+        <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-lg">💰</span>
+            <span className="text-slate-700 font-bold text-sm uppercase tracking-wide">
+              Application Fee
+            </span>
+          </div>
+          <p className="text-gray-800 text-sm font-semibold">{d.fee}</p>
+        </div>
+
+        {/* Caste Relaxation */}
+        <div className="bg-yellow-50 rounded-xl p-4 border border-yellow-100">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-lg">🏷️</span>
+            <span className="text-yellow-700 font-bold text-sm uppercase tracking-wide">
+              Age Relaxation
+            </span>
+          </div>
+          <p className="text-gray-800 text-sm font-semibold">
+            {d.casteRelaxation}
+          </p>
+        </div>
+
+        {/* Exam Pattern */}
+        {d.examPattern && (
+          <div className="bg-purple-50 rounded-xl p-4 border border-purple-100">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">📝</span>
+              <span className="text-purple-700 font-bold text-sm uppercase tracking-wide">
+                Exam Pattern
+              </span>
+            </div>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              {d.examPattern}
+            </p>
+          </div>
+        )}
+
+        {/* How to Apply */}
+        <div className="bg-orange-50 rounded-xl p-4 border border-orange-100">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg">🔗</span>
+            <span className="text-orange-700 font-bold text-sm uppercase tracking-wide">
+              How to Apply
+            </span>
+          </div>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            {d.howToApply}
+          </p>
+        </div>
+
+        {/* Action buttons */}
+        <div className="flex flex-col sm:flex-row gap-3 flex-wrap pb-4">
+          <a
+            href={job.applyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] text-sm"
+            data-ocid="job.detail.apply_button"
+          >
+            Apply Now →
+          </a>
+          <a
+            href={job.notificationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-bold py-3 px-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] text-sm"
+            data-ocid="job.detail.notification_button"
+          >
+            📄 View Notification
+          </a>
+          {job.advertisementUrl &&
+            job.advertisementUrl !== job.notificationUrl && (
+              <a
+                href={job.advertisementUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-slate-400 text-slate-600 hover:bg-slate-50 font-bold py-3 px-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] text-sm"
+                data-ocid="job.detail.advertisement_button"
+              >
+                📢 Official Advertisement
+              </a>
+            )}
+          <a
+            href={`https://wa.me/916000134640?text=${encodeURIComponent(job.whatsappMsg)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] text-sm"
+            data-ocid="job.detail.whatsapp_button"
+          >
+            💬 Get Help on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function JobDetailsModal({
   job,
   onClose,
@@ -1597,7 +1800,51 @@ function GovJobCard({
   onViewDetails: (job: (typeof GOV_JOBS)[0]) => void;
 }) {
   return (
-    <div className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+    <div className="relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+      {/* QS DIGITAL Watermark */}
+      <div
+        className="absolute inset-0 pointer-events-none overflow-hidden rounded-xl"
+        aria-hidden="true"
+        style={{ userSelect: "none" }}
+      >
+        <span
+          className="absolute top-3 left-6 text-base font-black text-gray-500"
+          style={{
+            opacity: 0.07,
+            letterSpacing: "0.12em",
+            transform: "rotate(-28deg)",
+            transformOrigin: "left",
+            display: "block",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute text-base font-black text-gray-500"
+          style={{
+            opacity: 0.07,
+            letterSpacing: "0.12em",
+            transform: "translateX(-50%) translateY(-50%) rotate(-28deg)",
+            top: "50%",
+            left: "50%",
+            display: "block",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute bottom-3 right-6 text-base font-black text-gray-500"
+          style={{
+            opacity: 0.07,
+            letterSpacing: "0.12em",
+            transform: "rotate(-28deg)",
+            transformOrigin: "right",
+            display: "block",
+          }}
+        >
+          QS DIGITAL
+        </span>
+      </div>
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 p-4">
         <div className="flex-1 min-w-0">
           {/* Badges */}
@@ -1915,6 +2162,9 @@ export default function App() {
   const [selectedJob, setSelectedJob] = useState<(typeof GOV_JOBS)[0] | null>(
     null,
   );
+  const [currentJobPage, setCurrentJobPage] = useState<
+    (typeof GOV_JOBS)[0] | null
+  >(null);
   const [showBankingServices, setShowBankingServices] = useState(false);
   const [showPassportDocs, setShowPassportDocs] = useState(false);
   const [showVoterIdDocs, setShowVoterIdDocs] = useState(false);
@@ -2490,21 +2740,32 @@ export default function App() {
 
                             {/* Latest Government Jobs Section */}
                             <div>
-                              <div className="flex items-center gap-3 mb-4">
-                                <span className="text-gray-700 font-bold text-sm uppercase tracking-wide">
-                                  💼 Latest Government Jobs
-                                </span>
-                                <div className="flex-1 h-px bg-gray-200" />
-                              </div>
-                              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-                                {GOV_JOBS.map((job) => (
-                                  <GovJobCard
-                                    key={job.id}
-                                    job={job}
-                                    onViewDetails={(j) => setSelectedJob(j)}
-                                  />
-                                ))}
-                              </div>
+                              {currentJobPage ? (
+                                <JobDetailPage
+                                  job={currentJobPage}
+                                  onBack={() => setCurrentJobPage(null)}
+                                />
+                              ) : (
+                                <>
+                                  <div className="flex items-center gap-3 mb-4">
+                                    <span className="text-gray-700 font-bold text-sm uppercase tracking-wide">
+                                      💼 Latest Government Jobs
+                                    </span>
+                                    <div className="flex-1 h-px bg-gray-200" />
+                                  </div>
+                                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                                    {GOV_JOBS.map((job) => (
+                                      <GovJobCard
+                                        key={job.id}
+                                        job={job}
+                                        onViewDetails={(j) =>
+                                          setCurrentJobPage(j)
+                                        }
+                                      />
+                                    ))}
+                                  </div>
+                                </>
+                              )}
                             </div>
                           </motion.div>
                         </AnimatePresence>

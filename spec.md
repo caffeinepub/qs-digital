@@ -1,29 +1,26 @@
 # QS Digital
 
 ## Current State
-Online Job Apply section has 15 job listings (GOV_JOBS array in App.tsx). Each has a View Details modal with eligibility, vacancy, dates, exam pattern, how-to-apply. Apply Now links to official sites.
+The Online Job Apply section has 17 job listings. Each job card has a "View Details" button that opens a modal (JobDetailsModal) with full job info. The modal is rendered at the App level using `selectedJob` state. Job cards (GovJobCard) have no watermark styling.
 
 ## Requested Changes (Diff)
 
 ### Add
-- SSB Constable Recruitment 2026 – 827 Posts (Last Date: 20 Apr 2026) – official site: ssb.gov.in
-- Punjab & Sind Bank LBO Recruitment 2026 – 1000 Posts (50 in Assam) (Last Date: 20 Apr 2026) – official site: punjabandsindbank.co.in
-- "View Official Advertisement" link inside each modal (links to official PDF advertisement URL)
+- A dedicated `JobDetailPage` component that renders full job details as an in-app page (not modal) — shown when "View Details" is clicked.
+- A `JobWatermark` SVG/CSS watermark overlay on each `GovJobCard` that shows "QS DIGITAL" 2–3 times diagonally, very faint (opacity ~0.06), not obstructing readability.
+- `currentJobPage` state in App to track which job's detail page is open (null = list view, job object = detail page).
 
 ### Modify
-- Apex Bank: fix fee to ₹750 (current data had wrong fee), add official ad PDF link
-- LRA Assam: update with full exam pattern (negative marking 0.25, subject-wise breakdown), full caste details, official ad PDF link
-- PNRD: update with category-wise vacancies, full selection process
-- Indian Army Agniveer: update last date to reflect 10 Apr 2026 (extended), add full details
-- ASSEB JAA: last date was 04 Apr (passed) – mark isUrgent: false, update status
-- All existing modals: add fee structure, caste/age relaxation table, original advertisement PDF link
+- `GovJobCard` — change `onViewDetails` button to navigate to the dedicated page instead of modal.
+- App state — add `currentJobPage` state; keep `selectedJob` for any legacy use or remove it in favour of `currentJobPage`.
+- The job section rendering — when `currentJobPage` is set, render `JobDetailPage` instead of the job list.
 
 ### Remove
-- Nothing removed
+- `JobDetailsModal` can be kept for fallback, but the "View Details" button now navigates to the new page instead.
 
 ## Implementation Plan
-1. Update GOV_JOBS array in App.tsx with 2 new entries (SSB, Punjab & Sind Bank) and updated details for existing ones
-2. Add `advertisementUrl` field to each job entry (official PDF link)
-3. In GovJobCard modal, add "Official Advertisement" button/link row alongside Apply Now
-4. Add fee and caste relaxation fields to details object
-5. Display fee table and caste relaxation in modal in structured format
+1. Add `JobWatermark` overlay div inside `GovJobCard` — positioned absolute, repeating diagonal "QS DIGITAL" text 3 times, opacity 0.06, pointer-events none.
+2. Create `JobDetailPage` component with same content as `JobDetailsModal` but rendered as a full-width page with a back button at the top.
+3. Add `currentJobPage` state to App; wire `GovJobCard` `onViewDetails` to set it.
+4. In the job section render: if `currentJobPage` is set, show `JobDetailPage`; otherwise show the list.
+5. Remove the modal trigger for View Details (keep modal code in case needed elsewhere or remove cleanly).
