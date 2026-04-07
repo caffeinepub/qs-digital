@@ -847,11 +847,11 @@ const GOV_JOBS = [
     id: "indian-army-agniveer-2026",
     category: "Central Govt / Defence",
     categoryColor: "bg-emerald-100 text-emerald-800",
-    isUrgent: false,
+    isUrgent: true,
     title: "Indian Army Agniveer Recruitment 2026 — Agnipath Scheme",
     organization: "Indian Army — Office of Directorate General of Recruiting",
     posts: "Multiple",
-    lastDate: "10 Apr 2026",
+    lastDate: "10 Apr 2026 (Closed)",
     notificationUrl: "https://joinindianarmy.nic.in",
     applyUrl: "https://joinindianarmy.nic.in",
     advertisementUrl: "https://joinindianarmy.nic.in",
@@ -863,7 +863,8 @@ const GOV_JOBS = [
       vacancy:
         "Multiple Agniveer posts under Agnipath Scheme — categories include Agniveer GD, Agniveer Technical, Agniveer Clerk/SKT, Agniveer Tradesman. Service period: 4 years.",
       applyStart: "13 February 2026",
-      lastDate: "10 April 2026 / 01 April 2026 (Rally dates vary by ARO)",
+      lastDate:
+        "10 April 2026 / 01 April 2026 (Application closed — watch for next intake)",
       fee: "No Application Fee",
       casteRelaxation:
         "Age relaxation: SC/ST and OBC candidates get standard relaxation as per GOI rules.",
@@ -882,7 +883,7 @@ const GOV_JOBS = [
       "Indian Navy Agniveer SSR Recruitment 2026 — 01/2027 & 02/2027 Batch",
     organization: "Indian Navy (Agnipath Scheme), Integrated HQ, MoD",
     posts: "Multiple",
-    lastDate: "06 Apr 2026",
+    lastDate: "06 Apr 2026 (Closed)",
     notificationUrl: "https://joinindiannavy.gov.in",
     applyUrl: "https://joinindiannavy.gov.in",
     advertisementUrl: "https://joinindiannavy.gov.in",
@@ -912,7 +913,7 @@ const GOV_JOBS = [
     title: "Indian Navy Agniveer MR Recruitment 2026 — 01/2027 & 02/2027 Batch",
     organization: "Indian Navy (Agnipath Scheme), Integrated HQ, MoD",
     posts: "Multiple",
-    lastDate: "06 Apr 2026",
+    lastDate: "06 Apr 2026 (Closed)",
     notificationUrl: "https://joinindiannavy.gov.in",
     applyUrl: "https://joinindiannavy.gov.in",
     advertisementUrl: "https://joinindiannavy.gov.in",
@@ -1059,14 +1060,14 @@ const GOV_JOBS = [
     id: "sankardev-shiksha-gohpur-2026",
     category: "Private / Education",
     categoryColor: "bg-orange-100 text-orange-800",
-    isUrgent: true,
+    isUrgent: false,
     title: "Sankardev Shiksha Niketan Gohpur Recruitment 2026 — 18 Posts",
     organization: "Sankardev Shiksha Niketan, Gohpur, Sonitpur, Assam",
     posts: "18",
-    lastDate: "15 Apr 2026",
-    notificationUrl: "https://www.assamcareer.com",
-    applyUrl: "https://www.assamcareer.com",
-    advertisementUrl: "https://www.assamcareer.com",
+    lastDate: "15 Apr 2026 (Closed)",
+    notificationUrl: "https://www.educationassam.in",
+    applyUrl: "https://www.educationassam.in",
+    advertisementUrl: "https://www.educationassam.in",
     whatsappMsg:
       "Hi, I need help applying for Sankardev Shiksha Niketan Gohpur Faculty Recruitment 2026.",
     details: {
@@ -1111,6 +1112,250 @@ const GOV_JOBS = [
         "Written Examination (75 marks, OMR, 2 hours): Domain Knowledge, Computer Proficiency, Logical Reasoning & Aptitude, History & Culture of Assam/India, General Knowledge. Negative marking: -0.25 per wrong answer. Viva/Interview (25 marks). Total: 100 marks.",
       howToApply:
         "Application period closed. Results and merit list to be published on rural.assam.gov.in. Candidates who applied can check their application status on the official portal.",
+    },
+  },
+  {
+    id: "bob-manager-2026",
+    category: "Central Govt / Banking",
+    categoryColor: "bg-orange-100 text-orange-800",
+    isUrgent: true,
+    title: "Bank of Baroda Manager Recruitment 2026 — 104 Posts",
+    organization: "Bank of Baroda (A Government of India Undertaking)",
+    posts: "104",
+    lastDate: "Check bankofbaroda.in",
+    notificationUrl: "https://www.bankofbaroda.in/career",
+    applyUrl: "https://www.bankofbaroda.in/career",
+    advertisementUrl: "https://www.bankofbaroda.in/career",
+    whatsappMsg:
+      "Hi, I need help applying for Bank of Baroda Manager Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 25–37 years (relaxation for SC/ST/OBC/PwD as per RBI guidelines). Education: Graduate in any discipline from a recognized University/Institution. Post Graduate / MBA / PGDM preferred for managerial roles. Banking experience preferred.",
+      vacancy:
+        "104 Manager posts (Scale-II/III) across various specializations — Credit, IT, Treasury, Finance, HR, Law, and General Banking. Vacancies spread across India including branches in Assam/NE region.",
+      applyStart: "As per official notification",
+      lastDate: "Check bankofbaroda.in/career for exact last date",
+      fee: "General/EWS/OBC: ₹600 | SC/ST/PwD/Ex-SM: ₹100 (approx., as per latest notification)",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC (Non-Creamy Layer): 3 years | PwD: 10 years | Ex-Servicemen: as per GOI rules",
+      examPattern:
+        "Online Written Test: Reasoning & Computer Aptitude, English Language, Data Analysis & Interpretation, General/Economy/Banking Awareness. Followed by Group Discussion (GD) and Personal Interview (PI). Shortlisting based on online test + GD/PI combined score.",
+      howToApply:
+        "Apply online at bankofbaroda.in/career section. Register with valid email and mobile, fill application, upload photo/signature and documents, pay fee online, submit. Download application receipt. Check official site regularly for admit card and exam schedule.",
+    },
+  },
+  {
+    id: "aft-guwahati-2026",
+    category: "Central Govt / Legal",
+    categoryColor: "bg-violet-100 text-violet-800",
+    isUrgent: true,
+    title: "AFT Guwahati Recruitment 2026 — 15 Assistant, Steno & More Posts",
+    organization: "Armed Forces Tribunal Regional Bench, Guwahati (Kamrup)",
+    posts: "15",
+    lastDate: "30 Apr 2026",
+    notificationUrl: "https://aftrbghy.nic.in",
+    applyUrl: "https://aftrbghy.nic.in",
+    advertisementUrl: "https://aftrbghy.nic.in",
+    whatsappMsg: "Hi, I need help applying for AFT Guwahati Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–27 years (as per respective post norms; SC/ST +5 yrs, OBC +3 yrs, PwD +10 yrs, Ex-SM as per rules). Education varies by post: Assistant — Graduate; Stenographer Grade-II — 12th pass + shorthand speed 80 wpm; Private Secretary — Graduate + shorthand 100 wpm; MTS — 10th pass. Ex-servicemen with equivalent ranks eligible. Candidates must be permanent residents of NE Region preferred.",
+      vacancy:
+        "15 Posts at Armed Forces Tribunal (AFT) Regional Bench Guwahati — Private Secretary (2), Personal Assistant (1), Assistant (4), Stenographer Grade-II (3), Hindi Translator (1), Multi Tasking Staff/MTS (4). Deputation basis for some posts.",
+      applyStart: "As per official notification",
+      lastDate: "30 April 2026",
+      fee: "No Application Fee (Apply Offline — send application by post)",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC: 3 years | PwD: 10 years | Ex-Servicemen: as per GOI rules",
+      examPattern:
+        "Written Test (Objective & Descriptive) as per post requirement. Stenographer/PA posts: shorthand & typing test. Interview/Skill test for shortlisted candidates. Final selection on merit basis.",
+      howToApply:
+        "Apply OFFLINE. Download application form from aftrbghy.nic.in. Fill in all details, attach attested copies of certificates (10th/12th/Graduation, caste certificate, age proof, experience certificate, passport-size photo). Send by Speed Post / Registered Post to: Registrar, AFT Regional Bench Guwahati, Opposite State Bank Bhawan, Rajgarh Road, Guwahati – 781003, Assam. Last date: 30 April 2026.",
+    },
+  },
+  {
+    id: "slprb-forest-guard-2026",
+    category: "State Govt / Forest",
+    categoryColor: "bg-green-100 text-green-800",
+    isUrgent: true,
+    title: "SLPRB Assam Forest Guard Recruitment 2026 — 2,972 Posts",
+    organization:
+      "State Level Police Recruitment Board (SLPRB), Assam / Assam Forest Department",
+    posts: "2,972",
+    lastDate: "Check slprbassam.in",
+    notificationUrl: "https://slprbassam.in",
+    applyUrl: "https://slprbassam.in",
+    advertisementUrl: "https://slprbassam.in",
+    whatsappMsg:
+      "Hi, I need help applying for SLPRB Assam Forest Guard Recruitment 2026.",
+    details: {
+      eligibility:
+        "Age: 18–38 years as on 01 January 2026 (SC/ST: +5 yrs, OBC/MOBC: +3 yrs, PwD: +10 yrs, Ex-SM: as per rules). Education: HSLC (Class 10) passed from a recognized board. Physical Standards: Male — Height 163 cm (162 cm for ST), Chest 80/85 cm; Female — Height 150 cm. Must be medically fit. Candidates from BTC area (Kokrajhar, Chirang, Baksa, Udalguri) eligible for district-level vacancies.",
+      vacancy:
+        "2,972 Forest Guard posts across all forest divisions of Assam — including BTC area, Hills districts, and plains. Breakdown: Unreserved, SC, ST (Plains), ST (Hills), OBC, MOBC, EWS, Ex-SM, PwD categories. Large number of vacancies in Udalguri, Sonitpur, Kamrup, Cachar, and other districts.",
+      applyStart: "January 2026",
+      lastDate: "Check slprbassam.in for current application status",
+      fee: "General/OBC/EWS: ₹300 | SC/ST/PwD/Ex-SM: ₹150",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC/MOBC: 3 years | PwD: 10 years | Ex-Servicemen: as per GOI/Assam Govt rules | Women: Height relaxation",
+      examPattern:
+        "Stage 1 — Physical Standard Test (Height/Chest/Weight). Stage 2 — Physical Efficiency Test (1600m run in 6 min for male; 800m run in 4 min for female). Stage 3 — Written Test (OMR-based MCQ, 100 marks): General Knowledge, Assam History & Culture, Mathematics, English, Science. Stage 4 — Medical Examination. Final selection based on written test merit.",
+      howToApply:
+        "Apply online at slprbassam.in. Register with valid email and mobile number. Fill application form, upload photo and signature, select preferred district, pay fee online. Download admit card from official portal before Physical Test. Check slprbassam.in regularly for exam schedule and admit card.",
+    },
+  },
+  {
+    id: "special-assam-tet-2026",
+    category: "State Govt / Education",
+    categoryColor: "bg-yellow-100 text-yellow-800",
+    isUrgent: false,
+    title:
+      "Special Assam TET 2026 — LP & UP Level Teachers (Bodo/Garo/Manipuri/Hmar)",
+    organization: "Department of School Education, Government of Assam / ASSEB",
+    posts: "Eligibility Certificate (for future teacher recruitment)",
+    lastDate: "07 Feb 2026 (Closed — Result Awaited)",
+    notificationUrl: "https://sebaonline.org",
+    applyUrl: "https://sebamis.sebaonline.org/spltet2026",
+    advertisementUrl: "https://sebaonline.org",
+    whatsappMsg: "Hi, I need information about Special Assam TET 2026 Result.",
+    details: {
+      eligibility:
+        "Must be a permanent resident of Assam. LP Level: Senior Secondary (50%) + 2-year D.El.Ed, or 4-year B.El.Ed, or Graduation + 2-year D.El.Ed. UP Level: Graduation + 2-year D.El.Ed, or Graduation (50%) + B.Ed, or Post-Graduation (55%) + 3-year integrated B.Ed-M.Ed. Relaxation: 5% marks for SC/ST/OBC/MOBC/PwD.",
+      vacancy:
+        "This is a Teacher Eligibility Test (TET) — not a direct recruitment. Qualified candidates receive a TET certificate (lifetime validity) making them eligible for LP/UP teacher posts in Bodo, Garo, Manipuri, and Hmar medium government schools across Assam.",
+      applyStart: "07 January 2026",
+      lastDate: "07 February 2026 (Application closed — Result awaited)",
+      fee: "General: ₹550 per paper | SC/ST/OBC/MOBC: ₹450 per paper | PwD: ₹300 per paper. Candidates appearing in both papers must pay separately.",
+      casteRelaxation:
+        "SC/ST/OBC/MOBC/PwD: 5% marks relaxation in qualifying marks. Qualifying marks: General — 60% (90/150); Reserved — 55% (83/150).",
+      examPattern:
+        "MCQ Paper — 150 questions, 150 marks, 2.5 hours, No negative marking. Paper I (LP): Child Development & Pedagogy (30) + Language I Bodo/Garo/Manipuri/Hmar (30) + Language II English (30) + Mathematics (30) + Environmental Studies (30). Paper II (UP): Child Development & Pedagogy (30) + Language I (30) + Language II English (30) + Mathematics & Science OR Social Science (60).",
+      howToApply:
+        "Application period closed. Candidates who applied can check their status on sebamis.sebaonline.org/spltet2026. Result and merit list will be published on sebaonline.org. Qualified candidates will receive TET certificate for LP/UP teacher recruitment. Watch official site for further updates.",
+    },
+  },
+  {
+    id: "ssc-chsl-2026",
+    category: "Central Govt / SSC",
+    categoryColor: "bg-fuchsia-100 text-fuchsia-800",
+    isUrgent: true,
+    title: "SSC CHSL 2026 Recruitment — LDC, JSA, DEO, PA/SA Posts",
+    organization: "Staff Selection Commission (SSC), Government of India",
+    posts: "TBD (Expected 5000+)",
+    lastDate: "30 Apr 2026 (Notification: 30 Apr 2026)",
+    notificationUrl: "https://ssc.gov.in",
+    applyUrl: "https://ssc.gov.in",
+    advertisementUrl: "https://ssc.gov.in",
+    whatsappMsg: "Hi, I need help applying for SSC CHSL 2026 Recruitment.",
+    details: {
+      eligibility:
+        "Age: 18–27 years for most posts (as on 01 Jan 2026). SC/ST: +5 yrs; OBC: +3 yrs; PwD: +10 yrs; Ex-SM: as per rules. Education: 12th pass (Higher Secondary) from a recognized Board or University. For DEO Grade 'A': 12th pass in Science stream with Mathematics as a subject.",
+      vacancy:
+        "Expected 5000+ posts (as per SSC CHSL 2024 trend) in: Lower Division Clerk (LDC), Junior Secretariat Assistant (JSA), Postal Assistant (PA), Sorting Assistant (SA), Data Entry Operator (DEO). Posts are in various Central Government Ministries/Departments/Offices across India including NE Region.",
+      applyStart: "30 April 2026 (Notification expected)",
+      lastDate:
+        "Expected May 2026 — Check ssc.gov.in for exact date after notification",
+      fee: "General/OBC/EWS: ₹100 | SC/ST/PwD/Ex-SM/Female: Nil (Fee Exempted)",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC: 3 years | PwD: 10 years | Ex-Servicemen: 3 years after deducting military service | Women: Fee exemption",
+      examPattern:
+        "Tier-I: Computer Based Examination (CBE) — English Language (25Q/50M), General Intelligence (25Q/50M), Quantitative Aptitude (25Q/50M), General Awareness (25Q/50M). Total: 100Q/200M, 60 min. Negative marking: 0.50 per wrong answer. Tier-II: Skill Test (Typing/Data Entry) for shortlisted candidates. No Interview.",
+      howToApply:
+        "Apply online at ssc.gov.in after notification release. Register on SSC portal with valid email and Aadhaar, fill application, upload photo and signature, pay fee, submit. Download admit card from official portal. Check ssc.gov.in regularly from 30 April 2026 onwards for official notification.",
+    },
+  },
+  {
+    id: "adre-3-2026",
+    category: "State Govt / ADRE",
+    categoryColor: "bg-blue-100 text-blue-800",
+    isUrgent: false,
+    title: "ADRE 3.0 — Assam Direct Recruitment 2026 (Grade III & IV)",
+    organization:
+      "State Level Recruitment Commission (SLRC), Government of Assam",
+    posts: "5000+ (Expected)",
+    lastDate: "Notification Expected — Watch sebaonline.org",
+    notificationUrl: "https://sebaonline.org",
+    applyUrl: "https://sebaonline.org",
+    advertisementUrl: "https://sebaonline.org",
+    whatsappMsg:
+      "Hi, I want to know about ADRE 3.0 Assam Direct Recruitment 2026.",
+    details: {
+      eligibility:
+        "Grade III: Graduate from a recognized university (specific subject requirements per post). Grade IV: HSLC (Class 10) passed. Age: 18–38 years (SC/ST: +5 yrs, OBC/MOBC: +3 yrs, PwD: +10 yrs). Must be permanent resident of Assam. Knowledge of Assamese language required for most posts.",
+      vacancy:
+        "Expected 5000+ vacancies across multiple departments of Assam Government for Grade III (including: Junior Assistants, Lower Division Assistants, Grade III technical posts across Education, Revenue, Health, Agriculture, PWD, etc.) and Grade IV (Multi Tasking Staff / Class IV) posts. Final vacancy list to be released with official notification.",
+      applyStart: "Expected 2026 — Watch sebaonline.org for official date",
+      lastDate:
+        "Will be announced with official notification on sebaonline.org",
+      fee: "Expected: Grade III — ₹185 (General), ₹185 (OBC/MOBC), ₹85 (SC/ST/PwD) | Grade IV — ₹100 (General), ₹50 (SC/ST/PwD) (Based on ADRE 2.0 fee structure; may change for ADRE 3.0)",
+      casteRelaxation:
+        "SC/ST: 5 years | OBC/MOBC: 3 years | PwD: 10 years | Women candidates: As per Assam Govt policy | Ex-Servicemen: as per rules",
+      examPattern:
+        "Grade III: Written Examination (OMR-based MCQ) — General English, General Mathematics, General Knowledge & Current Affairs, Assamese Language & Culture, Logical Reasoning. Total 100 marks. Grade IV: Similar OMR-based written test at Class 10 level. Both: No interview. Final merit list based on written exam marks only.",
+      howToApply:
+        "Notification not yet released. Prepare for ADRE 3.0 by studying previous year papers from ADRE 1.0 (2022) and ADRE 2.0 (2024). Once notification is out, apply online at sebaonline.org. Keep Aadhaar, academic certificates, and passport photo ready. Join WhatsApp/Telegram updates for immediate notification.",
+    },
+  },
+  {
+    id: "cuet-ug-2026",
+    category: "Admission / Central",
+    categoryColor: "bg-rose-100 text-rose-800",
+    isUrgent: false,
+    title: "CUET UG 2026 — Common University Entrance Test (Undergraduate)",
+    organization:
+      "National Testing Agency (NTA), Ministry of Education, Govt. of India",
+    posts: "Admission to 250+ Central & Other Universities",
+    lastDate: "Check cuet.nta.nic.in",
+    notificationUrl: "https://cuet.nta.nic.in",
+    applyUrl: "https://cuet.nta.nic.in",
+    advertisementUrl: "https://cuet.nta.nic.in",
+    whatsappMsg:
+      "Hi, I need help applying for CUET UG 2026 University Admission.",
+    details: {
+      eligibility:
+        "Candidates who have passed or are appearing in Class 12 (10+2) from any recognized board. Minimum marks: Generally 50% in 12th (45% for SC/ST) — varies by university and programme. Age: As per university requirements (no central age limit by NTA). Candidates from Assam can apply for Central Universities of India including NEHU (Shillong), Tezpur University, Cotton University, etc.",
+      vacancy:
+        "Admission to undergraduate programmes (BA, BSc, BCom, BBA, BCA, etc.) at 250+ participating universities including all Central Universities, State Universities, Deemed Universities, and Private Universities. Key Assam & NE universities: Gauhati University, Tezpur University, NEHU (Shillong), Cotton University, Dibrugarh University, and others.",
+      applyStart: "January 2026 (Re-opened February 23, 2026)",
+      lastDate:
+        "Check cuet.nta.nic.in for current deadline (originally March 11, 2026)",
+      fee: "Single subject: ₹550 (General) | Two subjects: ₹1050 (General) | Each additional subject: ₹350. SC/ST/PwD/3rd Gender: 40% discount on fee. OBC/EWS: No discount.",
+      casteRelaxation:
+        "SC/ST/PwD: 40% fee concession | Marks relaxation as per individual university admission norms | OBC/EWS relaxation as per respective university policy",
+      examPattern:
+        "Computer Based Test (CBT) — Hybrid Mode (CBT + Pen & Paper for some subjects). Section IA & IB: Language (26 languages available, 50 MCQ, 45 min). Section II: Domain Subjects (27 domains, 45-50 MCQ, 45 min). Section III: General Test (75 MCQ including Current Affairs, GK, Quantitative Reasoning, 60 min). Candidates choose subjects as required by their chosen universities. No negative marking for Language/General Test; -1 for Domain subjects.",
+      howToApply:
+        "Apply online at cuet.nta.nic.in. Register with valid email and mobile. Choose test papers as required by your preferred universities. Upload photo, signature, pay fee. Download city intimation slip and admit card from official portal. Exam tentatively scheduled May–June 2026. Check cuet.nta.nic.in for final exam schedule.",
+    },
+  },
+  {
+    id: "assam-nmms-scholarship-2026",
+    category: "Scholarship / Assam",
+    categoryColor: "bg-amber-100 text-amber-800",
+    isUrgent: false,
+    title: "Assam NMMS Scholarship 2026 — National Means-Cum-Merit Scholarship",
+    organization:
+      "State Council of Educational Research & Training (SCERT), Assam",
+    posts: "State Quota Scholarships (₹12,000/year)",
+    lastDate: "Check scertassam.co.in",
+    notificationUrl: "https://scertassam.co.in",
+    applyUrl: "https://scholarships.gov.in",
+    advertisementUrl: "https://scertassam.co.in",
+    whatsappMsg: "Hi, I need help applying for Assam NMMS Scholarship 2026.",
+    details: {
+      eligibility:
+        "Class 8 students studying in Govt./Govt.-aided/Local Body schools in Assam. Family income must be below ₹3.5 lakh per year. Must have scored minimum 55% in Class 7 (50% for SC/ST). Not eligible for students in Jawahar Navodaya Vidyalaya, Kendriya Vidyalaya, private schools, or residential schools with boarding facilities. Age: As per Class 8 norm.",
+      vacancy:
+        "State quota of scholarships for Assam — selected students receive ₹12,000 per year (₹1,000/month) for Class 9 to 12 (4 years) and further renewal for graduation/post-graduation. Result of NMMS 2026 has been declared — selected students can check on scholarships.gov.in.",
+      applyStart: "As per annual SCERT Assam notification",
+      lastDate: "Check scertassam.co.in for next cycle notification",
+      fee: "No Application Fee",
+      casteRelaxation:
+        "SC/ST: 5% marks relaxation in Class 7 qualifying criteria | Income limit: ₹3.5 lakh/year (uniform for all categories)",
+      examPattern:
+        "2 Papers: MAT (Mental Ability Test) — 90 MCQ, 90 marks, 90 min; SAT (Scholastic Aptitude Test) — 90 MCQ covering Science (35), Social Studies (35), Mathematics (20), 90 marks, 90 min. No negative marking. Qualifying marks: 40% general, 32% SC/ST. Final selection based on written test merit.",
+      howToApply:
+        "Schools register eligible students through SCERT Assam. Individual candidates must apply through their school (Headmaster/Principal forwards applications to DEO). Once selected, register on National Scholarship Portal: scholarships.gov.in with Aadhaar-linked bank account for direct scholarship payment.",
     },
   },
 ];
@@ -1634,20 +1879,21 @@ function JobDetailPage({
       className="relative min-h-screen bg-gray-50"
       data-ocid="job.detail.page"
     >
-      {/* QS DIGITAL Watermark - repeated diagonally across page */}
+      {/* QS DIGITAL Watermark - 7 repeats across detail page */}
       <div
         className="fixed inset-0 pointer-events-none overflow-hidden z-0"
         aria-hidden="true"
         style={{ userSelect: "none" }}
       >
         <span
-          className="absolute text-2xl font-black"
+          className="absolute font-black whitespace-nowrap"
           style={{
+            top: "8%",
+            left: "2%",
             opacity: 0.65,
+            fontSize: "1.3rem",
             letterSpacing: "0.14em",
             transform: "rotate(-28deg)",
-            top: "12%",
-            left: "3%",
             color: "#1e3a8a",
             background: "rgba(219,234,254,0.7)",
             padding: "3px 12px",
@@ -1657,13 +1903,14 @@ function JobDetailPage({
           QS DIGITAL
         </span>
         <span
-          className="absolute text-2xl font-black"
+          className="absolute font-black whitespace-nowrap"
           style={{
-            opacity: 0.6,
+            top: "8%",
+            left: "52%",
+            opacity: 0.55,
+            fontSize: "1.3rem",
             letterSpacing: "0.14em",
             transform: "rotate(-28deg)",
-            top: "45%",
-            left: "20%",
             color: "#1e3a8a",
             background: "rgba(219,234,254,0.7)",
             padding: "3px 12px",
@@ -1673,13 +1920,82 @@ function JobDetailPage({
           QS DIGITAL
         </span>
         <span
-          className="absolute text-2xl font-black"
+          className="absolute font-black whitespace-nowrap"
           style={{
-            opacity: 0.6,
+            top: "28%",
+            left: "18%",
+            opacity: 0.55,
+            fontSize: "1.3rem",
             letterSpacing: "0.14em",
             transform: "rotate(-28deg)",
-            top: "75%",
-            left: "38%",
+            color: "#1e3a8a",
+            background: "rgba(219,234,254,0.7)",
+            padding: "3px 12px",
+            borderRadius: "6px",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute font-black whitespace-nowrap"
+          style={{
+            top: "28%",
+            left: "65%",
+            opacity: 0.55,
+            fontSize: "1.3rem",
+            letterSpacing: "0.14em",
+            transform: "rotate(-28deg)",
+            color: "#1e3a8a",
+            background: "rgba(219,234,254,0.7)",
+            padding: "3px 12px",
+            borderRadius: "6px",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute font-black whitespace-nowrap"
+          style={{
+            top: "52%",
+            left: "5%",
+            opacity: 0.55,
+            fontSize: "1.3rem",
+            letterSpacing: "0.14em",
+            transform: "rotate(-28deg)",
+            color: "#1e3a8a",
+            background: "rgba(219,234,254,0.7)",
+            padding: "3px 12px",
+            borderRadius: "6px",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute font-black whitespace-nowrap"
+          style={{
+            top: "52%",
+            left: "52%",
+            opacity: 0.55,
+            fontSize: "1.3rem",
+            letterSpacing: "0.14em",
+            transform: "rotate(-28deg)",
+            color: "#1e3a8a",
+            background: "rgba(219,234,254,0.7)",
+            padding: "3px 12px",
+            borderRadius: "6px",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute font-black whitespace-nowrap"
+          style={{
+            top: "76%",
+            left: "28%",
+            opacity: 0.55,
+            fontSize: "1.3rem",
+            letterSpacing: "0.14em",
+            transform: "rotate(-28deg)",
             color: "#1e3a8a",
             background: "rgba(219,234,254,0.7)",
             padding: "3px 12px",
@@ -2109,56 +2425,103 @@ function GovJobCard({
 }) {
   return (
     <div className="relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-      {/* QS DIGITAL Watermark */}
+      {/* QS DIGITAL Watermark - 6 repeats */}
       <div
         className="absolute inset-0 pointer-events-none overflow-hidden rounded-xl"
         aria-hidden="true"
         style={{ userSelect: "none" }}
       >
         <span
-          className="absolute top-4 left-4 text-lg font-black"
+          className="absolute text-base font-black whitespace-nowrap"
           style={{
+            top: "6%",
+            left: "2%",
             opacity: 0.55,
             letterSpacing: "0.14em",
             transform: "rotate(-28deg)",
-            transformOrigin: "left",
-            display: "block",
             color: "#1e40af",
             background: "rgba(219,234,254,0.75)",
-            padding: "2px 8px",
+            padding: "1px 7px",
             borderRadius: "4px",
           }}
         >
           QS DIGITAL
         </span>
         <span
-          className="absolute text-lg font-black"
+          className="absolute text-base font-black whitespace-nowrap"
           style={{
-            opacity: 0.5,
-            letterSpacing: "0.14em",
-            transform: "translateX(-50%) translateY(-50%) rotate(-28deg)",
-            top: "50%",
-            left: "50%",
-            display: "block",
-            color: "#1e40af",
-            background: "rgba(219,234,254,0.75)",
-            padding: "2px 8px",
-            borderRadius: "4px",
-          }}
-        >
-          QS DIGITAL
-        </span>
-        <span
-          className="absolute bottom-4 right-4 text-lg font-black"
-          style={{
-            opacity: 0.5,
+            top: "6%",
+            left: "55%",
+            opacity: 0.45,
             letterSpacing: "0.14em",
             transform: "rotate(-28deg)",
-            transformOrigin: "right",
-            display: "block",
             color: "#1e40af",
             background: "rgba(219,234,254,0.75)",
-            padding: "2px 8px",
+            padding: "1px 7px",
+            borderRadius: "4px",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute text-base font-black whitespace-nowrap"
+          style={{
+            top: "35%",
+            left: "10%",
+            opacity: 0.45,
+            letterSpacing: "0.14em",
+            transform: "rotate(-28deg)",
+            color: "#1e40af",
+            background: "rgba(219,234,254,0.75)",
+            padding: "1px 7px",
+            borderRadius: "4px",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute text-base font-black whitespace-nowrap"
+          style={{
+            top: "35%",
+            left: "60%",
+            opacity: 0.45,
+            letterSpacing: "0.14em",
+            transform: "rotate(-28deg)",
+            color: "#1e40af",
+            background: "rgba(219,234,254,0.75)",
+            padding: "1px 7px",
+            borderRadius: "4px",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute text-base font-black whitespace-nowrap"
+          style={{
+            top: "68%",
+            left: "2%",
+            opacity: 0.45,
+            letterSpacing: "0.14em",
+            transform: "rotate(-28deg)",
+            color: "#1e40af",
+            background: "rgba(219,234,254,0.75)",
+            padding: "1px 7px",
+            borderRadius: "4px",
+          }}
+        >
+          QS DIGITAL
+        </span>
+        <span
+          className="absolute text-base font-black whitespace-nowrap"
+          style={{
+            top: "68%",
+            left: "55%",
+            opacity: 0.45,
+            letterSpacing: "0.14em",
+            transform: "rotate(-28deg)",
+            color: "#1e40af",
+            background: "rgba(219,234,254,0.75)",
+            padding: "1px 7px",
             borderRadius: "4px",
           }}
         >
@@ -2891,8 +3254,111 @@ export default function App() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.07 }}
                     data-ocid={`services.item.${idx + 1}`}
-                    className="group bg-white rounded-xl border border-blue-100 overflow-hidden flex flex-col hover:border-[#0EA5A5] hover:shadow-card hover:scale-[1.02] transition-all duration-300"
+                    className="group relative bg-white rounded-xl border border-blue-100 overflow-hidden flex flex-col hover:border-[#0EA5A5] hover:shadow-card hover:scale-[1.02] transition-all duration-300"
                   >
+                    {/* QS DIGITAL watermark on service card */}
+                    <div
+                      className="absolute inset-0 pointer-events-none overflow-hidden rounded-xl z-10"
+                      aria-hidden="true"
+                      style={{ userSelect: "none" }}
+                    >
+                      <span
+                        className="absolute text-xs font-black whitespace-nowrap"
+                        style={{
+                          top: "8%",
+                          left: "3%",
+                          opacity: 0.4,
+                          letterSpacing: "0.12em",
+                          transform: "rotate(-28deg)",
+                          color: "#1e40af",
+                          background: "rgba(219,234,254,0.70)",
+                          padding: "1px 5px",
+                          borderRadius: "3px",
+                        }}
+                      >
+                        QS DIGITAL
+                      </span>
+                      <span
+                        className="absolute text-xs font-black whitespace-nowrap"
+                        style={{
+                          top: "8%",
+                          left: "52%",
+                          opacity: 0.35,
+                          letterSpacing: "0.12em",
+                          transform: "rotate(-28deg)",
+                          color: "#1e40af",
+                          background: "rgba(219,234,254,0.70)",
+                          padding: "1px 5px",
+                          borderRadius: "3px",
+                        }}
+                      >
+                        QS DIGITAL
+                      </span>
+                      <span
+                        className="absolute text-xs font-black whitespace-nowrap"
+                        style={{
+                          top: "42%",
+                          left: "10%",
+                          opacity: 0.35,
+                          letterSpacing: "0.12em",
+                          transform: "rotate(-28deg)",
+                          color: "#1e40af",
+                          background: "rgba(219,234,254,0.70)",
+                          padding: "1px 5px",
+                          borderRadius: "3px",
+                        }}
+                      >
+                        QS DIGITAL
+                      </span>
+                      <span
+                        className="absolute text-xs font-black whitespace-nowrap"
+                        style={{
+                          top: "42%",
+                          left: "58%",
+                          opacity: 0.35,
+                          letterSpacing: "0.12em",
+                          transform: "rotate(-28deg)",
+                          color: "#1e40af",
+                          background: "rgba(219,234,254,0.70)",
+                          padding: "1px 5px",
+                          borderRadius: "3px",
+                        }}
+                      >
+                        QS DIGITAL
+                      </span>
+                      <span
+                        className="absolute text-xs font-black whitespace-nowrap"
+                        style={{
+                          top: "75%",
+                          left: "3%",
+                          opacity: 0.35,
+                          letterSpacing: "0.12em",
+                          transform: "rotate(-28deg)",
+                          color: "#1e40af",
+                          background: "rgba(219,234,254,0.70)",
+                          padding: "1px 5px",
+                          borderRadius: "3px",
+                        }}
+                      >
+                        QS DIGITAL
+                      </span>
+                      <span
+                        className="absolute text-xs font-black whitespace-nowrap"
+                        style={{
+                          top: "75%",
+                          left: "52%",
+                          opacity: 0.35,
+                          letterSpacing: "0.12em",
+                          transform: "rotate(-28deg)",
+                          color: "#1e40af",
+                          background: "rgba(219,234,254,0.70)",
+                          padding: "1px 5px",
+                          borderRadius: "3px",
+                        }}
+                      >
+                        QS DIGITAL
+                      </span>
+                    </div>
                     <div className="h-[180px] overflow-hidden">
                       <img
                         src={service.image}
