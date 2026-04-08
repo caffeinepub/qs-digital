@@ -1,5 +1,6 @@
+import { useActor } from "@caffeineai/core-infrastructure";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useActor } from "./useActor";
+import { createActor } from "../backend";
 
 export interface Review {
   id: bigint;
@@ -10,7 +11,7 @@ export interface Review {
 }
 
 export function useGetReviews() {
-  const { actor, isFetching } = useActor();
+  const { actor, isFetching } = useActor(createActor);
   return useQuery<Review[]>({
     queryKey: ["reviews"],
     queryFn: async () => {
@@ -22,7 +23,7 @@ export function useGetReviews() {
 }
 
 export function useSubmitReview() {
-  const { actor, isFetching } = useActor();
+  const { actor, isFetching } = useActor(createActor);
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: async ({

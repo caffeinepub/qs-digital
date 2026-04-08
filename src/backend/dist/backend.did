@@ -1,0 +1,12 @@
+type Review = 
+ record {
+   comment: text;
+   id: nat;
+   name: text;
+   rating: nat;
+   timestamp: int;
+ };
+service : {
+  getReviews: () -> (vec Review) query;
+  submitReview: (name: text, rating: nat, comment: text) -> (nat);
+}

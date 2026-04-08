@@ -1,0 +1,7 @@
+// Version: 1.0.0
+type Review__422344017 =
+  {comment : Text; id : Nat; name : Text; rating : Nat; timestamp : Int};
+actor {
+  stable var nextId : Nat;
+  stable var reviews : [Review__422344017]
+};
