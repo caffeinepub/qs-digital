@@ -738,13 +738,6 @@ const SERVICES = [
     image: "/assets/generated/service-banking.dim_800x600.jpg",
   },
   {
-    icon: <Briefcase className="w-8 h-8" />,
-    title: "Online Job Apply",
-    fee: 150,
-    description: "Get help applying for jobs online",
-    image: "/assets/generated/service-online-job-apply.dim_800x600.jpg",
-  },
-  {
     icon: <Plane className="w-8 h-8" />,
     title: "Flight Ticket Booking",
     fee: 0,
