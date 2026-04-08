@@ -3,18 +3,25 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  AlertCircle,
+  ArrowLeft,
   BookOpen,
   Briefcase,
   Building2,
+  Calendar,
   Camera,
   Car,
+  CheckCircle2,
+  ChevronRight,
   Clock,
   Copy,
   CreditCard,
+  ExternalLink,
   FileCheck,
   FileText,
   Fingerprint,
   Gift,
+  GraduationCap,
   HeartHandshake,
   Mail,
   MapPin,
@@ -23,6 +30,7 @@ import {
   Phone,
   Plane,
   RotateCcw,
+  Search,
   Shield,
   ShoppingBag,
   Star,
@@ -41,11 +49,656 @@ import type { Review } from "./hooks/useQueries";
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
+  { label: "Jobs", href: "#job-portal" },
   { label: "Products", href: "#products" },
   { label: "Partners", href: "#partners" },
   { label: "About Us", href: "#about" },
   { label: "Contact", href: "#contact" },
   { label: "Reviews", href: "#reviews" },
+];
+
+// ─── JOB LISTINGS DATA ────────────────────────────────────────────────────────
+type JobCategory = "job" | "exam" | "admission";
+type JobStatus = "active" | "closed" | "upcoming";
+
+interface JobListing {
+  id: number;
+  title: string;
+  organization: string;
+  category: JobCategory;
+  vacancies: string;
+  lastDate: string;
+  applicationStart: string;
+  status: JobStatus;
+  isLatest: boolean;
+  shortDescription: string;
+  eligibility: { qualification: string; age: string };
+  fee: { general: string; sc_st: string; pwd: string };
+  casteRelaxation: string;
+  importantDates: {
+    applicationStart: string;
+    lastDate: string;
+    examDate: string;
+    admitCard?: string;
+  };
+  selectionProcess: string;
+  examPattern: string;
+  officialAdLink: string;
+  applyLink: string;
+  additionalInfo?: string;
+}
+
+const JOB_LISTINGS: JobListing[] = [
+  {
+    id: 1,
+    title: "SLPRB Assam Recruitment 2026 — SI, Constable, Fireman, Warder",
+    organization: "State Level Police Recruitment Board (SLPRB), Assam",
+    category: "job",
+    vacancies: "5734 Posts",
+    lastDate: "Check official site",
+    applicationStart: "Feb 2026",
+    status: "active",
+    isLatest: true,
+    shortDescription:
+      "Mass recruitment for Sub-Inspector, Constable, Fireman, and Warder posts under SLPRB Assam.",
+    eligibility: {
+      qualification: "12th pass for Constable; Graduate for Sub-Inspector",
+      age: "18–25 years (SC/ST/OBC relaxation applicable)",
+    },
+    fee: { general: "₹250", sc_st: "₹150", pwd: "₹0 (Exempt)" },
+    casteRelaxation: "SC/ST: 5 years | OBC: 3 years | EWS: 5 years",
+    importantDates: {
+      applicationStart: "Feb 2026",
+      lastDate: "Check official site",
+      examDate: "To be announced",
+      admitCard: "To be announced",
+    },
+    selectionProcess:
+      "Written Test → Physical Efficiency Test (PET) / Physical Standard Test (PST) → Medical Examination",
+    examPattern:
+      "Written Test: Objective type questions covering General Knowledge, Reasoning, Mathematics, and English",
+    officialAdLink: "https://slprbassam.in",
+    applyLink: "https://slprbassam.in",
+  },
+  {
+    id: 2,
+    title: "Apex Bank Assistant Recruitment 2026 — 150 Posts",
+    organization: "The Assam Co-operative Apex Bank Ltd.",
+    category: "job",
+    vacancies: "150 Posts",
+    lastDate: "19 Apr 2026",
+    applicationStart: "20 Mar 2026",
+    status: "active",
+    isLatest: true,
+    shortDescription:
+      "Apex Bank recruiting Assistants from graduates across Assam for its banking operations.",
+    eligibility: {
+      qualification: "Graduate in any discipline from a recognized university",
+      age: "21–38 years",
+    },
+    fee: {
+      general: "₹750",
+      sc_st: "₹500 (SC/ST/PwD)",
+      pwd: "₹500",
+    },
+    casteRelaxation: "SC/ST: 5 years | OBC: 3 years (as per Assam Govt. norms)",
+    importantDates: {
+      applicationStart: "20 Mar 2026",
+      lastDate: "19 Apr 2026",
+      examDate: "To be announced",
+      admitCard: "To be announced",
+    },
+    selectionProcess: "Written Test → Interview",
+    examPattern:
+      "Objective type: English Language, Reasoning Ability, Quantitative Aptitude, General Awareness, Computer Knowledge",
+    officialAdLink: "https://apexbankassam.com",
+    applyLink: "https://apexbankassam.com",
+  },
+  {
+    id: 3,
+    title: "APSC CCE 2026 — Combined Competitive Exam (400+ Posts)",
+    organization: "Assam Public Service Commission (APSC)",
+    category: "job",
+    vacancies: "400+ Posts",
+    lastDate: "15 May 2026",
+    applicationStart: "Mar 2026",
+    status: "active",
+    isLatest: true,
+    shortDescription:
+      "APSC Combined Competitive Exam 2026 for ACS, APS, Finance, Agriculture, Forest, and Revenue Services.",
+    eligibility: {
+      qualification:
+        "Graduate in relevant discipline from a recognized university",
+      age: "21–38 years (SC/ST/OBC relaxation as per Assam Govt rules)",
+    },
+    fee: {
+      general: "₹270",
+      sc_st: "₹170 (SC/ST/OBC/EWS/PwD)",
+      pwd: "₹170",
+    },
+    casteRelaxation: "SC/ST: 5 years | OBC: 3 years | EWS: as per rules",
+    importantDates: {
+      applicationStart: "Mar 2026",
+      lastDate: "15 May 2026",
+      examDate: "July 2026 (Prelim)",
+      admitCard: "Before exam",
+    },
+    selectionProcess:
+      "Preliminary Exam → Main Exam (Descriptive) → Interview / Personality Test",
+    examPattern:
+      "Prelim: 2 papers — GS Paper I & II, 200 marks each, Objective type | Main: Descriptive papers",
+    officialAdLink: "https://apsc.nic.in",
+    applyLink: "https://apsc.nic.in",
+  },
+  {
+    id: 4,
+    title: "PNRD Assam Contractual Recruitment 2026 — 1508 Posts",
+    organization: "Panchayat & Rural Development Dept., Govt. of Assam",
+    category: "job",
+    vacancies: "1508 Posts",
+    lastDate: "Closed",
+    applicationStart: "Feb 2026",
+    status: "closed",
+    isLatest: false,
+    shortDescription:
+      "Contractual recruitment for Cluster Resource Person, Data Entry Operator, and Block Coordinator posts.",
+    eligibility: {
+      qualification: "Graduate / 10+2 depending on post",
+      age: "18–43 years",
+    },
+    fee: {
+      general: "₹0 (No Fee)",
+      sc_st: "₹0 (No Fee)",
+      pwd: "₹0 (No Fee)",
+    },
+    casteRelaxation: "As per Assam Govt. norms",
+    importantDates: {
+      applicationStart: "Feb 2026",
+      lastDate: "Passed (Closed)",
+      examDate: "Result/Merit List Stage",
+      admitCard: "N/A",
+    },
+    selectionProcess: "Merit-based on academic qualification + Interview",
+    examPattern: "No written exam; merit-based selection",
+    officialAdLink: "https://pnrd.assam.gov.in",
+    applyLink: "https://pnrd.assam.gov.in",
+  },
+  {
+    id: 5,
+    title: "ADRE 3.0 — Grade III & IV Recruitment (5000+ Posts)",
+    organization: "Assam Direct Recruitment Commission / SLRC, Govt. of Assam",
+    category: "job",
+    vacancies: "5000+ Posts",
+    lastDate: "To be announced",
+    applicationStart: "Mid-2026 (Expected)",
+    status: "upcoming",
+    isLatest: true,
+    shortDescription:
+      "Upcoming ADRE 3.0 mass recruitment for Grade III and Grade IV posts across multiple Assam Govt. departments.",
+    eligibility: {
+      qualification: "8th / 10th / 12th / Graduate as per post requirement",
+      age: "18–40 years (relaxation as per Assam Govt. norms)",
+    },
+    fee: {
+      general: "₹300 (Grade III) / ₹200 (Grade IV)",
+      sc_st: "₹150 (SC/ST/PwD)",
+      pwd: "₹150",
+    },
+    casteRelaxation: "SC/ST: 5 years | OBC: 3 years | EWS: 5 years",
+    importantDates: {
+      applicationStart: "Mid-2026 (Expected)",
+      lastDate: "To be announced",
+      examDate: "To be announced",
+      admitCard: "To be announced",
+    },
+    selectionProcess: "Written MCQ Test → Merit List → Document Verification",
+    examPattern:
+      "MCQ-based written test; subject-wise pattern as per post category",
+    officialAdLink: "https://slrcassam.in",
+    applyLink: "https://slrcassam.in",
+  },
+  {
+    id: 6,
+    title: "NHM Assam Health Dept. Recruitment 2026 — Multiple Posts",
+    organization: "National Health Mission (NHM), Assam",
+    category: "job",
+    vacancies: "Multiple",
+    lastDate: "Check official site",
+    applicationStart: "Rolling recruitment",
+    status: "active",
+    isLatest: false,
+    shortDescription:
+      "NHM Assam recruiting Staff Nurse, ANM, Lab Technician, Pharmacist, and Community Health Officer on a rolling basis.",
+    eligibility: {
+      qualification:
+        "GNM / B.Sc Nursing / Diploma in relevant healthcare field",
+      age: "18–43 years",
+    },
+    fee: {
+      general: "₹0 (No Fee)",
+      sc_st: "₹0 (No Fee)",
+      pwd: "₹0 (No Fee)",
+    },
+    casteRelaxation: "As per Assam Govt. norms",
+    importantDates: {
+      applicationStart: "Rolling",
+      lastDate: "Check official site",
+      examDate: "As per recruitment cycle",
+      admitCard: "As per recruitment cycle",
+    },
+    selectionProcess: "Merit-based + Document Verification",
+    examPattern:
+      "No written exam for most posts; merit-based on qualifications",
+    officialAdLink: "https://nhm.assam.gov.in",
+    applyLink: "https://nhm.assam.gov.in",
+  },
+  {
+    id: 7,
+    title: "SSC CHSL 2026 — 5000+ LDC, JSA, DEO, PA/SA Posts",
+    organization: "Staff Selection Commission (SSC), Govt. of India",
+    category: "job",
+    vacancies: "5000+ Posts",
+    lastDate: "May 2026 (Expected)",
+    applicationStart: "30 Apr 2026 (Expected)",
+    status: "upcoming",
+    isLatest: true,
+    shortDescription:
+      "SSC CHSL 2026 recruitment for Lower Divisional Clerk, JSA, Data Entry Operator, Postal and Sorting Assistant posts across Central Govt. offices.",
+    eligibility: {
+      qualification: "12th pass from a recognized board",
+      age: "18–27 years (SC/ST: +5 yrs, OBC: +3 yrs, PwD: +10 yrs)",
+    },
+    fee: {
+      general: "₹100",
+      sc_st: "₹0 (Female/SC/ST/PwD/Ex-Servicemen exempt)",
+      pwd: "₹0",
+    },
+    casteRelaxation: "SC/ST: 5 years | OBC: 3 years | PwD: 10 years",
+    importantDates: {
+      applicationStart: "30 Apr 2026 (Expected)",
+      lastDate: "May 2026 (Expected)",
+      examDate: "July–Aug 2026",
+      admitCard: "Before exam",
+    },
+    selectionProcess:
+      "Tier-I (Computer Based Test) → Tier-II (CBT + Skill Test/Typing Test)",
+    examPattern:
+      "Tier-I: 100 questions, 200 marks — English Language, Reasoning, Quantitative Aptitude, General Knowledge; 60 mins",
+    officialAdLink: "https://ssc.gov.in",
+    applyLink: "https://ssc.gov.in",
+  },
+  {
+    id: 8,
+    title: "RRB Group D 2026 — 22,195 Railway Posts",
+    organization:
+      "Railway Recruitment Board (RRB), Ministry of Railways, Govt. of India",
+    category: "job",
+    vacancies: "22,195 Posts",
+    lastDate: "To be announced",
+    applicationStart: "To be announced",
+    status: "upcoming",
+    isLatest: true,
+    shortDescription:
+      "RRB Group D mass recruitment for Track Maintainer, Helper, and Assistant posts across Electrical, Mechanical, Signal & Telecom departments.",
+    eligibility: {
+      qualification:
+        "10th pass + ITI (relevant trade) OR 10th pass with 2 years experience in relevant field",
+      age: "18–36 years (relaxation for reserved categories)",
+    },
+    fee: {
+      general: "₹500 (refundable on appearing in exam)",
+      sc_st: "₹250 (Female/SC/ST/Minority/EBC — refundable)",
+      pwd: "₹250 (refundable)",
+    },
+    casteRelaxation:
+      "SC/ST: 5 years | OBC: 3 years | PwD: 10 years | Ex-Servicemen: as per rules",
+    importantDates: {
+      applicationStart: "To be announced",
+      lastDate: "To be announced",
+      examDate: "To be announced",
+      admitCard: "To be announced",
+    },
+    selectionProcess:
+      "Computer Based Test (CBT) → Physical Efficiency Test (PET) → Document Verification → Medical Examination",
+    examPattern:
+      "CBT: 100 questions, 100 marks — Mathematics, General Intelligence & Reasoning, General Science, General Awareness; 90 mins; Negative marking (1/3)",
+    officialAdLink: "https://indianrailways.gov.in",
+    applyLink: "https://rrbapply.gov.in",
+  },
+  {
+    id: 9,
+    title: "AFT Guwahati Recruitment 2026 — Assistant, Steno & MTS (15 Posts)",
+    organization: "Armed Forces Tribunal (AFT) Regional Bench, Guwahati",
+    category: "job",
+    vacancies: "15 Posts",
+    lastDate: "30 Apr 2026",
+    applicationStart: "Mar 2026",
+    status: "active",
+    isLatest: true,
+    shortDescription:
+      "AFT Guwahati Regional Bench recruiting for Assistant, Stenographer Grade-C, and Multi-Tasking Staff posts.",
+    eligibility: {
+      qualification:
+        "Graduate / 12th / 8th pass as per post; Stenographer requires 80 wpm shorthand + 40 wpm typing",
+      age: "18–27 years (age relaxation for SC/ST/OBC/PwD)",
+    },
+    fee: {
+      general: "₹0 (No Fee)",
+      sc_st: "₹0 (No Fee)",
+      pwd: "₹0 (No Fee)",
+    },
+    casteRelaxation: "SC/ST: 5 years | OBC: 3 years | PwD: 10 years",
+    importantDates: {
+      applicationStart: "Mar 2026",
+      lastDate: "30 Apr 2026",
+      examDate: "To be announced",
+      admitCard: "To be announced",
+    },
+    selectionProcess:
+      "Written Test → Skill Test (Typing/Shorthand for relevant posts) → Document Verification",
+    examPattern:
+      "Written Test: Objective + Descriptive; Skill test for Steno and Assistant posts",
+    officialAdLink: "https://aftguwahati.gov.in",
+    applyLink: "https://aftguwahati.gov.in",
+  },
+  {
+    id: 10,
+    title: "Gauhati High Court Recruitment 2026 — Grade III & IV Posts",
+    organization: "Gauhati High Court, Assam",
+    category: "job",
+    vacancies: "Multiple",
+    lastDate: "Check official site",
+    applicationStart: "2026",
+    status: "active",
+    isLatest: false,
+    shortDescription:
+      "Gauhati High Court recruiting Junior Assistants, Stenographers, MTS, and Drivers across Grade III and IV posts.",
+    eligibility: {
+      qualification:
+        "Graduate / 12th / 8th pass as per the specific post applied for",
+      age: "18–38 years (relaxation for SC/ST/OBC as per Assam norms)",
+    },
+    fee: {
+      general: "₹300",
+      sc_st: "₹150 (SC/ST)",
+      pwd: "Exempted / as per rules",
+    },
+    casteRelaxation: "SC/ST: 5 years | OBC: 3 years (as per Assam Govt. norms)",
+    importantDates: {
+      applicationStart: "2026",
+      lastDate: "Check official site",
+      examDate: "To be announced",
+      admitCard: "To be announced",
+    },
+    selectionProcess:
+      "Written Examination → Typing / Skill Test → Interview / Document Verification",
+    examPattern:
+      "Written exam: General Knowledge, English, Reasoning; followed by Skill/Typing test for relevant posts",
+    officialAdLink: "https://ghconline.gov.in",
+    applyLink: "https://ghconline.gov.in",
+  },
+  {
+    id: 11,
+    title: "NEET UG 2026 — National Medical Entrance Test",
+    organization: "National Testing Agency (NTA), Govt. of India",
+    category: "exam",
+    vacancies: "N/A (Entrance Exam)",
+    lastDate: "Mar 2026 (Application)",
+    applicationStart: "Feb 2026",
+    status: "active",
+    isLatest: true,
+    shortDescription:
+      "NEET UG 2026 for admission to MBBS, BDS, BAMS, BSMS, BUMS, BHMS courses in medical colleges across India.",
+    eligibility: {
+      qualification:
+        "10+2 with Physics, Chemistry, Biology/Biotechnology; minimum 50% marks (40% for SC/ST/PwD)",
+      age: "17+ years as of 31 Dec 2026; no upper age limit",
+    },
+    fee: {
+      general: "₹1700",
+      sc_st: "₹1000 (SC/ST/PwD/Transgender)",
+      pwd: "₹1000",
+    },
+    casteRelaxation:
+      "5% mark relaxation for SC/ST/PwD candidates in eligibility criteria",
+    importantDates: {
+      applicationStart: "Feb 2026",
+      lastDate: "Mar 2026",
+      examDate: "04 May 2026",
+      admitCard: "Apr 2026",
+    },
+    selectionProcess:
+      "Single entrance test → Rank-based counselling (through MCC for Central/Deemed Universities; State counselling for State quota seats)",
+    examPattern:
+      "200 questions (attempt 180) — Physics (50), Chemistry (50), Botany (50), Zoology (50); 720 marks; 3 hours 20 mins; Negative marking: -1 per wrong answer",
+    officialAdLink: "https://neet.nta.nic.in",
+    applyLink: "https://neet.nta.nic.in",
+  },
+  {
+    id: 12,
+    title: "Assam CEE 2026 — Combined Entrance Exam for B.Tech / B.E.",
+    organization: "Assam Science & Technology University (ASTU)",
+    category: "exam",
+    vacancies: "N/A (Entrance Exam)",
+    lastDate: "Apr 2026",
+    applicationStart: "Mar 2026",
+    status: "active",
+    isLatest: true,
+    shortDescription:
+      "Assam CEE 2026 for admission to B.Tech/B.E. programs in Govt. and Private engineering colleges across Assam.",
+    eligibility: {
+      qualification:
+        "10+2 with Physics, Chemistry, Mathematics; minimum 45% for General, 40% for SC/ST",
+      age: "17+ years; must be born on or before 31 Jul 2009",
+    },
+    fee: {
+      general: "₹500",
+      sc_st: "₹300 (SC/ST/PwD)",
+      pwd: "₹300",
+    },
+    casteRelaxation:
+      "SC/ST candidates get 5% mark relaxation in eligibility criteria",
+    importantDates: {
+      applicationStart: "Mar 2026",
+      lastDate: "Apr 2026",
+      examDate: "June 2026",
+      admitCard: "May 2026",
+    },
+    selectionProcess:
+      "Entrance Exam → Merit-based rank → Centralized Counselling for seat allotment",
+    examPattern:
+      "120 questions — Physics (40), Chemistry (40), Mathematics (40); 480 marks; 3 hours; Negative marking: -1 per wrong answer",
+    officialAdLink: "https://astu.ac.in",
+    applyLink: "https://astu.ac.in",
+  },
+  {
+    id: 13,
+    title: "PAT Assam 2026 — Polytechnic Admission Test",
+    organization: "Directorate of Technical Education (DTE), Govt. of Assam",
+    category: "exam",
+    vacancies: "N/A (Entrance Exam)",
+    lastDate: "Feb 2026",
+    applicationStart: "Jan 2026",
+    status: "active",
+    isLatest: false,
+    shortDescription:
+      "Polytechnic Admission Test (PAT) 2026 for Diploma Engineering admissions in Govt. and Private Polytechnic colleges of Assam.",
+    eligibility: {
+      qualification:
+        "10th pass with minimum 35% marks in Mathematics and Science",
+      age: "14+ years; no upper age limit",
+    },
+    fee: {
+      general: "₹400",
+      sc_st: "₹200 (SC/ST)",
+      pwd: "₹200",
+    },
+    casteRelaxation:
+      "SC/ST candidates get fee concession and relaxation in merit criteria as per Assam rules",
+    importantDates: {
+      applicationStart: "Jan 2026",
+      lastDate: "Feb 2026",
+      examDate: "5 Jul 2026 or 24 Jul 2026",
+      admitCard: "Before exam",
+    },
+    selectionProcess:
+      "Entrance Exam → Merit list → Counselling for diploma college seat allotment",
+    examPattern:
+      "90 questions — Mathematics (35), Science (35), English (20); 90 marks; 2 hours; No negative marking",
+    officialAdLink: "https://dte.assam.gov.in",
+    applyLink: "https://dte.assam.gov.in",
+  },
+  {
+    id: 14,
+    title: "SSUHS GNM Entrance Examination 2026",
+    organization:
+      "Srimanta Sankaradeva University of Health Sciences (SSUHS), Assam",
+    category: "admission",
+    vacancies: "Multiple Seats (Govt. & Private Nursing Institutes)",
+    lastDate: "30 May 2026",
+    applicationStart: "10 Apr 2026",
+    status: "active",
+    isLatest: true,
+    shortDescription:
+      "SSUHS GNM Entrance 2026 for admission to General Nursing & Midwifery courses in Govt. and Private institutes of Assam for 2026-27 session.",
+    eligibility: {
+      qualification:
+        "10+2 with English; minimum 40% aggregate marks (5% relaxation for SC/ST); PRC mandatory for Govt. institute seats",
+      age: "Minimum 17 years as of 31 Dec 2026",
+    },
+    fee: {
+      general:
+        "Online payment via SSUHS portal (check official site for amount)",
+      sc_st: "Online payment (check official site)",
+      pwd: "PwD candidates with 40%+ disability are EXEMPT from fee",
+    },
+    casteRelaxation:
+      "SC/ST: 5% mark relaxation in eligibility | PRC mandatory for Govt. institute seats",
+    importantDates: {
+      applicationStart: "10 Apr 2026",
+      lastDate: "30 May 2026",
+      examDate: "28 Jun 2026 (10:00 AM – 12:00 PM)",
+      admitCard: "14 Jun 2026",
+    },
+    selectionProcess:
+      "Entrance Exam → Merit-based rank → Counselling for institute allotment",
+    examPattern:
+      "100 marks OMR-based paper — English (50 marks), Mathematics (25 marks), General Science (25 marks); Questions in English & Assamese; NO negative marking. Helpdesk: 08048794953 | ssuhs.cee2026@gmail.com",
+    officialAdLink: "https://ssuhs.ac.in",
+    applyLink: "https://ssuhs.ac.in",
+  },
+  {
+    id: 15,
+    title: "SSUHS CEE 2026 — B.Sc Nursing, B.Pharm, D.Pharm & Allied Health",
+    organization:
+      "Srimanta Sankaradeva University of Health Sciences (SSUHS), Assam",
+    category: "admission",
+    vacancies: "Multiple Seats",
+    lastDate: "Apr–May 2026",
+    applicationStart: "Mar 2026",
+    status: "active",
+    isLatest: true,
+    shortDescription:
+      "SSUHS Common Entrance Examination 2026 for B.Sc Nursing, B.Pharm, D.Pharm, and Allied Health Sciences admissions for 2026-27 session.",
+    eligibility: {
+      qualification:
+        "10+2 with PCB / PCM as per course; minimum 45% marks; Nursing requires Biology",
+      age: "17+ years; as per course-specific requirements",
+    },
+    fee: {
+      general:
+        "Online payment via SSUHS portal (check official site for amount)",
+      sc_st: "As per official notification",
+      pwd: "As per official notification",
+    },
+    casteRelaxation:
+      "SC/ST/OBC relaxation as per Assam Govt. norms | PRC may be required",
+    importantDates: {
+      applicationStart: "Mar 2026",
+      lastDate: "Apr–May 2026",
+      examDate: "June–July 2026",
+      admitCard: "Before exam",
+    },
+    selectionProcess:
+      "Entrance Exam → Merit-based counselling for course/institute allotment",
+    examPattern:
+      "Objective type entrance exam covering subjects relevant to the course applied (PCB/PCM); check official SSUHS notification for exact pattern",
+    officialAdLink: "https://ssuhs.ac.in",
+    applyLink: "https://ssuhs.ac.in",
+  },
+  {
+    id: 16,
+    title: "CUET UG 2026 — Central Universities Undergraduate Admission Test",
+    organization: "National Testing Agency (NTA), Govt. of India",
+    category: "admission",
+    vacancies: "Seats in 250+ Universities",
+    lastDate: "Mar 2026",
+    applicationStart: "Feb 2026",
+    status: "active",
+    isLatest: true,
+    shortDescription:
+      "CUET UG 2026 for admission to undergraduate programs (BA, B.Sc, B.Com, etc.) in 250+ Central, State, and Private Universities.",
+    eligibility: {
+      qualification:
+        "12th pass or appearing; no minimum marks required (individual university criteria may apply)",
+      age: "No age limit specified; varies by university",
+    },
+    fee: {
+      general: "₹650 (for 1–3 subjects); higher for additional subjects",
+      sc_st: "Reduced fee for SC/ST/PwD; check official NTA site",
+      pwd: "Reduced fee; check official NTA site",
+    },
+    casteRelaxation:
+      "Relaxation varies by individual university; CUET score applies uniformly",
+    importantDates: {
+      applicationStart: "Feb 2026",
+      lastDate: "Mar 2026",
+      examDate: "May 2026",
+      admitCard: "Apr–May 2026",
+    },
+    selectionProcess:
+      "CUET Score → University-wise cut-off and counselling for seat allotment",
+    examPattern:
+      "Domain-specific subjects (chosen by student), Language tests, General Test; MCQ format; 200 questions total (varies by subject choice); Negative marking",
+    officialAdLink: "https://cuet.nta.nic.in",
+    applyLink: "https://cuet.nta.nic.in",
+  },
+  {
+    id: 17,
+    title: "Tezpur University B.Ed Admission 2026",
+    organization: "Tezpur University (Central University of Assam)",
+    category: "admission",
+    vacancies: "Limited Seats",
+    lastDate: "May 2026",
+    applicationStart: "Apr 2026",
+    status: "active",
+    isLatest: false,
+    shortDescription:
+      "Tezpur University B.Ed (2-year) Admission 2026 — a Central University program for aspiring teachers through entrance-based selection.",
+    eligibility: {
+      qualification:
+        "Graduate with at least 50% marks (45% for SC/ST/OBC/PwD); must have studied the teaching subject at UG level",
+      age: "No specific age limit mentioned in general norms",
+    },
+    fee: {
+      general: "₹500",
+      sc_st: "₹250 (SC/ST/PwD)",
+      pwd: "₹250",
+    },
+    casteRelaxation: "SC/ST: 5% mark relaxation | OBC/PwD: 5% mark relaxation",
+    importantDates: {
+      applicationStart: "Apr 2026",
+      lastDate: "May 2026",
+      examDate: "June 2026",
+      admitCard: "Before exam",
+    },
+    selectionProcess:
+      "Entrance Test → Merit list based on test score → Counselling → Admission",
+    examPattern:
+      "Entrance test covering Teaching Aptitude, Language Proficiency, Subject Knowledge, and General Awareness",
+    officialAdLink: "https://tezu.ernet.in",
+    applyLink: "https://tezu.ernet.in",
+  },
 ];
 
 const SERVICES = [
@@ -275,6 +928,725 @@ const BANKING_SUB_SERVICES = [
       "Hi, I am interested in Aadhaar Seeding With Bank Account service at QS DIGITAL.",
   },
 ];
+
+// ─── JOB PORTAL HELPERS ───────────────────────────────────────────────────────
+const CATEGORY_STYLES: Record<
+  JobCategory,
+  { label: string; bg: string; text: string; icon: React.ReactNode }
+> = {
+  job: {
+    label: "Job",
+    bg: "bg-blue-100",
+    text: "text-blue-800",
+    icon: <Briefcase className="w-3 h-3" />,
+  },
+  exam: {
+    label: "Exam",
+    bg: "bg-amber-100",
+    text: "text-amber-800",
+    icon: <GraduationCap className="w-3 h-3" />,
+  },
+  admission: {
+    label: "Admission",
+    bg: "bg-green-100",
+    text: "text-green-800",
+    icon: <BookOpen className="w-3 h-3" />,
+  },
+};
+
+const WATERMARK_POSITIONS = [
+  { top: "5%", left: "2%", opacity: 0.09, id: "wc1" },
+  { top: "5%", left: "48%", opacity: 0.09, id: "wc2" },
+  { top: "38%", left: "18%", opacity: 0.09, id: "wc3" },
+  { top: "38%", left: "60%", opacity: 0.09, id: "wc4" },
+  { top: "72%", left: "5%", opacity: 0.09, id: "wc5" },
+  { top: "72%", left: "50%", opacity: 0.09, id: "wc6" },
+];
+
+const WATERMARK_POSITIONS_DETAIL = [
+  { top: "6%", left: "5%", opacity: 0.09, id: "wd1" },
+  { top: "6%", left: "40%", opacity: 0.09, id: "wd2" },
+  { top: "6%", left: "72%", opacity: 0.09, id: "wd3" },
+  { top: "35%", left: "15%", opacity: 0.09, id: "wd4" },
+  { top: "35%", left: "60%", opacity: 0.09, id: "wd5" },
+  { top: "65%", left: "5%", opacity: 0.09, id: "wd6" },
+  { top: "65%", left: "50%", opacity: 0.09, id: "wd7" },
+];
+
+function JobWatermark({
+  positions,
+}: { positions: typeof WATERMARK_POSITIONS }) {
+  return (
+    <div
+      className="absolute inset-0 pointer-events-none overflow-hidden"
+      aria-hidden="true"
+      style={{ userSelect: "none", zIndex: 0 }}
+    >
+      {positions.map((pos) => (
+        <span
+          key={pos.id}
+          className="absolute text-sm font-black whitespace-nowrap text-blue-900"
+          style={{
+            top: pos.top,
+            left: pos.left,
+            opacity: pos.opacity,
+            transform: "rotate(-25deg)",
+            letterSpacing: "0.12em",
+          }}
+        >
+          QS DIGITAL
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function JobCard({
+  job,
+  onView,
+}: {
+  job: JobListing;
+  onView: (job: JobListing) => void;
+}) {
+  const cat = CATEGORY_STYLES[job.category];
+  const isClosed = job.status === "closed";
+  const isUpcoming = job.status === "upcoming";
+
+  return (
+    <div className="relative bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-blue-300 transition-all duration-300 flex flex-col overflow-hidden">
+      <JobWatermark positions={WATERMARK_POSITIONS} />
+
+      {/* Status banner */}
+      {isClosed && (
+        <div className="absolute top-0 left-0 right-0 bg-red-600 text-white text-xs font-bold text-center py-1 z-10 tracking-wider">
+          APPLICATION CLOSED
+        </div>
+      )}
+      {isUpcoming && (
+        <div className="absolute top-0 left-0 right-0 bg-amber-500 text-white text-xs font-bold text-center py-1 z-10 tracking-wider">
+          COMING SOON
+        </div>
+      )}
+
+      <div
+        className={`relative z-10 p-5 flex flex-col gap-3 flex-1 ${isClosed || isUpcoming ? "pt-8" : ""}`}
+      >
+        {/* Category + Latest badges */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <span
+            className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold ${cat.bg} ${cat.text}`}
+          >
+            {cat.icon}
+            {cat.label}
+          </span>
+          {job.isLatest && (
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold">
+              <span className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse" />
+              LATEST
+            </span>
+          )}
+        </div>
+
+        {/* Title + Org */}
+        <div>
+          <h3 className="font-bold text-gray-900 text-sm leading-snug mb-1 line-clamp-2">
+            {job.title}
+          </h3>
+          <p className="text-gray-500 text-xs flex items-center gap-1 line-clamp-1">
+            <Building2 className="w-3 h-3 flex-shrink-0" />
+            {job.organization}
+          </p>
+        </div>
+
+        {/* Vacancies + Last date */}
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-2 text-xs text-gray-600">
+            <Users className="w-3.5 h-3.5 text-blue-500 flex-shrink-0" />
+            <span className="font-semibold">{job.vacancies}</span>
+          </div>
+          <div className="flex items-center gap-2 text-xs">
+            <Calendar className="w-3.5 h-3.5 text-red-500 flex-shrink-0" />
+            <span
+              className={`font-semibold ${isClosed ? "text-red-600" : "text-gray-700"}`}
+            >
+              Last Date: {job.lastDate}
+            </span>
+          </div>
+        </div>
+
+        {/* Short description */}
+        <p className="text-gray-500 text-xs leading-relaxed line-clamp-2">
+          {job.shortDescription}
+        </p>
+
+        {/* CTA */}
+        <button
+          type="button"
+          onClick={() => onView(job)}
+          data-ocid={`job-portal.card.${job.id}.view_button`}
+          className="mt-auto inline-flex items-center gap-1.5 bg-[#0B4F8F] hover:bg-[#0E6AAE] text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-colors self-start"
+        >
+          View Details
+          <ChevronRight className="w-3.5 h-3.5" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function JobDetailPage({
+  job,
+  onBack,
+}: {
+  job: JobListing;
+  onBack: () => void;
+}) {
+  const cat = CATEGORY_STYLES[job.category];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 60 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 60 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
+      className="fixed inset-0 z-50 bg-gray-50 overflow-y-auto"
+      data-ocid="job-portal.detail_page"
+    >
+      {/* Watermarks for detail page */}
+      <div
+        className="fixed inset-0 pointer-events-none overflow-hidden"
+        aria-hidden="true"
+        style={{ userSelect: "none", zIndex: 0 }}
+      >
+        {WATERMARK_POSITIONS_DETAIL.map((pos) => (
+          <span
+            key={pos.id}
+            className="absolute text-xl font-black whitespace-nowrap text-blue-900"
+            style={{
+              top: pos.top,
+              left: pos.left,
+              opacity: pos.opacity,
+              transform: "rotate(-25deg)",
+              letterSpacing: "0.15em",
+            }}
+          >
+            QS DIGITAL
+          </span>
+        ))}
+      </div>
+
+      <div className="relative z-10 max-w-3xl mx-auto px-4 py-6">
+        {/* Back button */}
+        <button
+          type="button"
+          onClick={onBack}
+          data-ocid="job-portal.detail_page.back_button"
+          className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-[#0B4F8F] hover:text-[#0EA5A5] transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Jobs
+        </button>
+
+        {/* Header card */}
+        <div
+          className="rounded-2xl p-6 mb-6 text-white relative overflow-hidden"
+          style={{
+            background: "linear-gradient(135deg, #0B4F8F 0%, #0EA5A5 100%)",
+          }}
+        >
+          <div className="flex items-start gap-3 mb-4 flex-wrap">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-white/20 text-white">
+              {cat.icon}
+              {cat.label}
+            </span>
+            {job.isLatest && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-400/90 text-white rounded-full text-xs font-bold">
+                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                LATEST
+              </span>
+            )}
+            {job.status === "closed" && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-500/90 text-white rounded-full text-xs font-bold">
+                CLOSED
+              </span>
+            )}
+            {job.status === "upcoming" && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-400/90 text-white rounded-full text-xs font-bold">
+                UPCOMING
+              </span>
+            )}
+          </div>
+          <h1 className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-2">
+            {job.title}
+          </h1>
+          <p className="text-blue-100 text-sm font-medium flex items-center gap-1.5">
+            <Building2 className="w-4 h-4" />
+            {job.organization}
+          </p>
+
+          {/* Quick stats */}
+          <div className="mt-5 flex flex-wrap gap-4">
+            <div className="bg-white/15 rounded-xl px-4 py-3 flex flex-col gap-0.5">
+              <span className="text-blue-200 text-xs font-semibold uppercase tracking-wide">
+                Vacancies
+              </span>
+              <span className="text-white font-extrabold text-base">
+                {job.vacancies}
+              </span>
+            </div>
+            <div className="bg-white/15 rounded-xl px-4 py-3 flex flex-col gap-0.5">
+              <span className="text-blue-200 text-xs font-semibold uppercase tracking-wide">
+                Last Date
+              </span>
+              <span className="text-white font-extrabold text-base">
+                {job.lastDate}
+              </span>
+            </div>
+            <div className="bg-white/15 rounded-xl px-4 py-3 flex flex-col gap-0.5">
+              <span className="text-blue-200 text-xs font-semibold uppercase tracking-wide">
+                Apply Start
+              </span>
+              <span className="text-white font-extrabold text-base">
+                {job.applicationStart}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Detail sections */}
+        <div className="flex flex-col gap-5">
+          {/* Eligibility */}
+          <DetailSection
+            icon={<CheckCircle2 className="w-5 h-5 text-green-600" />}
+            title="Eligibility Criteria"
+            bgColor="bg-green-50"
+            borderColor="border-green-200"
+          >
+            <InfoRow
+              label="Educational Qualification"
+              value={job.eligibility.qualification}
+            />
+            <InfoRow label="Age Limit" value={job.eligibility.age} />
+          </DetailSection>
+
+          {/* Application Fee */}
+          <DetailSection
+            icon={<CreditCard className="w-5 h-5 text-blue-600" />}
+            title="Application Fee"
+            bgColor="bg-blue-50"
+            borderColor="border-blue-200"
+          >
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-blue-100">
+                    <th className="text-left px-3 py-2 font-bold text-blue-900 rounded-tl-lg">
+                      Category
+                    </th>
+                    <th className="text-left px-3 py-2 font-bold text-blue-900 rounded-tr-lg">
+                      Fee
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-blue-100">
+                    <td className="px-3 py-2 text-gray-700">
+                      General / OBC / EWS
+                    </td>
+                    <td className="px-3 py-2 font-semibold text-gray-900">
+                      {job.fee.general}
+                    </td>
+                  </tr>
+                  <tr className="border-t border-blue-100 bg-white">
+                    <td className="px-3 py-2 text-gray-700">SC / ST</td>
+                    <td className="px-3 py-2 font-semibold text-gray-900">
+                      {job.fee.sc_st}
+                    </td>
+                  </tr>
+                  <tr className="border-t border-blue-100">
+                    <td className="px-3 py-2 text-gray-700">PwD (Divyang)</td>
+                    <td className="px-3 py-2 font-semibold text-gray-900">
+                      {job.fee.pwd}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </DetailSection>
+
+          {/* Caste Relaxation */}
+          <DetailSection
+            icon={<Users className="w-5 h-5 text-purple-600" />}
+            title="Caste / Category Relaxation"
+            bgColor="bg-purple-50"
+            borderColor="border-purple-200"
+          >
+            <p className="text-gray-700 text-sm leading-relaxed">
+              {job.casteRelaxation}
+            </p>
+          </DetailSection>
+
+          {/* Important Dates */}
+          <DetailSection
+            icon={<Calendar className="w-5 h-5 text-orange-600" />}
+            title="Important Dates"
+            bgColor="bg-orange-50"
+            borderColor="border-orange-200"
+          >
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-orange-100">
+                    <th className="text-left px-3 py-2 font-bold text-orange-900 rounded-tl-lg">
+                      Event
+                    </th>
+                    <th className="text-left px-3 py-2 font-bold text-orange-900 rounded-tr-lg">
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      event: "Application Start Date",
+                      date: job.importantDates.applicationStart,
+                    },
+                    {
+                      event: "Last Date to Apply",
+                      date: job.importantDates.lastDate,
+                    },
+                    {
+                      event: "Exam / Test Date",
+                      date: job.importantDates.examDate,
+                    },
+                    ...(job.importantDates.admitCard
+                      ? [
+                          {
+                            event: "Admit Card Download",
+                            date: job.importantDates.admitCard,
+                          },
+                        ]
+                      : []),
+                  ].map((row, i) => (
+                    <tr
+                      key={row.event}
+                      className={`border-t border-orange-100 ${i % 2 === 0 ? "" : "bg-white"}`}
+                    >
+                      <td className="px-3 py-2 text-gray-700">{row.event}</td>
+                      <td className="px-3 py-2 font-semibold text-gray-900">
+                        {row.date}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </DetailSection>
+
+          {/* Selection Process */}
+          <DetailSection
+            icon={<CheckCircle2 className="w-5 h-5 text-teal-600" />}
+            title="Selection Process"
+            bgColor="bg-teal-50"
+            borderColor="border-teal-200"
+          >
+            <p className="text-gray-700 text-sm leading-relaxed">
+              {job.selectionProcess}
+            </p>
+          </DetailSection>
+
+          {/* Exam Pattern */}
+          {job.examPattern && (
+            <DetailSection
+              icon={<FileText className="w-5 h-5 text-indigo-600" />}
+              title="Exam Pattern / Syllabus"
+              bgColor="bg-indigo-50"
+              borderColor="border-indigo-200"
+            >
+              <p className="text-gray-700 text-sm leading-relaxed">
+                {job.examPattern}
+              </p>
+            </DetailSection>
+          )}
+
+          {/* Official Ad + Apply Now */}
+          <div className="flex flex-col sm:flex-row gap-3 mt-2">
+            <a
+              href={job.officialAdLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-ocid={`job-portal.detail_page.official_ad.${job.id}`}
+              className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-[#0B4F8F] text-[#0B4F8F] hover:bg-[#0B4F8F] hover:text-white font-bold px-5 py-3.5 rounded-xl transition-colors text-sm"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Official Advertisement
+            </a>
+            <a
+              href={job.applyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-ocid={`job-portal.detail_page.apply_now.${job.id}`}
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-extrabold px-5 py-3.5 rounded-xl transition-colors text-sm"
+            >
+              <ChevronRight className="w-4 h-4" />
+              Apply Now — Official Website
+            </a>
+          </div>
+
+          {/* Back button bottom */}
+          <button
+            type="button"
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-[#0B4F8F] transition-colors mt-2"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Jobs
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function DetailSection({
+  icon,
+  title,
+  bgColor,
+  borderColor,
+  children,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  bgColor: string;
+  borderColor: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div
+      className={`rounded-xl border ${borderColor} ${bgColor} overflow-hidden`}
+    >
+      <div
+        className={`px-4 py-3 border-b ${borderColor} flex items-center gap-2`}
+      >
+        {icon}
+        <span className="font-bold text-gray-800 text-sm">{title}</span>
+      </div>
+      <div className="p-4">{children}</div>
+    </div>
+  );
+}
+
+function InfoRow({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="flex flex-col gap-0.5 mb-3 last:mb-0">
+      <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">
+        {label}
+      </span>
+      <span className="text-sm text-gray-800 leading-relaxed">{value}</span>
+    </div>
+  );
+}
+
+function JobPortalSection({
+  onViewJob,
+}: {
+  onViewJob: (job: JobListing) => void;
+}) {
+  const [jobCategory, setJobCategory] = useState<"all" | JobCategory>("all");
+  const [jobSearch, setJobSearch] = useState("");
+  const [jobsVisible, setJobsVisible] = useState(9);
+
+  const filtered = JOB_LISTINGS.filter((j) => {
+    const matchCat = jobCategory === "all" || j.category === jobCategory;
+    const q = jobSearch.toLowerCase();
+    const matchSearch =
+      !q ||
+      j.title.toLowerCase().includes(q) ||
+      j.organization.toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
+
+  const visible = filtered.slice(0, jobsVisible);
+
+  const filterTabs: {
+    key: "all" | JobCategory;
+    label: string;
+    count: number;
+  }[] = [
+    { key: "all", label: "All", count: JOB_LISTINGS.length },
+    {
+      key: "job",
+      label: "Jobs",
+      count: JOB_LISTINGS.filter((j) => j.category === "job").length,
+    },
+    {
+      key: "exam",
+      label: "Exams",
+      count: JOB_LISTINGS.filter((j) => j.category === "exam").length,
+    },
+    {
+      key: "admission",
+      label: "Admissions",
+      count: JOB_LISTINGS.filter((j) => j.category === "admission").length,
+    },
+  ];
+
+  return (
+    <section
+      id="job-portal"
+      className="py-16 md:py-24"
+      style={{ background: "#F3F6FA" }}
+      data-ocid="job-portal.section"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10"
+        >
+          <span className="text-[#0EA5A5] font-bold uppercase tracking-widest text-sm">
+            Sarkari Naukri
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B4F8F] mt-2 mb-4">
+            Online Job Portal
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Latest Jobs, Exam Notices, and Admission Notifications for Assam
+            &amp; Central Govt. — Apply directly through the official
+            organization website.
+          </p>
+          <div className="inline-flex items-center gap-2 mt-4 bg-green-50 border border-green-200 text-green-700 text-xs font-semibold px-4 py-2 rounded-full">
+            <AlertCircle className="w-3.5 h-3.5" />
+            All Apply Now links go directly to official government websites only
+          </div>
+        </motion.div>
+
+        {/* Search + Filters */}
+        <div className="flex flex-col gap-4 mb-8">
+          {/* Search bar */}
+          <div className="relative max-w-xl mx-auto w-full">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <input
+              type="text"
+              value={jobSearch}
+              onChange={(e) => {
+                setJobSearch(e.target.value);
+                setJobsVisible(9);
+              }}
+              placeholder="Search by job title or organization..."
+              data-ocid="job-portal.search_input"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-white text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0B4F8F] focus:border-[#0B4F8F] shadow-sm"
+            />
+          </div>
+
+          {/* Category filter tabs */}
+          <div
+            className="flex flex-wrap justify-center gap-2"
+            data-ocid="job-portal.category_filter"
+          >
+            {filterTabs.map((tab) => (
+              <button
+                key={tab.key}
+                type="button"
+                onClick={() => {
+                  setJobCategory(tab.key);
+                  setJobsVisible(9);
+                }}
+                data-ocid={`job-portal.filter.${tab.key}`}
+                className={[
+                  "inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all",
+                  jobCategory === tab.key
+                    ? "bg-[#0B4F8F] text-white shadow-md"
+                    : "bg-white text-gray-600 border border-gray-200 hover:border-[#0B4F8F] hover:text-[#0B4F8F]",
+                ].join(" ")}
+              >
+                {tab.label}
+                <span
+                  className={`text-xs px-1.5 py-0.5 rounded-full font-bold ${
+                    jobCategory === tab.key
+                      ? "bg-white/20 text-white"
+                      : "bg-gray-100 text-gray-500"
+                  }`}
+                >
+                  {tab.count}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Results count */}
+        <div className="text-sm text-gray-500 mb-6 text-center">
+          Showing{" "}
+          <span className="font-bold text-[#0B4F8F]">{visible.length}</span> of{" "}
+          <span className="font-bold text-[#0B4F8F]">{filtered.length}</span>{" "}
+          listings
+        </div>
+
+        {/* Grid */}
+        {filtered.length === 0 ? (
+          <div
+            className="text-center py-16 text-gray-400"
+            data-ocid="job-portal.empty_state"
+          >
+            <Search className="w-12 h-12 mx-auto mb-3 opacity-40" />
+            <p className="font-semibold">No listings found</p>
+            <p className="text-sm mt-1">Try a different search or category</p>
+          </div>
+        ) : (
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            data-ocid="job-portal.list"
+          >
+            {visible.map((job, idx) => (
+              <motion.div
+                key={job.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: idx * 0.05 }}
+                data-ocid={`job-portal.card.${job.id}`}
+              >
+                <JobCard job={job} onView={onViewJob} />
+              </motion.div>
+            ))}
+          </div>
+        )}
+
+        {/* Load More */}
+        {jobsVisible < filtered.length && (
+          <div className="text-center mt-10">
+            <button
+              type="button"
+              onClick={() => setJobsVisible((v) => v + 9)}
+              data-ocid="job-portal.load_more_button"
+              className="inline-flex items-center gap-2 bg-[#0B4F8F] hover:bg-[#0E6AAE] text-white font-bold px-8 py-3 rounded-xl transition-colors shadow-md"
+            >
+              Load More Listings
+            </button>
+          </div>
+        )}
+
+        {/* Disclaimer */}
+        <p className="text-center text-xs text-gray-400 mt-10 max-w-2xl mx-auto">
+          * All information is sourced from official government notifications.
+          Always verify details from the official organization website before
+          applying. QS DIGITAL assists with the online application process —
+          visit our center at Budlapara Chowk, Dimakuchi for help.
+        </p>
+      </div>
+    </section>
+  );
+}
 
 function scrollTo(href: string) {
   const el = document.querySelector(href);
@@ -746,6 +2118,7 @@ export default function App() {
   const [showBankingServices, setShowBankingServices] = useState(false);
   const [showPassportDocs, setShowPassportDocs] = useState(false);
   const [showVoterIdDocs, setShowVoterIdDocs] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<JobListing | null>(null);
   const [selectedBankingService, setSelectedBankingService] = useState<
     (typeof BANKING_SUB_SERVICES)[0] | null
   >(null);
@@ -1315,6 +2688,9 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* ===== JOB PORTAL ===== */}
+        <JobPortalSection onViewJob={(job) => setSelectedJob(job)} />
 
         {/* ===== PRODUCTS ===== */}
         <section
@@ -2051,6 +3427,16 @@ export default function App() {
         {/* ===== REVIEWS ===== */}
         <ReviewsSection />
       </main>
+
+      {/* ===== JOB DETAIL PAGE OVERLAY ===== */}
+      <AnimatePresence>
+        {selectedJob && (
+          <JobDetailPage
+            job={selectedJob}
+            onBack={() => setSelectedJob(null)}
+          />
+        )}
+      </AnimatePresence>
 
       {/* ===== BANKING SUB-SERVICE MODAL ===== */}
       <AnimatePresence>
